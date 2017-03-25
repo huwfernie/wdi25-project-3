@@ -1,10 +1,10 @@
-const Track = require('../models/track');
+const User = require('../models/user');
 
 function indexRoute(req, res, next) {
-  Track
+  User
     .find()
     .exec()
-    .then((tracks) => res.json(tracks))
+    .then((users) => res.json(users))
     .catch(next);
 }
 
@@ -14,20 +14,20 @@ function createRoute(req, res, next) {
 
   req.body.createdBy = req.user;
 
-  Track
+  User
     .create(req.body)
-    .then((track) => res.status(201).json(track))
+    .then((user) => res.status(201).json(user))
     .catch(next);
 }
 
 function showRoute(req, res, next) {
-  Track
+  User
     .findById(req.params.id)
     .exec()
-    .then((track) => {
-      if(!track) return res.notFound();
+    .then((user) => {
+      if(!user) return res.notFound();
 
-      res.json(track);
+      res.json(user);
     })
     .catch(next);
 }
@@ -35,30 +35,30 @@ function showRoute(req, res, next) {
 function updateRoute(req, res, next) {
   // if(req.file) req.body.image = req.file.filename;
 
-  Track
+  User
     .findById(req.params.id)
     .exec()
-    .then((track) => {
-      if(!track) return res.notFound();
+    .then((user) => {
+      if(!user) return res.notFound();
 
       for(const field in req.body) {
-        track[field] = req.body[field];
+        user[field] = req.body[field];
       }
 
-      return track.save();
+      return user.save();
     })
-    .then((track) => res.json(track))
+    .then((user) => res.json(user))
     .catch(next);
 }
 
 function deleteRoute(req, res, next) {
-  Track
+  User
     .findById(req.params.id)
     .exec()
-    .then((track) => {
-      if(!track) return res.notFound();
+    .then((user) => {
+      if(!user) return res.notFound();
 
-      return track.remove();
+      return user.remove();
     })
     .then(() => res.status(204).end())
     .catch(next);
