@@ -1,2 +1,2 @@
 angular
-  .module('nameYourAppHere', []);
+  .module('runApp', []);
