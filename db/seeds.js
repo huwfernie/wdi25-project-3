@@ -47,13 +47,30 @@ User
           name: 'Tower of London',
           lat: '51.508113',
           lng: '-0.075958',
-          image: 'http://www.buckinghampalace.co.uk/assets/images/bp1.jpg'
+          img: 'http://www.buckinghampalace.co.uk/assets/images/bp1.jpg'
         },
         finish: {
           name: 'Buckingham',
           lat: '51.501366',
           lng: '-0.141887',
-          image: 'https://media1.britannica.com/eb-media/45/18545-004-FFFBAE09.jpg'
+          img: 'https://media1.britannica.com/eb-media/45/18545-004-FFFBAE09.jpg'
+        },
+        distance: '3.1 miles',
+        attemptedBy: [],
+        favedBy: []
+      },{
+        name: 'Kensington to Battersea run',
+        start: {
+          name: 'Kensington Palace',
+          lat: '51.505837',
+          lng: '-0.187713',
+          img: 'https://upload.wikimedia.org/wikipedia/commons/8/80/Kensington_Palace%2C_the_South_Front_-_geograph.org.uk_-_287402.jpg'
+        },
+        finish: {
+          name: 'Battersea',
+          lat: '51.501366',
+          lng: '-0.141887',
+          img: 'https://media1.britannica.com/eb-media/45/18545-004-FFFBAE09.jpg'
         },
         distance: '3.1 miles',
         attemptedBy: [],
@@ -66,11 +83,11 @@ User
       .create([{
         start: {
           time: 'Sat Mar 26 2017 10:34:12 GMT+0000 (GMT)',
-          image: 'http://www.kobinazrul.towerhamlets.sch.uk/files/slideshows/728/5829d830b4528.jpg'
+          img: 'http://www.kobinazrul.towerhamlets.sch.uk/files/slideshows/728/5829d830b4528.jpg'
         },
         finish: {
           time: 'Sat Mar 26 2017 12:15:12 GMT+0000 (GMT)',
-          image: 'http://i.dailymail.co.uk/i/pix/2014/04/06/article-2598044-1CE188AF00000578-133_634x386.jpg'
+          img: 'http://i.dailymail.co.uk/i/pix/2014/04/06/article-2598044-1CE188AF00000578-133_634x386.jpg'
         },
         createdBy: ''
       }]);
