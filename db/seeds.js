@@ -78,7 +78,7 @@ User
       }]);
   })
   .then((track) => {
-    console.log(`${track.length} track was  created`);
+    console.log(`${track.length} tracks created`);
     return Sprint
       .create([{
         start: {
@@ -92,6 +92,6 @@ User
         createdBy: ''
       }]);
   })
-  .then((sprint) => console.log(`${sprint.length} sprint created`))
+  .then((sprint) => console.log(`${sprint.length} sprints created`))
   .catch((err) => console.log(err))
   .finally(() => mongoose.connection.close());

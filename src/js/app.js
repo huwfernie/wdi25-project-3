@@ -1,2 +1,2 @@
 angular
-  .module('nameYourAppHere', []);
+  .module('runApp', ['ui.router', 'ngResource', 'satellizer', 'ngMessages']);
