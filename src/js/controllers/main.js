@@ -21,7 +21,7 @@ function MainCtrl($rootScope, $state, $auth) {
   });
 
   function logout() {
-    console.log('Logout');
+    //console.log('Logout');
     $auth.logout();
     $state.go('login'); // redirect to login page
   }
