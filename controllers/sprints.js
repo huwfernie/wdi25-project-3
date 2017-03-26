@@ -3,7 +3,7 @@ const Sprint = require('../models/sprint');
 function indexRoute(req, res, next) {
   Sprint
     .find()
-    .populate('createdBy')
+  //  .populate('createdBy')
     .exec()
     .then((sprints) => res.json(sprints))
     .catch(next);
@@ -24,7 +24,7 @@ function createRoute(req, res, next) {
 function showRoute(req, res, next) {
   Sprint
     .findById(req.params.id)
-    .populate('createdBy comments.createdBy')
+    //.populate('createdBy comments.createdBy')
     .exec()
     .then((sprint) => {
       if(!sprint) return res.notFound();
