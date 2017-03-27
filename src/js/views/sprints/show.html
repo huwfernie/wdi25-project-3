@@ -18,7 +18,8 @@ start time: {{ sprintsShow.sprint.start.time }} minutes
 </div>
 
 <!-- Upload finish image -->
-<div class="fullscreen pure-g outline ng-hide" ng-show="sprintsShow.sprint.finish.time">
+
+<div class="fullscreen pure-g outline ng-hide" ng-show="sprintsShow.sprint.finish.time && !sprintsShow.sprint.finish.imgSRC">
   <div class="pure-u">
     <form ng-submit="sprintsShow.finish()">
       <div class="form-group">
@@ -31,6 +32,7 @@ start time: {{ sprintsShow.sprint.start.time }} minutes
     {{sprintsShow}}
   </div>
 </div>
+
 
 <!-- <div class="fullscreen pure-g outline">
   <form class="pure-u pure-form pure-form-aligned" name="sprintsShow.finishForm" ng-submit="sprintsShow.finish()" novalidate>
@@ -45,6 +47,7 @@ start time: {{ sprintsShow.sprint.start.time }} minutes
           <div ng-message="finishImage">This field must be a valid finishing image.</div>
         </div>
       </div> -->
+
 <!--
       <div class="pure-controls">
         <button class="pure-button pure-button-primary">Upload finish image</button>
