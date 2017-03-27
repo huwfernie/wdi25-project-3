@@ -14,30 +14,36 @@ const sprintSchema = new mongoose.Schema({
 });
 
 sprintSchema
-  .path('image')
+  .path('start.img')
   .set(function getPreviousImage(image){
-    this._image = this.image;
+    this.start._img = this.start.img;
     return image;
   });
 
 sprintSchema
-  .virtual('imageSRC')
+  .virtual('start.imgSRC')
   .get(function getImageSRC() {
-    if(this.image) return null;
-    return `https://s3-eu-west-1.amazonaws.com/kriszwdi/${this.image}`;
+    if(!this.start.img) return null;
+    return `https://s3-eu-west-1.amazonaws.com/kriszwdi/${this.start.img}`;
   });
 
-sprintSchema.pre('save', function checkPreviousImage(next) {
-  if(this.isModified('image') && this._image) {
-    return s3.deleteObject({ Key: this._image }, next);
-  }
-  next();
-});
+sprintSchema
+  .virtual('duration')
+  .get(function getDuration() {
 
-sprintSchema.pre('remove', function deleteImage(next) {
-  if(this.image) return s3.deleteObject({ Key: this.image}, next );
-  next();
-});
+  });
+
+// sprintSchema.pre('save', function checkPreviousImage(next) {
+//   if(this.isModified('start.img') && this.start._img) {
+//     return s3.deleteObject({ Key: this.start_img }, next);
+//   }
+//   next();
+// });
+//
+// sprintSchema.pre('remove', function deleteImage(next) {
+//   if(this.image) return s3.deleteObject({ Key: this.image}, next );
+//   next();
+// });
 
 
 module.exports = mongoose.model('Sprint', sprintSchema);

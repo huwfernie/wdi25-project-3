@@ -10,7 +10,9 @@ function indexRoute(req, res, next) {
 }
 
 function createRoute(req, res, next) {
+  req.body.start = {};
   if(req.file) req.body.start.img = req.file.filename;
+  req.body.start.time = new Date();
   // image files -- do with imageupload and base64 directive etc.
 
   req.body.createdBy = req.user;
