@@ -18,10 +18,12 @@ function SprintsNewCtrl(Sprint, $state) {
   vm.sprint = {};
 
   function sprintsCreate() {
+    console.log('New race');
     Sprint
       .save(vm.sprint)
       .$promise
       .then(() => $state.go('sprintsShow'));
+
   }
 
   vm.create = sprintsCreate;
