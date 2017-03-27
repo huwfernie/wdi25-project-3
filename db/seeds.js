@@ -75,8 +75,8 @@ User
           img: 'https://media1.britannica.com/eb-media/45/18545-004-FFFBAE09.jpg'
         },
         distance: '3.1 miles',
-        attemptedBy: [],
-        favedBy: []
+        attemptedBy: [`${users[2].id}, ${users[3].id}`],
+        favedBy: [users[3].id]
       }]);
   })
   .then((track) => {
