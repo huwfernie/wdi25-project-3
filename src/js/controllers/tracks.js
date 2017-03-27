@@ -36,6 +36,7 @@ function TracksShowCtrl(Track, $stateParams, $state) {
   vm.track = Track.get($stateParams);
 
   function tracksDelete() {
+    //console.log('are you sure');
     vm.track
       .$remove()
       .then(() => $state.go('tracksIndex'));
