@@ -50,8 +50,8 @@ User
         name: 'Tower Buckingham Run',
         start: {
           name: 'Tower of London',
-          lat: '51.508113',
-          lng: '-0.075958',
+          lat: '51.5081',
+          lng: '-0.076674',
           img: 'http://www.buckinghampalace.co.uk/assets/images/bp1.jpg'
         },
         finish: {
@@ -80,6 +80,57 @@ User
         distance: '3.1 miles',
         attemptedBy: [`${users[2].id}, ${users[3].id}`],
         favedBy: [users[3].id]
+      },{
+        name: 'Big Ben to St Paul Cathedral',
+        start: {
+          name: 'Big Ben',
+          lat: '51.500901999999996',
+          lng: '-0.120697',
+          img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdNNyNazMS_xoR0Mp9vww_DkabDlMEQVbBCzSQ4hDSVOVwfDiu'
+        },
+        finish: {
+          name: 'St Paul',
+          lat: '51.513563',
+          lng: '-0.0984799861907959',
+          img: 'http://www.astoft2.co.uk/london/P1030970-transf-wandyellred-cln-u1-h540-u0.3t5-q60-selnonblue-varyr0div.jpg'
+        },
+        distance: '3.1 miles',
+        attemptedBy: [`${users[1].id}, ${users[0].id}`],
+        favedBy: [users[1].id]
+      },{
+        name: 'London Eye to Battersea',
+        start: {
+          name: 'London Eye',
+          lat: '51.503226',
+          lng: '-0.118532',
+          img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/London-Eye-2009.JPG/1200px-London-Eye-2009.JPG'
+        },
+        finish: {
+          name: 'Battersea',
+          lat: '51.482719',
+          lng: '-0.144839',
+          img: 'https://static.dezeen.com/uploads/2011/12/dezeen_Farrells-Battersea-Power-Station_1.jpg'
+        },
+        distance: '2.4 miles',
+        attemptedBy: [`${users[1].id}, ${users[0].id}`],
+        favedBy: [users[1].id]
+      },{
+        name: 'Trafalgal Square to Royal Albert hall',
+        start: {
+          name: 'Trafalgar square',
+          lat: '51.508078',
+          lng: '-0.12808',
+          img: 'http://cdn.ltstatic.com/2006/April/GK587344_942long.jpg'
+        },
+        finish: {
+          name: 'Royal Albert Hall',
+          lat: '51.482719',
+          lng: '-0.144839',
+          img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8DSxyJ9jZb9Z4bjnizsTK8-BS4-UmxOsYNiCmgqpEKFXXmKeA'
+        },
+        distance: '2.4 miles',
+        attemptedBy: [`${users[1].id}, ${users[0].id}`],
+        favedBy: [users[1].id]
       }]);
   })
   .then((track) => {
