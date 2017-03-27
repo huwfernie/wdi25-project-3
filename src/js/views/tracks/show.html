@@ -4,8 +4,19 @@
 <div>
   <p>
     <h2>{{ tracksShow.track.name }}</h2>
-    {{ tracksShow.track }}
-    <button ui-sref= "tracksShow.delete()">Track Delete</button>
-    <button ui-sref= "tracksEdit({ id: track.id })">Track Edit</button>
+    <div class="tracksShowImage">
+      <img ng-src="{{ tracksShow.track.finish.img }}">
+    </div>
+    <p>
+      A {{ tracksShow.track.distance }} mile run<br>
+      From {{ tracksShow.track.start.name }}<br>
+      To {{ tracksShow.track.finish.name }}
+    </p>
+    <p>
+      This run has been done {{ tracksShow.track[attemptedBy].length() }} times.
+    </p>
+    <!-- {{ tracksShow.track }} -->
+    <button ng-click="tracksShow.delete()">Track Delete</button>
+    <button ui-sref="tracksEdit({ id: tracksShow.track.id })">Track Edit</button>
   </p>
 </div>
