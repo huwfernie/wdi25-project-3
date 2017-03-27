@@ -5,14 +5,12 @@
 
     <div class="pure-control-group">
       <label for="startImage">Start Image</label>
-      <input base64 type="file" name="base64" id="startImage" ng-model="sprintsNew.sprint.start.base64" required>
+      <input base64 type="file" name="startImage" id="startImage" ng-model="sprintsNew.sprint.start.base64" required>
 
       <div ng-messages="sprintsNew.newForm.startImage.$error" role="alert" ng-show="(sprintsNew.newForm.$submitted || sprintsNew.newForm.startImage.$touched) && sprintsNew.newForm.startImage.$invalid" class="error">
         <div ng-message="required">Please enter a value for this field.</div>
         <div ng-message="startImage">This field must be a valid starting image.</div>
       </div>
-      <img src="{{ sprint.start.imgSRC }}">
-    </div>
 
     <div class="pure-controls">
       <button class="pure-button pure-button-primary">Create</button>
@@ -20,3 +18,23 @@
 
   </fieldset>
 </form>
+
+<!-- <h1> sprint edit</h1>
+
+<input base64 type="file" name="base64" id="image" ng-model="sprintsNew.sprint.base64">
+{{ sprintNew.sprint.image }}
+
+
+<form ng-submit="sprintsNew.create()">
+
+
+
+  <div class="form-group">
+    <label for="base64">Image</label>
+    <input type="file" base64 name="base64" id="base64" ng-model="sprintsNew.sprint.base64">
+  </div>
+
+  <button class="btn btn-primary">Update</button>
+</form>
+{{sprintsNew}}
+s -->
