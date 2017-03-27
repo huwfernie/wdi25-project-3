@@ -58,7 +58,7 @@ function SprintsShowCtrl(Sprint, $stateParams, $state) {
 
   function takeFinishPhoto(){
     vm.sprint.finish.time = new Date();
-    $state.reload();
+    // $state.reload();
   }
   vm.takeFinishPhoto = takeFinishPhoto;
 
