@@ -1,1 +1,39 @@
-<h1> tracks edit</h1>
+<h1>Edit Track</h1>
+<form class="pure-form pure-form-aligned" name="tracksEdit.editForm" ng-submit="tracksEdit.update()" novalidate>
+  <fieldset>
+    <div class="pure-control-group">
+      <label for="trackName">Name</label>
+      <input type="text" name="trackName" id="trackName" ng-model="tracksEdit.track.name" required>
+      <div ng-messages="tracksEdit.editForm.trackName.$error" role="alert" ng-show="(tracksEdit.editForm.$submitted || tracksEdit.editForm.trackName.$touched) && tracksEdit.tracksEditForm.trackName.$invalid" class="error">
+        <div ng-message="required">Please enter a value for this field.</div>
+      </div>
+    </div>
+    <div class="pure-control-group">
+      <label for="start">Start</label>
+      <input type="text" name="start" id="start" ng-model="tracksEdit.track.start.name" required>
+      <div ng-messages="tracksEdit.editForm.start.$error" role="alert" ng-show="(tracksEdit.editForm.$submitted || tracksEdit.editForm.start.$touched) && tracksEdit.editForm.start.$invalid" class="error">
+        <div ng-message="required">Please enter a value for this field.</div>
+        <div ng-message="start">This field must be a valid starting address.</div>
+      </div>
+    </div>
+    <div class="pure-control-group">
+      <label for="finish">Finish</label>
+      <input type="text" name="finish" id="finish" ng-model="tracksEdit.track.finish.name" required>
+      <div ng-messages="tracksEdit.editForm.finish.$error" role="alert" ng-show="(tracksEdit.editForm.$submitted || tracksEdit.editForm.finish.$touched) && tracksEdit.editForm.finish.$invalid" class="error">
+        <div ng-message="required">Please enter a value for this field.</div>
+      </div>
+    </div>
+    <div class="pure-control-group">
+      <label for="distance">Distance</label>
+      <input type="text" name="distance" id="distance" ng-model="tracksEdit.track.distance" required>
+      <div ng-messages="tracksEdit.editForm.distance.$error" role="alert" ng-show="(tracksEdit.editForm.$submitted || tracksEdit.editForm.distance.$touched) && tracksEdit.editForm.distance.$invalid" class="error">
+        <div ng-message="required">Please enter a value for this field.</div>
+      </div>
+    </div>
+
+    <div class="pure-controls">
+      <button class="pure-button pure-button-primary">Update</button>
+    </div>
+  </fieldset>
+
+</form>
