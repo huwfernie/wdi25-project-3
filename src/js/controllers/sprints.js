@@ -21,7 +21,7 @@ function SprintsNewCtrl(Sprint, $state) {
     Sprint
       .save(vm.sprint)
       .$promise
-      .then(() => $state.go('sprintsIndex'));
+      .then(() => $state.go('sprintsShow'));
   }
 
   vm.create = sprintsCreate;
