@@ -1,13 +1,20 @@
 <h1>Sprints Index (Newsfeed)</h1>
 
-<div ng-repeat="sprint in sprintsIndex.all">
-  <p>
-    <h1>{{ sprint.start.time }}</h1>
-    {{ sprint }}
-    <button ui-sref= "sprintsShow({ id: sprint.id })">Show Sprint</button>
-    <button ui-sref= "sprintsEdit({ id: sprint.id })">Edit Sprint</button>
-  </p>
+<div class="pure-g" ng-repeat="sprint in sprintsIndex.all">
+  <div class="pure-u">
+    <h3><a ui-sref="sprintsShow({ id: sprint.id })">{{ sprint.id }}</a></h3>
+    <button class="pure-button pure-button-primary" ui-sref= "sprintsEdit({ id: sprint.id })">Edit</button>
 
-  <img ng-src="{{ sprint.start.img }}">
+    <p>{{ sprint.start.time }}</p>
+    <p>{{ sprint.finish.time }}</p>
+    <p>{{ sprint.createdBy }}</p>
+    </div>
+
+    <div class="pure-g">
+      <img class="pure-u-1-2 pure-img sprintsIndex" ng-src="{{ sprint.start.img }}">
+      <img class="pure-u-1-2 pure-img sprintsIndex" ng-src="{{ sprint.finish.img }}">
+    </div>
+    <hr>
+  </div>
 </div>
 <!-- double check we need the Image SRC or not ?? -->

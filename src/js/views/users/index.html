@@ -1,11 +1,8 @@
-<h1> users - index</h1>
+<h1>Users Index</h1>
 
 
 <div ng-repeat="user in usersIndex.all">
-  <p>
-    <h1>{{ user.username }}</h1>
-    {{ user }}
-    <button ui-sref= "usersShow({ id: user.id })">Users Show</button>
-    <button ui-sref= "usersEdit({ id: user.id })">Users Edit</button>
-  </p>
+  <h4><a ui-sref= "usersShow({ id: user.id })">{{ user.username }}</a></h4>
+  <!-- {{ user }} -->
+  <!-- <button ui-sref= "usersEdit({ id: user.id })">Edit</button> -->
 </div>

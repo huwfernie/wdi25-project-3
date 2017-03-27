@@ -1,0 +1,33 @@
+*:not(button input) {
+  width: 100%;
+}
+//
+// nav {
+//   ul {
+//     list-style: none;
+//     li {
+//       // display: inline-block;
+//       padding: 2vw;
+//     }
+//   }
+// }
+//
+// h1 {
+//   font-size: 10vw;
+// }
+// h2 {}
+// h3 {}
+// h4 {
+//   font-size: 6vw;
+// }
+// h5 {}
+// h6 {}
+//
+//
+//
+.pure-img {
+  &.sprintsIndex {
+    height: 50vw;
+    display: inline-block;
+  }
+}
