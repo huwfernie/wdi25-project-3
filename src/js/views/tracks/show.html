@@ -1,1 +1,11 @@
 <h1> tracks show</h1>
+
+
+<div>
+  <p>
+    <h2>{{ tracksShow.track.name }}</h2>
+    {{ tracksShow.track }}
+    <button ui-sref= "tracksShow.delete()">Track Delete</button>
+    <button ui-sref= "tracksEdit({ id: track.id })">Track Edit</button>
+  </p>
+</div>
