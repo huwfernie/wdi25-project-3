@@ -1,13 +1,13 @@
-<h1> sprints index (newsfeed)</h1>
+<h1>Sprints Index (Newsfeed)</h1>
 
 <div ng-repeat="sprint in sprintsIndex.all">
   <p>
     <h1>{{ sprint.start.time }}</h1>
     {{ sprint }}
-    <button ui-sref= "sprintsShow({ id: sprint.id })">Track Show</button>
-    <button ui-sref= "sprintsEdit({ id: sprint.id })">Track Edit</button>
+    <button ui-sref= "sprintsShow({ id: sprint.id })">Show Sprint</button>
+    <button ui-sref= "sprintsEdit({ id: sprint.id })">Edit Sprint</button>
   </p>
 
-  <img ng-src="{{ sprint.start.imgSRC }}">
+  <img ng-src="{{ sprint.start.img }}">
 </div>
 <!-- double check we need the Image SRC or not ?? -->
