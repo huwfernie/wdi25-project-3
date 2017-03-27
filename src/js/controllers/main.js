@@ -27,4 +27,10 @@ function MainCtrl($rootScope, $state, $auth) {
   }
 
   vm.logout = logout;
+
+  function click() {
+    console.log('click');
+  }
+
+  vm.click = click;
 }
