@@ -29,13 +29,14 @@ function TracksNewCtrl(Track, $state) {
   vm.create = tracksCreate;
 }
 
-TracksShowCtrl.$inject = ['Track', 'TrackComment', '$stateParams', '$state'];
-function TracksShowCtrl(Track, TrackComment, $stateParams, $state) {
+TracksShowCtrl.$inject = ['Track', '$stateParams', '$state'];
+function TracksShowCtrl(Track, $stateParams, $state) {
   const vm = this;
-  vm.newComment = {};
+  // vm.newComment = {};
   vm.track = Track.get($stateParams);
 
   function tracksDelete() {
+    //console.log('are you sure');
     vm.track
       .$remove()
       .then(() => $state.go('tracksIndex'));
@@ -43,30 +44,30 @@ function TracksShowCtrl(Track, TrackComment, $stateParams, $state) {
 
   vm.delete = tracksDelete;
 
-  function addComment() {
-    TrackComment
-      .save({ trackId: vm.track.id }, vm.newComment)
-      .$promise
-      .then((comment) => {
-        vm.track.comments.push(comment);
-        vm.newComment = {};
-
-      });
-  }
-
-  vm.addComment = addComment;
-
-  function deleteComment(comment) {
-    TrackComment
-      .delete({ trackId: vm.track.id, id: comment.id })
-      .$promise
-      .then(() => {
-        const index = vm.track.comments.indexOf(comment);
-        vm.track.comments.splice(index, 1);
-      });
-  }
-
-  vm.deleteComment = deleteComment;
+  // function addComment() {
+  //   TrackComment
+  //     .save({ trackId: vm.track.id }, vm.newComment)
+  //     .$promise
+  //     .then((comment) => {
+  //       vm.track.comments.push(comment);
+  //       vm.newComment = {};
+  //
+  //     });
+  // }
+  //
+  // vm.addComment = addComment;
+  //
+  // function deleteComment(comment) {
+  //   TrackComment
+  //     .delete({ trackId: vm.track.id, id: comment.id })
+  //     .$promise
+  //     .then(() => {
+  //       const index = vm.track.comments.indexOf(comment);
+  //       vm.track.comments.splice(index, 1);
+  //     });
+  // }
+  //
+  // vm.deleteComment = deleteComment;
 }
 
 TracksEditCtrl.$inject = ['Track', '$stateParams', '$state'];

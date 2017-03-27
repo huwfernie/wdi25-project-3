@@ -8,6 +8,8 @@ const Track = require('../models/track');
 const Sprint = require('../models/sprint');
 
 User.collection.drop();
+Track.collection.drop();
+Sprint.collection.drop();
 
 User
   .create([{
@@ -16,14 +18,12 @@ User
     password: 'm',
     passwordConfirmation: 'm',
     image: 'https://avatars0.githubusercontent.com/u/12150252?v=3&s=460'
-
   },{
     username: 'Huw',
     email: 'h@h.com',
     password: 'p',
     passwordConfirmation: 'p',
     image: 'https://lh6.googleusercontent.com/-Z05Md_BYdMQ/AAAAAAAAAAI/AAAAAAAAAzQ/tqRHm3qXopw/s0-c-k-no-ns/photo.jpg'
-
   },{
     username: 'Krisz',
     email: 'k@k.com',
@@ -36,7 +36,12 @@ User
     password: 'p',
     passwordConfirmation: 'p',
     image: 'https://avatars1.githubusercontent.com/u/22148681?v=3&s=460'
-
+  },{
+    username: 'a',
+    email: 'a@a.com',
+    password: 'a',
+    passwordConfirmation: 'a',
+    image: 'https://avatars1.githubusercontent.com/u/22148681?v=3&s=460'
   }])
   .then((users) => {
     console.log(`${users.length} users created`);
@@ -56,8 +61,8 @@ User
           img: 'https://media1.britannica.com/eb-media/45/18545-004-FFFBAE09.jpg'
         },
         distance: '3.1 miles',
-        attemptedBy: [],
-        favedBy: []
+        attemptedBy: [`${users[1].id}, ${users[0].id}`],
+        favedBy: [users[1].id]
       },{
         name: 'Kensington to Battersea run',
         start: {
@@ -73,8 +78,8 @@ User
           img: 'https://media1.britannica.com/eb-media/45/18545-004-FFFBAE09.jpg'
         },
         distance: '3.1 miles',
-        attemptedBy: [],
-        favedBy: []
+        attemptedBy: [`${users[2].id}, ${users[3].id}`],
+        favedBy: [users[3].id]
       }]);
   })
   .then((track) => {

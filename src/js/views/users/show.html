@@ -1,7 +1,10 @@
 <h1>Show User</h1>
 
-<div ng-repeat="user in usersIndex.all">
-  <h4>{{ usersShow.user }}</h4>
-  {{ user }}
-  <button ui-sref= "usersEdit({ id: user.id })">Edit</button>
+<div>
+  <h2>{{ usersShow.user.username }}</h2>
+  <p>{{ usersShow.user }}</p>
+  <img ng-src="{{ usersShow.user.image }}">
+  <!-- {{ usersShow.user }} -->
+  <button ui-sref="usersEdit({ id: usersShow.user.id })">User Edit</button>
+  <button ng-click="usersShow.delete()">User Delete</button>
 </div>
