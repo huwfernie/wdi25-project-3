@@ -4,8 +4,19 @@
 <button class="pure-button pure-button-primary" ng-click="">Private</button>
 
 <p>Start time: {{ sprintsShow.sprint.start.time }}</p>
-<p>Finish time: {{ sprintsShow.sprint.finish.time }}</p>
+<!-- <p>Finish time: {{ sprintsShow.sprint.finish.time }}</p> -->
 <p>Runner: {{ sprintsShow.sprint.createdBy }}</p>
+
+<div class="pure-control-group">
+  <label for="finishImage">Finish Image</label>
+  <input base64 type="file" name="base64" id="finishImage" ng-model="sprintsNew.sprint.finish.base64" required>
+
+  <div ng-messages="sprintsNew.newForm.finishImage.$error" role="alert" ng-show="(sprintsNew.newForm.$submitted || sprintsNew.newForm.finishImage.$touched) && sprintsNew.newForm.finishImage.$invalid" class="error">
+    <div ng-message="required">Please enter a value for this field.</div>
+    <div ng-message="finishImage">This field must be a valid finishing image.</div>
+  </div>
+  <img src="{{ sprint.finish.imgSRC }}">
+</div>
 
 <div class="pure-g">
   <img class="pure-u-1-2 pure-img sprintsIndex" ng-src="{{ sprintsShow.sprint.start.img }}">

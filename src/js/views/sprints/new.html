@@ -4,15 +4,6 @@
   <fieldset>
 
     <div class="pure-control-group">
-      <label for="startTime">Start Time</label>
-      <input type="text" name="startTime" id="startTime" ng-model="sprintsNew.sprint.start.time" required>
-      <div ng-messages="sprintsNew.newForm.startTime.$error" role="alert" ng-show="(sprintsNew.newForm.$submitted || sprintsNew.newForm.startTime.$touched) && sprintsNew.newForm.startTime.$invalid" class="error">
-        <div ng-message="required">Please enter a value for this field.</div>
-        <div ng-message="startTime">This field must be a valid starting address.</div>
-      </div>
-    </div>
-
-    <div class="pure-control-group">
       <label for="startImage">Start Image</label>
       <input base64 type="file" name="base64" id="startImage" ng-model="sprintsNew.sprint.start.base64" required>
 
@@ -23,25 +14,6 @@
       <img src="{{ sprint.start.imgSRC }}">
     </div>
 
-    <div class="pure-control-group">
-      <label for="finishTime">Finish Time</label>
-      <input type="text" name="finishTime" id="finishTime" ng-model="sprintsNew.sprint.finish.time" required>
-      <div ng-messages="sprintsNew.newForm.finishTime.$error" role="alert" ng-show="(sprintsNew.newForm.$submitted || sprintsNew.newForm.finish.$touched) && sprintsNew.newForm.finish.$invalid" class="error">
-        <div ng-message="required">Please enter a value for this field.</div>
-        <div ng-message="finishTime">This field must be a valid starting address.</div>
-      </div>
-    </div>
-
-    <div class="pure-control-group">
-      <label for="finishImage">Finish Image</label>
-      <input base64 type="file" name="base64" id="finishImage" ng-model="sprintsNew.sprint.finish.base64" required>
-
-      <div ng-messages="sprintsNew.newForm.finishImage.$error" role="alert" ng-show="(sprintsNew.newForm.$submitted || sprintsNew.newForm.finishImage.$touched) && sprintsNew.newForm.finishImage.$invalid" class="error">
-        <div ng-message="required">Please enter a value for this field.</div>
-        <div ng-message="finishImage">This field must be a valid finishing image.</div>
-      </div>
-      <img src="{{ sprint.finish.imgSRC }}">
-    </div>
     <div class="pure-controls">
       <button class="pure-button pure-button-primary">Create</button>
     </div>
