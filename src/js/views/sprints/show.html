@@ -1,7 +1,13 @@
-<h1> Your Run details </h1>
-<h2>{{ sprintsShow.sprint.createdBy }}</h2>
-<img ng-src="{{ sprintsShow.sprint.start.img }}">
-<!-- double check we need the Image SRC or not  -->
-<img ng-src="{{ sprintsShow.sprint.finish.img }}">
-<button ng-click="">Publish</button>
-<button ng-click="">Private</button>
+<h1> Your Run Details</h1>
+
+<button class="pure-button pure-button-primary" ng-click="">Public</button>
+<button class="pure-button pure-button-primary" ng-click="">Private</button>
+
+<p>Start time: {{ sprintsShow.sprint.start.time }}</p>
+<p>Finish time: {{ sprintsShow.sprint.finish.time }}</p>
+<p>Runner: {{ sprintsShow.sprint.createdBy }}</p>
+
+<div class="pure-g">
+  <img class="pure-u-1-2 pure-img sprintsIndex" ng-src="{{ sprintsShow.sprint.start.img }}">
+  <img class="pure-u-1-2 pure-img sprintsIndex" ng-src="{{ sprintsShow.sprint.finish.img }}">
+</div>
