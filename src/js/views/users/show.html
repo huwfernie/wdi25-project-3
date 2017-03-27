@@ -4,7 +4,7 @@
   <p>
     <h2>{{ usersShow.user.username }}</h2>
     <p>{{ usersShow.user }}</p>
-
+    <img ng-src="{{ usersShow.user.image }}">
     <!-- {{ usersShow.user }} -->
     <button ng-click="usersShow.delete()">User Delete</button>
     <button ui-sref="usersEdit({ id: usersShow.user.id })">User Edit</button>

@@ -4,10 +4,11 @@
   <p>
     <h1>{{ sprint.start.time }}</h1>
     {{ sprint }}
-    <button ui-sref= "sprintsShow({ id: sprint.id })">Track Show</button>
-    <button ui-sref= "sprintsEdit({ id: sprint.id })">Track Edit</button>
+    <button ui-sref= "sprintsShow({ id: sprint.id })">Sprint Show</button>
+    <button ui-sref= "sprintsEdit({ id: sprint.id })">Sprint Edit</button>
   </p>
 
-  <img ng-src="{{ sprint.start.imgSRC }}">
+  <!-- <img ng-src="{{ sprint.start.imgSRC }}"> // Change this when we switch to AWS-->
+  <img ng-src="{{ sprint.start.img }}">
 </div>
 <!-- double check we need the Image SRC or not ?? -->
