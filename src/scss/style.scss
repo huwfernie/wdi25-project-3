@@ -1,3 +1,8 @@
+$maroon: rgb(202, 60, 60);
+$orange: rgb(223, 117, 20);
+$green: rgb(28, 184, 65);
+$lightblue: rgb(66, 184, 221);
+
 * {
   padding: 0;
   margin: 0;
@@ -6,27 +11,44 @@
   }
 }
 
+.clearfix:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
 body.home {
   background: no-repeat url("https://static.pexels.com/photos/29578/pexels-photo.jpg");
   background-size: cover;
-  text-align: center;
   main {
     background-color: rgba(255, 255, 255, .5);
+    text-align: center;
   }
 }
+// main {
+//
+// }
 
 nav {
-  background-color: rgb(223, 117, 20);
+  background-color: $orange;
   ul {
     list-style: none;
+    .floatRight li {float: right;}
+    .floatLeft li {float: left;}
     li {
       display: inline-block;
       padding: 2vw;
-      a {
-        color: white;
-        text-decoration: none;
-        text-transform: uppercase;
+      color: white;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: .5s;
+      cursor: pointer;
+      &:hover {
+        background-color: $maroon;
       }
+
     }
   }
 }
@@ -55,19 +77,19 @@ nav {
 }
 
 .button-success {
-    background: rgb(28, 184, 65); /* this is a green */
+    background: $green;
 }
 
 .button-danger {
-    background: rgb(202, 60, 60); /* this is a maroon */
+    background: $maroon;
 }
 
 // .button-warning {
-//     background: rgb(223, 117, 20); /* this is an orange */
+//     background: $orange;
 // }
 //
 // .button-secondary {
-//     background: rgb(66, 184, 221); /* this is a light blue */
+//     background: $lightblue;
 // }
 
 .pure-img {
@@ -85,3 +107,10 @@ nav {
 .outline {
   border: 1px solid black;
 }
+
+.centered {
+  text-align: center;
+  margin: 0 auto;
+}
+
+// end of Huws styling
