@@ -1,7 +1,6 @@
 <h1>New Sprint</h1>
 
-
-<form class="pure-form pure-form-aligned" name="sprintsNew.newForm" ng-submit="sprintsNew.update()" novalidate>
+<form class="pure-form pure-form-aligned" name="sprintsNew.newForm" ng-submit="sprintsNew.create()" novalidate>
   <fieldset>
 
 
@@ -14,7 +13,7 @@
         <div ng-message="required">Please enter a value for this field.</div>
         <div ng-message="startImage">This field must be a valid starting image.</div>
       </div>
-      {{ sprintNew.sprint.image }}
+      <img src="{{ sprint.start.imgSRC }}">
     </div>
 
 
