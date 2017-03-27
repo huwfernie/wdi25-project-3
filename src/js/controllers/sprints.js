@@ -34,6 +34,7 @@ function SprintsShowCtrl(Sprint, $stateParams, $state) {
   const vm = this;
 
   vm.sprint = Sprint.get($stateParams);
+  vm.isRunning  = true;
 
   function sprintsDelete() {
     vm.sprint
