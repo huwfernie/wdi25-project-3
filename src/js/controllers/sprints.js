@@ -18,7 +18,7 @@ function SprintsNewCtrl(Sprint, $state) {
   vm.sprint = {};
 
   function sprintsCreate() {
-    console.log('New race');
+    console.log('sprintsCreate working???');
     Sprint
       .save(vm.sprint)
       .$promise
@@ -40,17 +40,20 @@ function SprintsShowCtrl(Sprint, $stateParams, $state) {
       .$remove()
       .then(() => $state.go('sprintsIndex'));
   }
-
   vm.delete = sprintsDelete;
 
   function sprintsFinish() {
-    console.log('finish clicked');
+    console.log('finish');
+    console.log(vm.sprint);
     vm.sprint
-      .$update()
-      .then(() => $state.go('sprintsShow', $stateParams));
-  }
+    .$update()
+    .then(() => $state.go('sprintsShow', $stateParams));
 
+  }
   vm.finish = sprintsFinish;
+
+
+
 }
 
 SprintsEditCtrl.$inject = ['Sprint', '$stateParams', '$state'];
