@@ -16,3 +16,13 @@
   <option   value="london">Buckingham palace</option>
 
 </select>
+
+
+<div ng-repeat="track in tracksIndex.all">
+  <p>
+    <h1>{{ track.name }}</h1>
+    {{ track }}
+    <button ui-sref= "tracksShow({ id: track.id })">Track Show</button>
+    <button ui-sref= "tracksEdit({ id: track.id })">Track Edit</button>
+  </p>
+</div>
