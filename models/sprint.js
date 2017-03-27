@@ -41,22 +41,11 @@ sprintSchema
     return `https://s3-eu-west-1.amazonaws.com/kriszwdi/${this.finish.img}`;
   });
 
-
-
-
-
-
-
-
-
-
-
-
-sprintSchema
-  .virtual('duration')
-  .get(function getDuration() {
-
-  });
+// sprintSchema
+//   .virtual('duration')
+//   .get(function getDuration(sprint) {
+//
+//   });
 
 // sprintSchema.pre('save', function checkPreviousImage(next) {
 //   if(this.isModified('start.img') && this.start._img) {

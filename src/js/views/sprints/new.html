@@ -1,7 +1,6 @@
 <h1>New Sprint</h1>
 
-
-<form class="pure-form pure-form-aligned" name="sprintsNew.newForm" ng-submit="sprintsNew.update()" novalidate>
+<form class="pure-form pure-form-aligned" name="sprintsNew.newForm" ng-submit="sprintsNew.create()" novalidate>
   <fieldset>
 
     <div class="pure-control-group">
@@ -21,7 +20,9 @@
         <div ng-message="required">Please enter a value for this field.</div>
         <div ng-message="startImage">This field must be a valid starting image.</div>
       </div>
-      {{ sprintsNew.sprint.base64 }}
+
+      <img ng-src="{{ sprint.start.imgSRC }}">
+
     </div>
 
     <div class="pure-control-group">
@@ -41,8 +42,8 @@
         <div ng-message="required">Please enter a value for this field.</div>
         <div ng-message="finishImage">This field must be a valid finishing image.</div>
       </div>
+      <img src="{{ sprint.finish.imgSRC }}">
     </div>
-
     <div class="pure-controls">
       <button class="pure-button pure-button-primary">Create</button>
     </div>
@@ -68,4 +69,4 @@
   <button class="btn btn-primary">Update</button>
 </form>
 {{sprintsNew}}
-======= -->
+s -->
