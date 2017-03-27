@@ -28,6 +28,31 @@ sprintSchema
   });
 
 sprintSchema
+  .path('finish.img')
+  .set(function getPreviousImage(image){
+    this.finish._img = this.finish.img;
+    return image;
+  });
+
+sprintSchema
+  .virtual('finish.imgSRC')
+  .get(function getImageSRC() {
+    if(!this.finish.img) return null;
+    return `https://s3-eu-west-1.amazonaws.com/kriszwdi/${this.finish.img}`;
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+sprintSchema
   .virtual('duration')
   .get(function getDuration() {
 
