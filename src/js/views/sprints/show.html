@@ -1,34 +1,19 @@
-<h1> Your Run details </h1>
+<h1>Your Run Details</h1>
 
 {{ sprintsShow.sprint.start.time }}
-<!-- the view with a timer and cancel button -->
+<!-- Placeholder with timer and cancel button -->
 <div class="fullscreen pure-g outline">
   <div class="pure-u">
     <h2>{{ sprintsShow.sprint.createdBy }}</h2>
 
-    <p>Start time: {{ sprintsShow.sprint.start.time }}</p>
+    <div class="timer">10:00:01</div>
 
-<div class="pure-control-group">
-  <label for="finishImage">Finish Image</label>
-  <input base64 type="file" name="base64" id="finishImage" ng-model="sprintsNew.sprint.finish.base64" required>
-
-  <div ng-messages="sprintsNew.newForm.finishImage.$error" role="alert" ng-show="(sprintsNew.newForm.$submitted || sprintsNew.newForm.finishImage.$touched) && sprintsNew.newForm.finishImage.$invalid" class="error">
-    <div ng-message="required">Please enter a value for this field.</div>
-    <div ng-message="finishImage">This field must be a valid finishing image.</div>
-  </div>
-  <img src="{{ sprint.finish.imgSRC }}">
-</div>
-
-
-    <div class="timer">
-        10:00:01
-    </div>
     <button ng-click="">Cancel</button>
     <button ng-click="">Take finish photo</button>
   </div>
 </div>
 
-<!-- The view for uploading the final image -->
+<!-- Upload finish image -->
 <div class="fullscreen pure-g outline">
   <form class="pure-u pure-form pure-form-aligned" name="sprintsNew.newForm" ng-submit="sprintsNew.update()" novalidate>
     <fieldset>
@@ -51,7 +36,7 @@
   </form>
 </div>
 
-<!-- The view to display an old sprint -->
+<!-- Display completed sprint -->
 <div class="fullscreen pure-g outline">
   <div class="pure-u">
     <h1> Your Run Details</h1>
