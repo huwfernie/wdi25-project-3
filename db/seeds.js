@@ -50,8 +50,8 @@ User
         name: 'Tower Buckingham Run',
         start: {
           name: 'Tower of London',
-          lat: '51.508113',
-          lng: '-0.075958',
+          lat: '51.5081',
+          lng: '-0.076674',
           img: 'http://www.buckinghampalace.co.uk/assets/images/bp1.jpg'
         },
         finish: {
