@@ -8,27 +8,27 @@
   <!-- inject:css -->
   <!-- endinject -->
 </head>
-<body  ng-controller="MainCtrl as main">
+<body ng-class="main.pageName" ng-controller="MainCtrl as main">
   <nav>
-    <ul>
-      <li><a ui-sref= "home">Home</a></li>
-      <li ng-if="!main.isAuthenticated()"><a ui-sref= "login">Login</a></li>
-      <li ng-if="!main.isAuthenticated()"><a ui-sref= "register">Register</a></li>
-      <li ng-if="main.isAuthenticated()"><button ng-click="main.logout()">Logout</button></li>
-
-      <li><a ui-sref= "usersIndex">UsersIndex</a></li>
-
-      <li><a ui-sref= "tracksIndex">TracksIndex</a></li>
-      <li><a ui-sref= "tracksNew">TracksNew</a></li>
-
-      <li><a ui-sref= "sprintsIndex">SprintsIndex</a></li>
-      <li><a ui-sref= "sprintsNew">SprintsNew</a></li>
+    <ul class="clearfix">
+      <span class="floatLeft">
+        <li><a ui-sref= "home">Home</a></li>
+        <li><a ui-sref= "usersIndex">UsersIndex</a></li>
+        <li><a ui-sref= "tracksIndex">TracksIndex</a></li>
+        <li><a ui-sref= "tracksNew">TracksNew</a></li>
+        <li><a ui-sref= "sprintsIndex">SprintsIndex</a></li>
+        <li><a ui-sref= "sprintsNew">SprintsNew</a></li>
+      </span>
+      <span class="floatRight">
+        <li ng-if="!main.isAuthenticated()"><a ui-sref= "login">Login</a></li>
+        <li ng-if="!main.isAuthenticated()"><a ui-sref= "register">Register</a></li>
+        <li ng-if="main.isAuthenticated()"><button ng-click="main.logout()">Logout</button></li>
+      </span>
     </ul>
 
 
-      <p ng-if="main.isAuthenticated()">You are logged in</p>
-      <p ng-if="!main.isAuthenticated()">You are not logged in</p>
   </nav>
+
   <main ui-view>
 
   </main>

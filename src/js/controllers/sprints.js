@@ -34,7 +34,10 @@ function SprintsShowCtrl(Sprint, $stateParams, $state) {
   const vm = this;
 
   vm.sprint = Sprint.get($stateParams);
-  vm.isRunning  = true;
+
+  vm.isRunning = true;
+  vm.isStopped = false;
+
 
   function sprintsDelete() {
     vm.sprint
@@ -53,7 +56,11 @@ function SprintsShowCtrl(Sprint, $stateParams, $state) {
   }
   vm.finish = sprintsFinish;
 
-
+  function takeFinishPhoto(){
+    vm.sprint.finish.time = new Date();
+    $state.reload();
+  }
+  vm.takeFinishPhoto = takeFinishPhoto;
 
 }
 
