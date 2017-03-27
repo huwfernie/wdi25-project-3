@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const s3 = require('../lib/s3');
 
 const sprintSchema = new mongoose.Schema({
   start: {
@@ -11,5 +12,38 @@ const sprintSchema = new mongoose.Schema({
   },
   createdBy: { type: String }
 });
+
+sprintSchema
+  .path('start.img')
+  .set(function getPreviousImage(image){
+    this.start._img = this.start.img;
+    return image;
+  });
+
+sprintSchema
+  .virtual('start.imgSRC')
+  .get(function getImageSRC() {
+    if(!this.start.img) return null;
+    return `https://s3-eu-west-1.amazonaws.com/kriszwdi/${this.start.img}`;
+  });
+
+sprintSchema
+  .virtual('duration')
+  .get(function getDuration() {
+
+  });
+
+// sprintSchema.pre('save', function checkPreviousImage(next) {
+//   if(this.isModified('start.img') && this.start._img) {
+//     return s3.deleteObject({ Key: this.start_img }, next);
+//   }
+//   next();
+// });
+//
+// sprintSchema.pre('remove', function deleteImage(next) {
+//   if(this.image) return s3.deleteObject({ Key: this.image}, next );
+//   next();
+// });
+
 
 module.exports = mongoose.model('Sprint', sprintSchema);
