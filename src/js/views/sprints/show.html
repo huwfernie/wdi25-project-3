@@ -2,12 +2,8 @@
 
 
 <!-- Placeholder with timer and cancel button -->
-<<<<<<< HEAD
-<div class="fullscreen pure-g outline" ng-show="">
-=======
 start time: {{ sprintsShow.sprint.start.time }} minutes
 <div class="fullscreen pure-g outline ng-hide" ng-show="!sprintsShow.sprint.finish.time">
->>>>>>> development
   <div class="pure-u">
     <h2>{{ sprintsShow.sprint.createdBy }}</h2>
     Aare you running? {{ sprintsShow.isRunning }}
@@ -24,7 +20,7 @@ start time: {{ sprintsShow.sprint.start.time }} minutes
 
 <!-- Upload finish image -->
 
-<div class="fullscreen pure-g outline ng-hide" ng-show="sprintsShow.sprint.finish.time">
+<div class="fullscreen pure-g outline ng-hide" ng-show="sprintsShow.sprint.finish.time && !sprintsShow.sprint.finish.imgSRC">
   <div class="pure-u">
     <form ng-submit="sprintsShow.finish()">
 
@@ -55,13 +51,9 @@ start time: {{ sprintsShow.sprint.start.time }} minutes
           <div ng-message="finishImage">This field must be a valid finishing image.</div>
         </div>
       </div> -->
-<<<<<<< HEAD
 
-      <!-- <div class="pure-controls">
-=======
 <!--
       <div class="pure-controls">
->>>>>>> development
         <button class="pure-button pure-button-primary">Upload finish image</button>
       </div>
 
