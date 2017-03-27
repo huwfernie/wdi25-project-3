@@ -1,1 +1,12 @@
 <h1> users show</h1>
+
+<div>
+  <p>
+    <h2>{{ usersShow.user.username }}</h2>
+    <p>{{ usersShow.user }}</p>
+
+    <!-- {{ usersShow.user }} -->
+    <button ng-click="usersShow.delete()">User Delete</button>
+    <button ui-sref="usersEdit({ id: usersShow.user.id })">User Edit</button>
+  </p>
+</div>

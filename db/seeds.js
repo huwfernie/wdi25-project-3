@@ -8,6 +8,8 @@ const Track = require('../models/track');
 const Sprint = require('../models/sprint');
 
 User.collection.drop();
+Track.collection.drop();
+Sprint.collection.drop();
 
 User
   .create([{
