@@ -9,8 +9,7 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
   $stateProvider
     .state('home', {
       url: '/',
-      templateUrl: 'js/views/index.html',
-      controller: 'MainCtrl as main'
+      templateUrl: 'js/views/index.html'
     })
     .state('usersIndex', {
       url: '/users',
