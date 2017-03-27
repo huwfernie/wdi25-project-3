@@ -14,11 +14,19 @@ userSchema
     this._passwordConfirmation = passwordConfirmation;
   });
 
+// userSchema.pre('validate', function checkPassword(next) {
+//   if(!this.password) {
+//     this.invalidate('password', 'required');
+//   }
+//   if(this.isModified('password') && this._passwordConfirmation !== this.password){
+//     this.invalidate('passwordConfirmation', 'does not match');
+//   }
+//   next();
+// });
+
+
 userSchema.pre('validate', function checkPassword(next) {
-  if(!this.password) {
-    this.invalidate('password', 'required');
-  }
-  if(this.isModified('password') && this._passwordConfirmation !== this.password){
+  if(!this._passwordConfirmation || this._passwordConfirmation !== this.password) {
     this.invalidate('passwordConfirmation', 'does not match');
   }
   next();
