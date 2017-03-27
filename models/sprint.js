@@ -24,7 +24,7 @@ sprintSchema
   .virtual('start.imgSRC')
   .get(function getImageSRC() {
     if(!this.start.img) return null;
-    return `https://s3-eu-west-1.amazonaws.com/kriszwdi/${this.start.img}`;
+    return `https://s3-eu-west-1.amazonaws.com/${process.env.AWS_BUCKET_NAME}/${this.start.img}`;
   });
 
 sprintSchema
@@ -38,7 +38,7 @@ sprintSchema
   .virtual('finish.imgSRC')
   .get(function getImageSRC() {
     if(!this.finish.img) return null;
-    return `https://s3-eu-west-1.amazonaws.com/kriszwdi/${this.finish.img}`;
+    return `https://s3-eu-west-1.amazonaws.com/${process.env.AWS_BUCKET_NAME}/${this.finish.img}`;
   });
 
 // sprintSchema
