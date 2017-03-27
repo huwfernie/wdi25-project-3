@@ -1,13 +1,60 @@
-<h1> Your Run Details</h1>
+<<<<<<< HEAD
+<h1> Your Run details </h1>
 
-<button class="pure-button pure-button-primary" ng-click="">Public</button>
-<button class="pure-button pure-button-primary" ng-click="">Private</button>
+{{ sprintsShow.sprint.start.time }}
+<!-- the view with a timer and cancel button -->
+<div class="fullscreen pure-g outline">
+  <div class="pure-u">
+    <h2>{{ sprintsShow.sprint.createdBy }}</h2>
 
-<p>Start time: {{ sprintsShow.sprint.start.time }}</p>
-<p>Finish time: {{ sprintsShow.sprint.finish.time }}</p>
-<p>Runner: {{ sprintsShow.sprint.createdBy }}</p>
+    <div class="timer">
+        10:00:01
+    </div>
+    <button ng-click="">Cancel</button>
+    <button ng-click="">Take finish photo</button>
+  </div>
+</div>
 
-<div class="pure-g">
-  <img class="pure-u-1-2 pure-img sprintsIndex" ng-src="{{ sprintsShow.sprint.start.img }}">
-  <img class="pure-u-1-2 pure-img sprintsIndex" ng-src="{{ sprintsShow.sprint.finish.img }}">
+<!-- The view for uploading the final image -->
+<div class="fullscreen pure-g outline">
+  <form class="pure-u pure-form pure-form-aligned" name="sprintsNew.newForm" ng-submit="sprintsNew.update()" novalidate>
+    <fieldset>
+
+      <div class="pure-control-group">
+        <label for="finishImage">Finish Image</label>
+        <input base64 type="file" name="base64" id="finishImage" ng-model="sprintsNew.sprint.finish.base64" required>
+
+        <div ng-messages="sprintsNew.newForm.finishImage.$error" role="alert" ng-show="(sprintsNew.newForm.$submitted || sprintsNew.newForm.finishImage.$touched) && sprintsNew.newForm.finishImage.$invalid" class="error">
+          <div ng-message="required">Please enter a value for this field.</div>
+          <div ng-message="finishImage">This field must be a valid finishing image.</div>
+        </div>
+      </div>
+
+      <div class="pure-controls">
+        <button class="pure-button pure-button-primary">Upload finish image</button>
+      </div>
+
+    </fieldset>
+  </form>
+</div>
+
+<!-- The view to display an old sprint -->
+<div class="fullscreen pure-g outline">
+  <div class="pure-u">
+    <h1> Your Run Details</h1>
+    <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+    <button class="pure-button pure-button-primary" ng-click="">Public</button>
+    <button class="pure-button pure-button-primary" ng-click="">Private</button>
+
+    <p>Start time: {{ sprintsShow.sprint.start.time }}</p>
+    <p>Finish time: {{ sprintsShow.sprint.finish.time }}</p>
+    <p>Runner: {{ sprintsShow.sprint.createdBy }}</p>
+
+    <div class="pure-g">
+      <img class="pure-u-1-2 pure-img sprintsIndex" ng-src="{{ sprintsShow.sprint.start.img }}">
+      <img class="pure-u-1-2 pure-img sprintsIndex" ng-src="{{ sprintsShow.sprint.finish.img }}">
+    </div>
+  </div>
 </div>
