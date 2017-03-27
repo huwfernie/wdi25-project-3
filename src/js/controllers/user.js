@@ -1,7 +1,7 @@
 angular
   .module('runApp')
   .controller('UsersIndexCtrl', UsersIndexCtrl)
-  .controller('UsersNewCtrl', UsersNewCtrl)
+  // .controller('UsersNewCtrl', UsersNewCtrl)
   .controller('UsersShowCtrl', UsersShowCtrl)
   .controller('UsersEditCtrl', UsersEditCtrl);
 
@@ -12,20 +12,20 @@ function UsersIndexCtrl(User) {
   vm.all = User.query();
 }
 
-UsersNewCtrl.$inject = ['User', '$state'];
-function UsersNewCtrl(User, $state) {
-  const vm = this;
-  vm.user = {};
-
-  function usersCreate() {
-    User
-      .save(vm.user)
-      .$promise
-      .then(() => $state.go('usersIndex'));
-  }
-
-  vm.create = usersCreate;
-}
+// UsersNewCtrl.$inject = ['User', '$state'];
+// function UsersNewCtrl(User, $state) {
+//   const vm = this;
+//   vm.user = {};
+//
+//   function usersCreate() {
+//     User
+//       .save(vm.user)
+//       .$promise
+//       .then(() => $state.go('usersIndex'));
+//   }
+//
+//   vm.create = usersCreate;
+// }
 
 UsersShowCtrl.$inject = ['User', '$stateParams', '$state'];
 function UsersShowCtrl(User, $stateParams, $state) {
