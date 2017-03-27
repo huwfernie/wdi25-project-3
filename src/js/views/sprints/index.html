@@ -3,7 +3,7 @@
 <div ng-repeat="sprint in sprintsIndex.all">
   <p>
     <h1>{{ sprint.start.time }}</h1>
-    {{ sprint }}
+    <img src="{{ sprint.start.img }}">
     <button ui-sref= "sprintsShow({ id: sprint.id })">Track Show</button>
     <button ui-sref= "sprintsEdit({ id: sprint.id })">Track Edit</button>
   </p>
