@@ -1,21 +1,19 @@
-<<<<<<< HEAD
-<h1> Your Run details </h1>
+<h1>Your Run Details</h1>
 
 {{ sprintsShow.sprint.start.time }}
-<!-- the view with a timer and cancel button -->
+<!-- Placeholder with timer and cancel button -->
 <div class="fullscreen pure-g outline">
   <div class="pure-u">
     <h2>{{ sprintsShow.sprint.createdBy }}</h2>
 
-    <div class="timer">
-        10:00:01
-    </div>
+    <div class="timer">10:00:01</div>
+
     <button ng-click="">Cancel</button>
     <button ng-click="">Take finish photo</button>
   </div>
 </div>
 
-<!-- The view for uploading the final image -->
+<!-- Upload finish image -->
 <div class="fullscreen pure-g outline">
   <form class="pure-u pure-form pure-form-aligned" name="sprintsNew.newForm" ng-submit="sprintsNew.update()" novalidate>
     <fieldset>
@@ -38,7 +36,7 @@
   </form>
 </div>
 
-<!-- The view to display an old sprint -->
+<!-- Display completed sprint -->
 <div class="fullscreen pure-g outline">
   <div class="pure-u">
     <h1> Your Run Details</h1>
