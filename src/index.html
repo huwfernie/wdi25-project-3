@@ -8,7 +8,7 @@
   <!-- inject:css -->
   <!-- endinject -->
 </head>
-<body  ng-controller="MainCtrl as main">
+<body ng-class="main.pageName" ng-controller="MainCtrl as main">
   <nav>
     <ul>
       <li><a ui-sref= "home">Home</a></li>
@@ -26,9 +26,8 @@
     </ul>
 
 
-      <p ng-if="main.isAuthenticated()">You are logged in</p>
-      <p ng-if="!main.isAuthenticated()">You are not logged in</p>
   </nav>
+
   <main ui-view>
 
   </main>

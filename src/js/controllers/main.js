@@ -15,10 +15,16 @@ function MainCtrl($rootScope, $state, $auth) {
     if(err.status === 401) $state.go('login'); // redirect to login.
   });
 
+  $rootScope.$on('$stateChangeStart', (e, toState) => {
+    vm.pageName = toState.name;
+  });
+
   $rootScope.$on('stateChangeSuccess', () => {
     if(vm.stateHasChanged) vm.message = null;
     if(!vm.stateHasChanged) vm.stateHasChanged = true;
   });
+
+
 
   function logout() {
     //console.log('Logout');
@@ -33,4 +39,5 @@ function MainCtrl($rootScope, $state, $auth) {
   }
 
   vm.click = click;
+
 }
