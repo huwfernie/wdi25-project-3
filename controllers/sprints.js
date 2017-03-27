@@ -42,6 +42,8 @@ function showRoute(req, res, next) {
 
 function updateRoute(req, res, next) {
   console.log('update route BE');
+  console.log(req.file);
+  console.log('done');
   if(req.file) req.body.finish.img = req.file.filename;
 
   //if(!req.body.finish.time) req.body.finish.time = new Date();  // change this so it doesn't make a new finish time on each update.
