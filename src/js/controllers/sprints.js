@@ -22,7 +22,7 @@ function SprintsNewCtrl(Sprint, $state) {
     Sprint
       .save(vm.sprint)
       .$promise
-      .then(() => $state.go('sprintsShow'));
+      .then((sprint) => $state.go('sprintsShow', { id: sprint.id}));
 
   }
 
@@ -42,6 +42,15 @@ function SprintsShowCtrl(Sprint, $stateParams, $state) {
   }
 
   vm.delete = sprintsDelete;
+
+  function sprintsFinish() {
+    console.log('finish clicked');
+    vm.sprint
+      .$update()
+      .then(() => $state.go('sprintsShow', $stateParams));
+  }
+
+  vm.finish = sprintsFinish;
 }
 
 SprintsEditCtrl.$inject = ['Sprint', '$stateParams', '$state'];
