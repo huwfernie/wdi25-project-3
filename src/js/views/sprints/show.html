@@ -1,6 +1,6 @@
 <h1>Your Run Details</h1>
 
-{{ sprintsShow.sprint.start.time }}
+start time: {{ sprintsShow.sprint.start.time }} minutes
 <!-- Placeholder with timer and cancel button -->
 <div class="fullscreen pure-g outline">
   <div class="pure-u">
@@ -18,27 +18,40 @@
 </div>
 
 <!-- Upload finish image -->
-<div class="fullscreen pure-g outline">
-  <form class="pure-u pure-form pure-form-aligned" name="sprintsNew.newForm" ng-submit="sprintsNew.update()" novalidate>
+<form ng-submit="sprintsShow.finish()">
+
+
+
+  <div class="form-group">
+    <label for="base64">Image</label>
+    <input type="file" base64 name="base64" id="base64" ng-model="sprintsShow.sprint.base64">
+  </div>
+
+  <button class="btn btn-primary">Update</button>
+</form>
+{{sprintsShow}}
+
+<!-- <div class="fullscreen pure-g outline">
+  <form class="pure-u pure-form pure-form-aligned" name="sprintsShow.finishForm" ng-submit="sprintsShow.finish()" novalidate>
     <fieldset>
 
       <div class="pure-control-group">
         <label for="finishImage">Finish Image</label>
-        <input base64 type="file" name="base64" id="finishImage" ng-model="sprintsNew.sprint.finish.base64" required>
+        <input base64 type="file" name="finishImage" id="finishImage" ng-model="sprintsShow.sprint.finish.base64" required> -->
 
-        <div ng-messages="sprintsNew.newForm.finishImage.$error" role="alert" ng-show="(sprintsNew.newForm.$submitted || sprintsNew.newForm.finishImage.$touched) && sprintsNew.newForm.finishImage.$invalid" class="error">
+        <!-- <div ng-messages="sprintsShow.finishForm.finishImage.$error" role="alert" ng-show="(sprintsShow.finishForm.$submitted || sprintsShow.finishForm.finishImage.$touched) && sprintsShow.finishForm.finishImage.$invalid" class="error">
           <div ng-message="required">Please enter a value for this field.</div>
           <div ng-message="finishImage">This field must be a valid finishing image.</div>
         </div>
-      </div>
-
+      </div> -->
+<!--
       <div class="pure-controls">
         <button class="pure-button pure-button-primary">Upload finish image</button>
       </div>
 
     </fieldset>
   </form>
-</div>
+</div> -->
 
 <!-- Display completed sprint -->
 <div class="fullscreen pure-g outline">

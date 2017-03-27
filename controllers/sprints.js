@@ -11,6 +11,10 @@ function indexRoute(req, res, next) {
 
 function createRoute(req, res, next) {
   req.body.start = {};
+  req.body.finish = {};
+  console.log('now');
+  console.log(req.file);
+  console.log('done');
   if(req.file) req.body.start.img = req.file.filename;
   req.body.start.time = new Date();
   // image files -- do with imageupload and base64 directive etc.
@@ -37,7 +41,14 @@ function showRoute(req, res, next) {
 }
 
 function updateRoute(req, res, next) {
-  if(req.file) req.body.image = req.file.filename;
+  console.log('update route BE');
+  console.log(req.file);
+  console.log('done');
+  if(req.file) req.body.finish.img = req.file.filename;
+
+  //if(!req.body.finish.time) req.body.finish.time = new Date();  // change this so it doesn't make a new finish time on each update.
+
+  req.body.finish.time = new Date();  // change this so it doesn't make a new finish time on each update.
 
   Sprint
     .findById(req.params.id)
