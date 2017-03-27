@@ -1,1 +1,28 @@
-<h1> sprint new</h1>
+<h1>New Sprint</h1>
+<form class="pure-form pure-form-aligned" name="sprintsNew.newForm" ng-submit="sprintsNew.update()" novalidate>
+  <fieldset>
+
+    <div class="pure-control-group">
+      <label for="startTime">Start Time</label>
+      <input type="text" name="startTime" id="startTime" ng-model="sprintsNew.sprint.start.time" required>
+      <div ng-messages="sprintsNew.newForm.startTime.$error" role="alert" ng-show="(sprintsNew.newForm.$submitted || sprintsNew.newForm.start.$touched) && sprintsNew.newForm.start.$invalid" class="error">
+        <div ng-message="required">Please enter a value for this field.</div>
+        <div ng-message="startTime">This field must be a valid starting address.</div>
+      </div>
+    </div>
+
+    <div class="pure-control-group">
+      <label for="finishTime">Finish Time</label>
+      <input type="text" name="finishTime" id="finishTime" ng-model="sprintsNew.sprint.finish.time" required>
+      <div ng-messages="sprintsNew.newForm.finishTime.$error" role="alert" ng-show="(sprintsNew.newForm.$submitted || sprintsNew.newForm.finish.$touched) && sprintsNew.newForm.finish.$invalid" class="error">
+        <div ng-message="required">Please enter a value for this field.</div>
+        <div ng-message="finishTime">This field must be a valid starting address.</div>
+      </div>
+    </div>
+
+    <div class="pure-controls">
+      <button class="pure-button pure-button-primary">Create</button>
+    </div>
+  </fieldset>
+
+</form>
