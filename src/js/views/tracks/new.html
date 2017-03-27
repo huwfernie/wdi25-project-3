@@ -1,38 +1,38 @@
 <h1>New Track</h1>
-<form class="pure-form pure-form-aligned" name="register.registerForm" ng-submit="register.submit()" novalidate>
+<form class="pure-form pure-form-aligned" name="tracksNew.newForm" ng-submit="tracksNew.update()" novalidate>
   <fieldset>
     <div class="pure-control-group">
-      <label for="username">Username</label>
-      <input type="text" name="username" id="username" ng-model="register.user.username" required>
-      <div ng-messages="register.registerForm.username.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.username.$touched) && register.registerForm.username.$invalid" class="error">
+      <label for="trackName">Name</label>
+      <input type="text" name="trackName" id="trackName" ng-model="tracksNew.track.name" required>
+      <div ng-messages="tracksNew.newForm.trackName.$error" role="alert" ng-show="(tracksNew.newForm.$submitted || tracksNew.newForm.trackName.$touched) && tracksNew.tracksNewForm.trackName.$invalid" class="error">
         <div ng-message="required">Please enter a value for this field.</div>
       </div>
     </div>
     <div class="pure-control-group">
-      <label for="email">Email</label>
-      <input type="email" name="email" id="email" ng-model="register.user.email" required>
-      <div ng-messages="register.registerForm.email.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.email.$touched) && register.registerForm.email.$invalid" class="error">
+      <label for="start">Start</label>
+      <input type="text" name="start" id="start" ng-model="tracksNew.track.start.name" required>
+      <div ng-messages="tracksNew.newForm.start.$error" role="alert" ng-show="(tracksNew.newForm.$submitted || tracksNew.newForm.start.$touched) && tracksNew.newForm.start.$invalid" class="error">
         <div ng-message="required">Please enter a value for this field.</div>
-        <div ng-message="email">This field must be a valid email address.</div>
+        <div ng-message="start">This field must be a valid starting address.</div>
       </div>
     </div>
     <div class="pure-control-group">
-      <label for="password">Password</label>
-      <input type="password" name="password" id="password" ng-model="register.user.password" required>
-      <div ng-messages="register.registerForm.password.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.password.$touched) && register.registerForm.password.$invalid" class="error">
+      <label for="finish">Finish</label>
+      <input type="text" name="finish" id="finish" ng-model="tracksNew.track.finish.name" required>
+      <div ng-messages="tracksNew.newForm.finish.$error" role="alert" ng-show="(tracksNew.newForm.$submitted || tracksNew.newForm.finish.$touched) && tracksNew.newForm.finish.$invalid" class="error">
         <div ng-message="required">Please enter a value for this field.</div>
       </div>
     </div>
     <div class="pure-control-group">
-      <label for="passwordConfirmation">Password Confirmation</label>
-      <input type="password" name="passwordConfirmation" id="passwordConfirmation" ng-model="register.user.passwordConfirmation" required>
-      <div ng-messages="register.registerForm.passwordConfirmation.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.passwordConfirmation.$touched) && register.registerForm.passwordConfirmation.$invalid" class="error">
+      <label for="distance">Distance</label>
+      <input type="text" name="distance" id="distance" ng-model="tracksNew.track.distance" required>
+      <div ng-messages="tracksNew.newForm.distance.$error" role="alert" ng-show="(tracksNew.newForm.$submitted || tracksNew.newForm.distance.$touched) && tracksNew.newForm.distance.$invalid" class="error">
         <div ng-message="required">Please enter a value for this field.</div>
       </div>
     </div>
 
     <div class="pure-controls">
-      <button class="pure-button pure-button-primary">Register</button>
+      <button class="pure-button pure-button-primary">Update</button>
     </div>
   </fieldset>
 
