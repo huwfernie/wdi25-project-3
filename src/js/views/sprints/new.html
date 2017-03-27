@@ -1,1 +1,17 @@
 <h1> sprint new</h1>
+<input base64 type="file" name="base64" id="image" ng-model="sprintsNew.sprint.base64">
+{{ sprintNew.sprint.image }}
+<h1>New Bird</h1>
+
+<form ng-submit="sprintsNew.create()">
+
+
+
+  <div class="form-group">
+    <label for="base64">Image</label>
+    <input type="file" base64 name="base64" id="base64" ng-model="sprintsNew.sprint.base64">
+  </div>
+
+  <button class="btn btn-primary">Update</button>
+</form>
+{{sprintsNew}}

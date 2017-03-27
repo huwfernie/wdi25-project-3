@@ -12,11 +12,11 @@ const imageUpload = require('../lib/imageUpload');
 // ------ Sprints ------ //
 router.route('/sprints')
   .get(sprints.index)
-  .post(sprints.create);
+  .post(imageUpload, sprints.create);
 
 router.route('/sprints/:id')
   .get(sprints.show)
-  .put(sprints.update)
+  .put(imageUpload, sprints.update)
   .delete(sprints.delete);
 
 // ------ Tracks ------ //
