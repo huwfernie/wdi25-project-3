@@ -21,10 +21,14 @@
     "angular-resource": "^1.6.3",
     "satellizer": "^0.15.5",
     "pure": "^0.6.2",
-    "normalize-css": "normalize.css#^6.0.0"
+    "normalize-css": "normalize.css#^6.0.0",
+    "moment": "^2.18.1",
+    "angular-moment": "^1.0.1",
+    "ng-maps": "ng-map#*",
+    "ngmap": "^1.18.4"
   },
   "resolutions": {
-    "angular": "^1.6.3"
+    "angular": "1.6.3"
   },
   "devDependencies": {
     "angular-mocks": "^1.6.3"

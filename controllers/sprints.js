@@ -20,9 +20,10 @@ function createRoute(req, res, next) {
   console.log('donedone');
 
   if(req.file) req.body.start.img = req.file.filename;
+
   req.body.start.time = new Date();
   // image files -- do with imageupload and base64 directive etc.
-
+  console.log('START', req.body.start.time);
   req.body.createdBy = req.user;
 
   Sprint
