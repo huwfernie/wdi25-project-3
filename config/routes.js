@@ -6,7 +6,7 @@ const sprints = require('../controllers/sprints');
 const auth = require('../controllers/auth');
 
 const imageUpload = require('../lib/imageUpload');
-const googleVision = require('../lib/googleVision');
+//const googleVision = require('../lib/googleVision');
 // const googVision = require('../lib/googVision');
 // const secureRoute = require('../lib/secureRoute');
 // const adminRoute = require('../lib/adminRoute');
