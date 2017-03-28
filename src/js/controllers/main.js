@@ -5,6 +5,7 @@ angular
 MainCtrl.$inject = ['$rootScope', '$state', '$auth'];
 function MainCtrl($rootScope, $state, $auth) {
   const vm = this;
+  vm.isNavCollapsed = false;
 
   vm.isAuthenticated = $auth.isAuthenticated;
   // rootscope is listening - it will pick up any 'error'
@@ -22,6 +23,8 @@ function MainCtrl($rootScope, $state, $auth) {
   $rootScope.$on('stateChangeSuccess', () => {
     if(vm.stateHasChanged) vm.message = null;
     if(!vm.stateHasChanged) vm.stateHasChanged = true;
+    vm.isNavCollapsed = true;
+
   });
 
   function logout() {
