@@ -14,7 +14,7 @@ const googleVision = require('../lib/googleVision');
 // ------ Sprints ------ //
 router.route('/sprints')
   .get(sprints.index)
-  .post(imageUpload, googleVision, sprints.create);
+  .post(imageUpload, sprints.create);
 
 router.route('/sprints/:id')
   .get(sprints.show)

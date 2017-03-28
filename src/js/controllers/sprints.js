@@ -12,8 +12,8 @@ function SprintsIndexCtrl(Sprint) {
   vm.all = Sprint.query();
 }
 
-SprintsNewCtrl.$inject = ['Sprint', '$state'];
-function SprintsNewCtrl(Sprint, $state) {
+SprintsNewCtrl.$inject = ['Sprint', '$state', '$http'];
+function SprintsNewCtrl(Sprint, $state, $http) {
   const vm = this;
   vm.sprint = {};
 
@@ -22,9 +22,34 @@ function SprintsNewCtrl(Sprint, $state) {
     Sprint
       .save(vm.sprint)
       .$promise
-      .then((sprint) => $state.go('sprintsShow', { id: sprint.id}));
+      .then((response) => {
+        console.log(response);
+        //console.log(`base 64 ${vm.sprint.base64}`);
+        const base64Data = vm.sprint.base64.match(/base64,(.*)$/)[1];
+        const data = `{
+        "requests": [
+          {
+            "image": {
+              "content": "${base64Data}"
+            },
+            "features": [
+              {
+                "type": "LANDMARK_DETECTION"
+              }
+            ]
+          }
+        ]
+      }`;
 
+        $http
+          .post(`https://vision.googleapis.com/v1/images:annotate?key=${response.googleKey}`, data)
+          .then((response) => {
+            console.log(response);
+          });
+      });
   }
+
+
 
   vm.create = sprintsCreate;
 }
