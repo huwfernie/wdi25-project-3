@@ -152,8 +152,6 @@ nav {
   }
 }
 
-
-
 @media (max-width: 650px) {
   nav {
     ul {
@@ -185,4 +183,44 @@ nav {
 
   }
 
+.pure-form {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  fieldset {
+    width: 250px;
+  }
+  .pure-button {
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  input {
+    margin-top: 15px;
+    height: 40px;
+    width: 100%;
+  }
+}
+
+.pure-form {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  fieldset {
+    width: 250px;
+  }
+  .pure-button {
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  input {
+    margin-top: 15px;
+    height: 40px;
+    width: 100%;
+  }
 }
