@@ -24,12 +24,9 @@ function MainCtrl($rootScope, $state, $auth) {
     if(!vm.stateHasChanged) vm.stateHasChanged = true;
   });
 
-
-
   function logout() {
-    //console.log('Logout');
     $auth.logout();
-    $state.go('login'); // redirect to login page
+    $state.go('home'); // redirect to login page
   }
 
   vm.logout = logout;
