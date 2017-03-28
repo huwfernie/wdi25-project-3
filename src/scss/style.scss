@@ -123,3 +123,23 @@ nav {
 }
 
 // end of Huws styling
+
+// Form styling
+.form-header {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.pure-form {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  .pure-button {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  input {
+    margin-top: 15px;
+  }
+}
