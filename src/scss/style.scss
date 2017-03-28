@@ -6,6 +6,7 @@ $lightblue: rgb(66, 184, 221);
 * {
   padding: 0;
   margin: 0;
+  // font-size: 5vw;
   &:not(button input) {
     width: 100%;
   }
@@ -52,7 +53,7 @@ nav {
     }
   }
 }
-//
+
 // h1 {
 //   font-size: 10vw;
 // }
@@ -63,9 +64,9 @@ nav {
 // }
 // h5 {}
 // h6 {}
-//
-//
-//
+
+
+
 
 .button-success,
 .button-danger {
