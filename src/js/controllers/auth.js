@@ -25,7 +25,7 @@ function LoginCtrl($auth, $state) {
 
   function submit() {
     $auth.login(vm.credentials)
-      .then(() => $state.go('sprintsIndex'));
+      .then(() => $state.go('tracksIndex'));
   }
 
   vm.submit = submit;
