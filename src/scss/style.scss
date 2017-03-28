@@ -132,9 +132,10 @@ nav {
   width: 100vw;
 }
 
-.outline {
-  border: 1px solid black;
-}
+// ************** COMMENTED OUT THE OUTLINE ********
+// .outline {
+//   border: 1px solid black;
+// }
 
 .centered {
   text-align: center;
@@ -224,4 +225,21 @@ nav {
     height: 40px;
     width: 100%;
   }
+}
+
+.pure-u {
+  p {
+    margin: 5px 0;
+  }
+}
+
+.sprint-upload {
+  text-align: center;
+  input {
+    margin: 10px 0;
+  }
+}
+
+.pure-button-primary {
+  margin-top: 10px;
 }

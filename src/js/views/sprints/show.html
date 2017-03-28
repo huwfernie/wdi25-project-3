@@ -3,7 +3,7 @@
 <!-- Placeholder with timer and cancel button -->
 <!-- start time: {{ sprintsShow.sprint.start.time }} minutes -->
 <div class="fullscreen pure-g outline ng-hide" ng-show="!sprintsShow.sprint.finish.time">
-  <div class="pure-u">
+  <div class="pure-u sprint-upload">
     <h2>{{ sprintsShow.sprint.createdBy }}</h2>
     Aare you running? {{ sprintsShow.isRunning }}
     <div id="stopwatch">00:00:00</div>
@@ -21,7 +21,7 @@
 
 <div class="fullscreen pure-g outline ng-hide" ng-show="sprintsShow.sprint.finish.time && !sprintsShow.sprint.finish.imgSRC">
   <div class="pure-u">
-    <form ng-submit="sprintsShow.finish()">
+    <form ng-submit="sprintsShow.finish()" class="sprint-upload">
       <div class="form-group">
         <label for="base64">Image</label>
         <input type="file" base64 name="base64" id="base64" ng-model="sprintsShow.sprint.base64">
@@ -58,7 +58,7 @@
 
 <!-- Display completed sprint -->
 <div class="fullscreen pure-g outline ng-hide" ng-show="sprintsShow.sprint.finish.imgSRC">
-  <div class="pure-u">
+  <div class="pure-u sprint-upload">
     <!-- <h1> Your Run Details</h1>
     <p>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
