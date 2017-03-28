@@ -27,7 +27,7 @@ start time: {{ sprintsShow.sprint.start.time }} minutes
         <input type="file" base64 name="base64" id="base64" ng-model="sprintsShow.sprint.base64">
       </div>
 
-      <button class="pure-button pure-button-primary" ui-sref="">Finish run</button>
+      <button class="pure-button pure-button-primary">Finish run</button>
     </form>
   </div>
 </div>
@@ -69,6 +69,7 @@ start time: {{ sprintsShow.sprint.start.time }} minutes
     <p>Start time: {{ sprintsShow.sprint.start.time }}</p>
     <p>Finish time: {{ sprintsShow.sprint.finish.time }}</p>
     <p>Runner: {{ sprintsShow.sprint.createdBy }}</p>
+    <p>Total time: {{ sprintsShow.sprint.finish.time | date:'MM/dd/yyyy' }}</p>
 
     <div class="pure-g">
       <img class="pure-u-1-2 pure-img sprintsIndex" ng-src="{{ sprintsShow.sprint.start.imgSRC }}">
