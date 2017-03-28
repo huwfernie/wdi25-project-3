@@ -6,13 +6,15 @@ const sprints = require('../controllers/sprints');
 const auth = require('../controllers/auth');
 
 const imageUpload = require('../lib/imageUpload');
+const googleVision = require('../lib/googleVision');
+// const googVision = require('../lib/googVision');
 // const secureRoute = require('../lib/secureRoute');
 // const adminRoute = require('../lib/adminRoute');
 
 // ------ Sprints ------ //
 router.route('/sprints')
   .get(sprints.index)
-  .post(imageUpload, sprints.create);
+  .post(imageUpload, googleVision, sprints.create);
 
 router.route('/sprints/:id')
   .get(sprints.show)
