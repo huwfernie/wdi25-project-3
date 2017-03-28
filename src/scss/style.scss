@@ -1,9 +1,10 @@
 $maroon: rgb(202, 60, 60);
-$orange: rgb(223, 117, 20);
+$purple: #531253;
 $green: rgb(28, 184, 65);
-$lightblue: rgb(66, 184, 221);
+$lightblue: #84DCC6;
 
 * {
+  font-family: 'Open Sans', sans-serif;
   padding: 0;
   margin: 0;
   &:not(button input) {
@@ -35,7 +36,7 @@ body.home {
 }
 
 nav {
-  background-color: $orange;
+  background-color: $purple;
   font-size: 0;
   ul {
     list-style: none;
@@ -112,7 +113,7 @@ nav {
 }
 
 // .button-warning {
-//     background: $orange;
+//     background: $purple;
 // }
 //
 // .button-secondary {
@@ -186,8 +187,11 @@ nav {
 }
 
 h1 {
+
+  color: #95A3B3;
+  text-align: center;
   margin-bottom: 5px;
-  font-weight: lighter;
+   font-weight: bold;
 }
 
 .pure-form {
@@ -246,6 +250,7 @@ h1 {
 }
 
 .pure-button-primary {
+  background-color: $lightblue;
   margin-top: 10px;
 }
 
