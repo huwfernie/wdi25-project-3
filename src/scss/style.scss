@@ -6,7 +6,6 @@ $lightblue: rgb(66, 184, 221);
 * {
   padding: 0;
   margin: 0;
-  // font-size: 5vw;
   &:not(button input) {
     width: 100%;
   }
@@ -21,9 +20,8 @@ $lightblue: rgb(66, 184, 221);
 }
 
 body.home {
-  // position: absolute;
-  // right: 0;
-  // bottom: 0;
+  font-size: 3vh;
+
   main {
     background-color: rgba(255, 255, 255, .5);
     text-align: center;
@@ -35,29 +33,53 @@ body.home {
     }
   }
 }
-// main {
-//
-// }
 
 nav {
   background-color: $orange;
+  font-size: 0;
   ul {
     list-style: none;
     .floatRight li {float: right;}
     .floatLeft li {float: left;}
     li {
-      display: inline-block;
-      padding: 2vw;
       color: white;
-      text-decoration: none;
-      text-transform: uppercase;
-      transition: .5s;
-      cursor: pointer;
-      &:hover {
-        background-color: $maroon;
+      font-size: 3vh;
+      float: none;
+      // display: inline-block;
+      vertical-align: middle;
+      &:not(.burger) {
+        padding: 3vh 6vh;
       }
-
+      // &.burger {
+      // height: 15px;
+      // width: 20px;
+      //   span {
+      //     display: block;
+      //     position: absolute;
+      //     height: 3px;
+      //     width: 100%;
+      //     background-color: pink;
+      //     border-radius: 3px;
+      //     opacity: 1;
+      //     left: 0;
+      //     &:nth-child(1) {
+      //       top: 0px;
+      //     }
+      //     &:nth-child(2),
+      //     &:nth-child(3) {
+      //       top: 6px;
+      //     }
+      //     &:nth-child(4) {
+      //       top: 12px;
+      //     }
+      //   }
+      // }
     }
+    div.hide {
+      // unhide when screen is large
+      display: none;
+    }
+
   }
 }
 
@@ -71,9 +93,6 @@ nav {
 // }
 // h5 {}
 // h6 {}
-
-
-
 
 .button-success,
 .button-danger {
@@ -124,11 +143,45 @@ nav {
 
 // end of Huws styling
 
-// Form styling
-.form-header {
-  text-align: center;
-  margin-bottom: 0;
-  font-weight: lighter;
+@media (min-width: 650px) {
+  nav ul div.hide{
+    display: block;
+    li {
+      display: inline-block;
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  nav {
+    ul {
+      text-align: right;
+      list-style: none;
+      // height: 100vh;
+      .floatRight li {float: none;}
+      .floatLeft li {float: none;}
+
+      // div.collapse.navbar-collapse {
+      //     display: block;
+      // }
+
+
+      li {
+        display: block;
+        padding: 3vh;
+        padding-right: 6vw;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: .5s;
+        cursor: pointer;
+        &.active {
+          background-color: $maroon;
+        }
+      }
+    }
+
+  }
 }
 
 .pure-form {

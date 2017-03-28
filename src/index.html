@@ -9,32 +9,9 @@
   <!-- endinject -->
   <!-- inject:css -->
   <!-- endinject -->
-  <script src="components/moment/moment.js"></script>
-  <script src="components/angular-moment/angular-moment.js"></script>
 </head>
 <body ng-class="main.pageName" ng-controller="MainCtrl as main">
-  <nav>
-    <ul class="clearfix">
-      <span class="floatLeft">
-        <li ui-sref= "home">Home</li>
-        <li ui-sref= "usersIndex">UsersIndex</li>
-        <li ui-sref= "tracksIndex">TracksIndex</li>
-        <li ng-if="main.isAdmin()" ui-sref= "tracksNew">TracksNew</li>
-        <li ui-sref= "sprintsIndex">SprintsIndex</li>
-        <li ui-sref= "sprintsNew">SprintsNew</li>
-      </span>
-      <span class="floatRight">
-        <li ng-if="!main.isAuthenticated()" ui-sref= "login">Login</li>
-        <li ng-if="!main.isAuthenticated()" ui-sref= "register">Register</li>
-        <li ng-if="main.isAuthenticated()"><button ng-click="main.logout()">Logout</button></li>
-      </span>
-    </ul>
-
-
-  </nav>
-
-  <main ui-view>
-
-  </main>
+  <div ng-include="'js/views/partials/navbar.html'"></div>
+  <main ui-view></main>
 </body>
 </html>
