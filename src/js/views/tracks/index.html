@@ -27,5 +27,22 @@
   <p>
     <h4><a ui-sref= "tracksShow({ id: track.id })">{{ track.name }}</a></h4>
     <button class="pure-button pure-button-primary" ui-sref= "tracksEdit({ id: track.id })">Edit</button>
+
   </p>
+
 </div>
+
+<ng-map center="37.7699298, -122.4469157" id="map" scrollwheel="false">
+  <marker position="[{ lat: 36.9915359, lng: 35.260788 }]"></marker>
+  <directions
+    draggable="true"
+    panel="directions-panel"
+    travel-mode="walking"
+    waypoints="[
+            {location: {lat:44.32384807250689, lng: -78.079833984375}, stopover: false},
+            {location: {lat:44.55916341529184, lng: -76.17919921875}, stopover: false}
+          ]"
+    origin="toronto"
+    destination="ottowa">
+</directions>
+</ng-map>
