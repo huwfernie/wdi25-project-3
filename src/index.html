@@ -19,7 +19,7 @@
         <li ui-sref= "home">Home</li>
         <li ui-sref= "usersIndex">UsersIndex</li>
         <li ui-sref= "tracksIndex">TracksIndex</li>
-        <li ui-sref= "tracksNew">TracksNew</li>
+        <li ng-if="main.isAdmin()" ui-sref= "tracksNew">TracksNew</li>
         <li ui-sref= "sprintsIndex">SprintsIndex</li>
         <li ui-sref= "sprintsNew">SprintsNew</li>
       </span>
