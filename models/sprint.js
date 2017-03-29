@@ -11,8 +11,8 @@ const sprintSchema = new mongoose.Schema({
     img: { type: String }
   },
   duration: { type: Number },
-  createdBy: { type: mongoose.Schema.ObjectId, ref: 'User' },
-  track: { type: mongoose.Schema.ObjectId, ref: 'Track' }
+  createdBy: { type: mongoose.Schema.ObjectId, ref: 'User' }//, had to comment this out to get rid of this error on sprint Create
+  //track: { type: mongoose.Schema.ObjectId, ref: 'Track' }   CastError: Cast to ObjectID failed for value "{ track:
 });
 
 sprintSchema
