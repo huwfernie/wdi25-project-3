@@ -51,6 +51,8 @@
     }
   },
   "dependencies": {
+    "@google-cloud/storage": "^0.8.0",
+    "@google-cloud/vision": "^0.10.0",
     "aws-sdk": "^2.32.0",
     "bcrypt": "^1.0.2",
     "bluebird": "^3.5.0",
