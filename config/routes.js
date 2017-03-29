@@ -6,17 +6,18 @@ const sprints = require('../controllers/sprints');
 const auth = require('../controllers/auth');
 
 const imageUpload = require('../lib/imageUpload');
-const secureRoute = require('../lib/secureRoute');
-const adminRoute = require('../lib/adminRoute');
+// const secureRoute = require('../lib/secureRoute');
+// const adminRoute = require('../lib/adminRoute');
 
 // ------ Sprints ------ //
 router.route('/sprints')
-  .all(secureRoute)
-  .get(adminRoute, sprints.index)
+  // .all(secureRoute)
+  .get(sprints.index)
+  //.get(sprints.index)
   .post(imageUpload, sprints.create);
 
 router.route('/sprints/:id')
-  .all(secureRoute)
+  // .all(secureRoute)
   .get(sprints.show)
   .put(imageUpload, sprints.update)
   .delete(sprints.delete);
@@ -24,12 +25,12 @@ router.route('/sprints/:id')
 // ------ Tracks ------ //
 router.route('/tracks')
   .get(tracks.index)
-  .post(secureRoute, tracks.create);
+  .post(tracks.create);
 
 router.route('/tracks/:id')
   .get(tracks.show)
-  .put(secureRoute, tracks.update)
-  .delete(secureRoute, tracks.delete);
+  .put(tracks.update)
+  .delete(tracks.delete);
 
 // ------ Users ------ //
 router.route('/users')
@@ -38,8 +39,8 @@ router.route('/users')
 
 router.route('/users/:id')
   .get(users.show) // admin route???
-  .put(secureRoute, users.update)
-  .delete(secureRoute, users.delete);
+  .put(users.update)
+  .delete(users.delete);
 
 // ------ Login / Register ------ //
 router.route('/register')

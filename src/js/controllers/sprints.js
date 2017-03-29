@@ -12,8 +12,8 @@ function SprintsIndexCtrl(Sprint) {
   vm.all = Sprint.query();
 }
 
-SprintsNewCtrl.$inject = ['Sprint', '$state', '$http', 'trackService'];
-function SprintsNewCtrl(Sprint, $state, $http, trackService) {
+SprintsNewCtrl.$inject = ['Sprint', '$state', '$http', 'trackService', '$rootScope'];
+function SprintsNewCtrl(Sprint, $state, $http, trackService, $rootScope) {
   const vm = this;
   vm.sprint = {};
 
@@ -32,49 +32,25 @@ function SprintsNewCtrl(Sprint, $state, $http, trackService) {
         features: [{ type: 'LANDMARK_DETECTION' }]
       }]
     };
-
-
-
-  // $http({
-  //   url: 'https://vision.googleapis.com/v1/images:annotate/',
-  //   data,
-  //   params: { key: 'AIzaSyBWXs5eQMEdN8caiQ-9QO0GqxRifMqNPyU' }
-  // })
-  // .then((response) => {
-  //   console.log(response);
-  // });
-
-    //  this doesn't work with secure routes--- AAARRRRRGGGGGHHHHHH!!!!!!! :-(
-    // $http // I had to change this back from Mikes version to make Google happy -- Huw
-    //   .post('https://vision.googleapis.com/v1/images:annotate?key=AIzaSyBWXs5eQMEdN8caiQ-9QO0GqxRifMqNPyU', data)
-    //   .then((response) => {
-
-    // $http({
-    //   url: 'https://vision.googleapis.com/v1/images:annotate?key=AIzaSyBWXs5eQMEdN8caiQ-9QO0GqxRifMqNPyU',
-    //   dataType: 'json',
-    //   data
-    // })
-    // .then((response) => {
-
-
     $http
     .post('https://vision.googleapis.com/v1/images:annotate?key=AIzaSyBWXs5eQMEdN8caiQ-9QO0GqxRifMqNPyU', data)
     .then((response) => {
-      //console.log('response', response);
+      console.log('response', response);
       const latLng = response.data.responses[0].landmarkAnnotations[0].locations[0].latLng;
 
       if(track.track.start.lat !== latLng.latitude || track.track.start.lng !== latLng.longitude) {
         console.log('false - you\'re start photo doesn\'t match');
+        $rootScope.$broadcast('start-photo-fail');
         //return false; // handle this error more gracefully with $broadcast or something...
       }
 
-      console.log('now');
+      //console.log('now');
       //console.log(vm.user);
       //vm.sprint.track = track;
       // vm.sprint.createdBy = vm.user.id; // huw
       vm.sprint.track = track.track.id; // huw
-      console.log('track is', track);
-      console.log('vm.sprint: ', vm.sprint);
+      //console.log('track is', track);
+      //console.log('vm.sprint: ', vm.sprint);
       // console.log(track);
       // console.log(response);
 
@@ -90,12 +66,16 @@ function SprintsNewCtrl(Sprint, $state, $http, trackService) {
   vm.create = sprintsCreate;
 }
 
-SprintsShowCtrl.$inject = ['Sprint', '$stateParams', '$state'];
-function SprintsShowCtrl(Sprint, $stateParams, $state) {
+SprintsShowCtrl.$inject = ['Sprint', '$stateParams', '$state', '$http', 'trackService'];
+function SprintsShowCtrl(Sprint, $stateParams, $state, $http, trackService) {
   const vm = this;
 
   vm.sprint = Sprint.get($stateParams);
+  const track = trackService.getTrack();
 
+  if(!track) {
+    $state.go('tracksIndex'); // handle this error more gracefully with $broadcast or something...
+  }
 
   function sprintsDelete() {
     vm.sprint
@@ -107,13 +87,32 @@ function SprintsShowCtrl(Sprint, $stateParams, $state) {
   function sprintsFinish() {
     console.log('finish');
     console.log(vm.sprint);
-    vm.sprint
-    .$update()
-    .then(() => $state.go('sprintsShow', $stateParams));
+    const base64Data = vm.sprint.base64.match(/base64,(.*)$/)[1];
+    const data = {
+      requests: [{
+        image: { content: base64Data },
+        features: [{ type: 'LANDMARK_DETECTION' }]
+      }]
+    };
+    $http
+    .post('https://vision.googleapis.com/v1/images:annotate?key=AIzaSyBWXs5eQMEdN8caiQ-9QO0GqxRifMqNPyU', data)
+    .then((response) => {
+      //console.log('response', response);
+      const latLng = response.data.responses[0].landmarkAnnotations[0].locations[0].latLng;
 
+      if(track.track.finish.lat !== latLng.latitude || track.track.finish.lng !== latLng.longitude) {
+        console.log('false - you\'re finish photo doesn\'t match');
+        vm.sprint.finish.time = null;
+        //return false; // handle this error more gracefully with $broadcast or something...
+      }
+      vm.sprint
+      .$update()
+      .then(() => $state.go('sprintsShow', $stateParams));
+    });
   }
   vm.finish = sprintsFinish;
 
+  // used to switch between views on the show page
   function takeFinishPhoto(){
     vm.sprint.finish.time = new Date();
     // $state.reload();
