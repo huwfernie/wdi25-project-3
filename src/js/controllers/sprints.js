@@ -46,7 +46,8 @@ function SprintsNewCtrl(Sprint, $state, $http, trackService) {
 
         console.log('now');
         vm.sprint.track = track;
-        console.log(vm.sprint);
+        console.log('track is', track);
+        console.log('vm.sprint: ', vm.sprint);
         // console.log(track);
         // console.log(response);
 
@@ -67,9 +68,6 @@ function SprintsShowCtrl(Sprint, $stateParams, $state) {
   const vm = this;
 
   vm.sprint = Sprint.get($stateParams);
-
-  vm.isRunning = true;
-  vm.isStopped = false;
 
 
   function sprintsDelete() {
