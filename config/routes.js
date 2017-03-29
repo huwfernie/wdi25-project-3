@@ -6,15 +6,17 @@ const sprints = require('../controllers/sprints');
 const auth = require('../controllers/auth');
 
 const imageUpload = require('../lib/imageUpload');
-// const secureRoute = require('../lib/secureRoute');
+const secureRoute = require('../lib/secureRoute');
 // const adminRoute = require('../lib/adminRoute');
 
 // ------ Sprints ------ //
 router.route('/sprints')
+  .all(secureRoute)
   .get(sprints.index)
   .post(imageUpload, sprints.create);
 
 router.route('/sprints/:id')
+  .all(secureRoute)
   .get(sprints.show)
   .put(imageUpload, sprints.update)
   .delete(sprints.delete);
@@ -22,22 +24,22 @@ router.route('/sprints/:id')
 // ------ Tracks ------ //
 router.route('/tracks')
   .get(tracks.index)
-  .post(tracks.create);
+  .post(secureRoute, tracks.create);
 
 router.route('/tracks/:id')
   .get(tracks.show)
-  .put(tracks.update)
-  .delete(tracks.delete);
+  .put(secureRoute, tracks.update)
+  .delete(secureRoute, tracks.delete);
 
 // ------ Users ------ //
 router.route('/users')
-  .get(users.index)
+  .get(users.index) // admin route
   .post(users.create);
 
 router.route('/users/:id')
-  .get(users.show)
-  .put(users.update)
-  .delete(users.delete);
+  .get(users.show) // admin route???
+  .put(secureRoute, users.update)
+  .delete(secureRoute, users.delete);
 
 // ------ Login / Register ------ //
 router.route('/register')
