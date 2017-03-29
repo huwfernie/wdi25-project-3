@@ -1,9 +1,11 @@
-<h1>Show Track</h1>
+<h1>{{ tracksShow.track.track.name }}</h1>
 
-<button class="pure-button button-success" ng-click="tracksShow.selectTrack()">Start running this track</button>
+<!-- <div id="runningButton"></div> -->
+<div class="buttonContainer">
+  <button class="pure-button button-success" ng-click="tracksShow.selectTrack()">Start running this track</button>
+</div>
+
 <div>
-  <p>
-    <h2>{{ tracksShow.track._track.name }}</h2>
     <div class="tracksShowImage">
       <img ng-src="{{ tracksShow.track.track.finish.img }}">
     </div>
@@ -15,8 +17,6 @@
     <p>
       This run has been done {{ tracksShow.track[attemptedBy].length() }} times.
     </p>
-    <!-- {{ tracksShow.track }} -->
-    <button class="pure-button pure-button-primary" ui-sref="tracksEdit({ id: tracksShow.track.track.id })">Track Edit</button>
-    <button class="pure-button button-danger" ng-click="tracksShow.delete()">Track Delete</button>
-  </p>
+    <button ng-if="!main.isAuthenticated()"　class="pure-button pure-button-primary" ui-sref="tracksEdit({ id: tracksShow.track.track.id })">Track Edit</button>
+    <button ng-if="!main.isAuthenticated()"　class="pure-button button-danger" ng-click="tracksShow.delete()">Track Delete</button>
 </div>
