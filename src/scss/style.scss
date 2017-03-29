@@ -226,6 +226,18 @@ nav {
     font-size: 0.8em;
   }
 }
+
+.pure-u-1-1 {
+  border: solid 1px $lightblue;
+  color: #fff;
+  background: rgba(50, 100, 250, 0.7);
+  text-align: center;
+  width: 50%;
+  margin: 5px auto;
+  padding: 5px;
+  border-radius: 5px;
+}
+
 .sprint-upload {
   text-align: center;
   input {

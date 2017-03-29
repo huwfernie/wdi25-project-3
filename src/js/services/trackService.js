@@ -1,6 +1,6 @@
 angular
   .module('runApp')
-  .controller('trackService', trackService);
+  .service('trackService', trackService);
 
 function trackService() {
   let _track = null;
@@ -12,4 +12,5 @@ function trackService() {
   this.setTrack = function setTrack(track) {
     _track = track;
   };
+
 }

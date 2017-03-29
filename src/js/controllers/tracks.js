@@ -34,6 +34,7 @@ function TracksShowCtrl(Track, $stateParams, $state, trackService) {
   const vm = this;
   // vm.newComment = {};
   vm.track = Track.get($stateParams);
+  //vm.trackResponse = Track.get($stateParams); will this get rid of track.track
 
   function tracksDelete() {
     //console.log('are you sure');
