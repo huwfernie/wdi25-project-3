@@ -1,5 +1,4 @@
 const Sprint = require('../models/sprint');
-const { googleKey } = require('../config/environment');
 
 function indexRoute(req, res, next) {
   Sprint
@@ -13,11 +12,6 @@ function indexRoute(req, res, next) {
 function createRoute(req, res, next) {
   req.body.start = {};
   req.body.finish = {};
-  console.log('now');
-  console.log(req.file);
-  console.log('done');
-  console.log(req.labels);
-  console.log('donedone');
 
   if(req.file) req.body.start.img = req.file.filename;
 
@@ -28,7 +22,7 @@ function createRoute(req, res, next) {
 
   Sprint
     .create(req.body)
-    .then((sprint) => res.status(201).json({sprint, googleKey}))
+    .then((sprint) => res.status(201).json(sprint))
     .catch(next);
 }
 

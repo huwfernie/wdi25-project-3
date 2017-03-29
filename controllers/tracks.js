@@ -1,4 +1,5 @@
 const Track = require('../models/track');
+const Sprint = require('../models/sprint');
 
 function indexRoute(req, res, next) {
   Track
@@ -25,9 +26,17 @@ function showRoute(req, res, next) {
     .findById(req.params.id)
     .exec()
     .then((track) => {
+
       if(!track) return res.notFound();
 
-      res.json(track);
+      Sprint.find({ track: track.id })
+        .populate('createdBy')
+        .sort('duration')
+        .limit(10)
+        .exec()
+        .then((sprints) => {
+          res.json({ track, sprints });
+        });
     })
     .catch(next);
 }

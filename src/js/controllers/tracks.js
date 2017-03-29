@@ -29,8 +29,8 @@ function TracksNewCtrl(Track, $state) {
   vm.create = tracksCreate;
 }
 
-TracksShowCtrl.$inject = ['Track', '$stateParams', '$state'];
-function TracksShowCtrl(Track, $stateParams, $state) {
+TracksShowCtrl.$inject = ['Track', '$stateParams', '$state', 'trackService'];
+function TracksShowCtrl(Track, $stateParams, $state, trackService) {
   const vm = this;
   // vm.newComment = {};
   vm.track = Track.get($stateParams);
@@ -43,6 +43,13 @@ function TracksShowCtrl(Track, $stateParams, $state) {
   }
 
   vm.delete = tracksDelete;
+
+  function selectTrack() {
+    trackService.setTrack(vm.track);
+    $state.go('sprintsNew');
+  }
+
+  vm.selectTrack = selectTrack;
 
   // function addComment() {
   //   TrackComment

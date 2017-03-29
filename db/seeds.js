@@ -60,9 +60,7 @@ User
           lng: '-0.141887',
           img: 'https://media1.britannica.com/eb-media/45/18545-004-FFFBAE09.jpg'
         },
-        distance: '3.1 miles',
-        attemptedBy: [`${users[1].id}, ${users[0].id}`],
-        favedBy: [users[1].id]
+        distance: '3.1 miles'
       },{
         name: 'Kensington to Battersea run',
         start: {
@@ -77,9 +75,7 @@ User
           lng: '-0.141887',
           img: 'https://media1.britannica.com/eb-media/45/18545-004-FFFBAE09.jpg'
         },
-        distance: '3.1 miles',
-        attemptedBy: [`${users[2].id}, ${users[3].id}`],
-        favedBy: [users[3].id]
+        distance: '3.1 miles'
       },{
         name: 'Big Ben to St Paul Cathedral',
         start: {
@@ -94,9 +90,7 @@ User
           lng: '-0.0984799861907959',
           img: 'http://www.astoft2.co.uk/london/P1030970-transf-wandyellred-cln-u1-h540-u0.3t5-q60-selnonblue-varyr0div.jpg'
         },
-        distance: '3.1 miles',
-        attemptedBy: [`${users[1].id}, ${users[0].id}`],
-        favedBy: [users[1].id]
+        distance: '3.1 miles'
       },{
         name: 'London Eye to Battersea',
         start: {
@@ -111,9 +105,7 @@ User
           lng: '-0.144839',
           img: 'https://static.dezeen.com/uploads/2011/12/dezeen_Farrells-Battersea-Power-Station_1.jpg'
         },
-        distance: '2.4 miles',
-        attemptedBy: [`${users[1].id}, ${users[0].id}`],
-        favedBy: [users[1].id]
+        distance: '2.4 miles'
       },{
         name: 'Trafalgal Square to Royal Albert hall',
         start: {
@@ -128,25 +120,24 @@ User
           lng: '-0.144839',
           img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8DSxyJ9jZb9Z4bjnizsTK8-BS4-UmxOsYNiCmgqpEKFXXmKeA'
         },
-        distance: '2.4 miles',
-        attemptedBy: [`${users[1].id}, ${users[0].id}`],
-        favedBy: [users[1].id]
-      }]);
-  })
-  .then((track) => {
-    console.log(`${track.length} tracks created`);
-    return Sprint
-      .create([{
-        start: {
-          time: 'Sat Mar 26 2017 10:34:12 GMT+0000 (GMT)',
-          img: 'http://www.kobinazrul.towerhamlets.sch.uk/files/slideshows/728/5829d830b4528.jpg'
-        },
-        finish: {
-          time: 'Sat Mar 26 2017 12:15:12 GMT+0000 (GMT)',
-          img: 'http://i.dailymail.co.uk/i/pix/2014/04/06/article-2598044-1CE188AF00000578-133_634x386.jpg'
-        },
-        createdBy: ''
-      }]);
+        distance: '2.4 miles'
+      }])
+      .then((tracks) => {
+        console.log(`${tracks.length} tracks created`);
+        return Sprint
+          .create([{
+            start: {
+              time: new Date(2017,2,26,10,34,12),
+              img: 'http://www.kobinazrul.towerhamlets.sch.uk/files/slideshows/728/5829d830b4528.jpg'
+            },
+            finish: {
+              time: new Date(2017,2,26,12,15,12),
+              img: 'http://i.dailymail.co.uk/i/pix/2014/04/06/article-2598044-1CE188AF00000578-133_634x386.jpg'
+            },
+            track: tracks[0],
+            createdBy: users[0]
+          }]);
+      });
   })
   .then((sprint) => console.log(`${sprint.length} sprints created`))
   .catch((err) => console.log(err))

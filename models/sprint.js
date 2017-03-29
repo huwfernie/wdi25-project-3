@@ -10,7 +10,9 @@ const sprintSchema = new mongoose.Schema({
     time: { type: Date },
     img: { type: String }
   },
-  createdBy: { type: String }
+  duration: { type: Number },
+  createdBy: { type: mongoose.Schema.ObjectId, ref: 'User' },
+  track: { type: mongoose.Schema.ObjectId, ref: 'Track' }
 });
 
 sprintSchema
@@ -41,19 +43,13 @@ sprintSchema
     return `https://s3-eu-west-1.amazonaws.com/${process.env.AWS_BUCKET_NAME}/${this.finish.img}`;
   });
 
-
 sprintSchema
-  .virtual('duration')
-  .get(function getDuration(){
-    if(this.finish.img){
-      console.log('FINISH', this.finish);
-      var seconds = parseInt((this.finish.time.getTime() - this.start.time.getTime()) / 1000);
-      var minutes = Math.floor(seconds % 3600 / 60);
-      var hours = Math.floor(seconds / 3600);
-      console.log(seconds);
-      console.log(typeof seconds);
-      return (hours ? (hours > 9 ? hours : '0' + hours) : '00') + ':' + (minutes ? (minutes > 9 ? minutes : '0' + minutes) : '00') + ':' + (seconds > 9 ? seconds : '0' + seconds);
+  .pre('save', function calculateDuration(next) {
+    if(this.finish.time) {
+      this.duration = parseInt((this.finish.time.getTime() - this.start.time.getTime()) / 1000);
     }
+
+    next();
   });
 
 
