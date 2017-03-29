@@ -12,41 +12,45 @@ function SprintsIndexCtrl(Sprint) {
   vm.all = Sprint.query();
 }
 
-SprintsNewCtrl.$inject = ['Sprint', '$state', '$http'];
-function SprintsNewCtrl(Sprint, $state, $http) {
+SprintsNewCtrl.$inject = ['Sprint', '$state', '$http', 'trackService'];
+function SprintsNewCtrl(Sprint, $state, $http, trackService) {
   const vm = this;
   vm.sprint = {};
 
-  function sprintsCreate() {
-    console.log('sprintsCreate working???');
-    Sprint
-      .save(vm.sprint)
-      .$promise
-      .then((response) => {
-        console.log(response);
-        //console.log(`base 64 ${vm.sprint.base64}`);
-        const base64Data = vm.sprint.base64.match(/base64,(.*)$/)[1];
-        const data = `{
-        "requests": [
-          {
-            "image": {
-              "content": "${base64Data}"
-            },
-            "features": [
-              {
-                "type": "LANDMARK_DETECTION"
-              }
-            ]
-          }
-        ]
-      }`;
+  const track = trackService.getTrack();
 
-        $http
-          .post(`https://vision.googleapis.com/v1/images:annotate?key=${response.googleKey}`, data)
-          .then((response) => {
-            console.log(response);
-          });
-      });
+  if(!track) {
+    $state.go('tracksIndex'); // handle this error more gracefully with $broadcast or something...
+  }
+
+  function sprintsCreate() {
+    const base64Data = vm.sprint.base64.match(/base64,(.*)$/)[1];
+    const data = {
+      requests: [{
+        image: { content: base64Data },
+        features: [{ type: 'LANDMARK_DETECTION' }]
+      }]
+    };
+
+    $http({
+      url: 'https://vision.googleapis.com/v1/images:annotate',
+      data,
+      params: { key: 'AIzaSyBWXs5eQMEdN8caiQ-9QO0GqxRifMqNPyU' }
+    })
+    .then((response) => {
+      const latLng = response.data.responses[0].landmarkAnnotations[0].locations[0].latLng;
+
+      if(track.start.lat !== latLng.latitude || track.start.longitude !== latLng.lng) {
+        return false; // handle this error more gracefully with $broadcast or something...
+      }
+
+      vm.sprint.track = track;
+
+      Sprint
+        .save(vm.sprint)
+        .$promise
+        .then((sprint) => $state.go('sprintsShow', { id: sprint.id }));
+    });
   }
 
 
