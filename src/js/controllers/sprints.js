@@ -33,9 +33,7 @@ function SprintsNewCtrl(Sprint, $state, $http, trackService) {
       }]
     };
 
-
-
-    $http
+    $http // I had to change this back from Mikes version to make Google happy -- Huw
       .post('https://vision.googleapis.com/v1/images:annotate?key=AIzaSyBWXs5eQMEdN8caiQ-9QO0GqxRifMqNPyU', data)
       .then((response) => {
         console.log('response', response);
@@ -48,6 +46,8 @@ function SprintsNewCtrl(Sprint, $state, $http, trackService) {
 
         console.log('now');
         vm.sprint.track = track;
+        console.log('track is', track);
+        console.log('vm.sprint: ', vm.sprint);
         // console.log(track);
         // console.log(response);
 
@@ -68,9 +68,6 @@ function SprintsShowCtrl(Sprint, $stateParams, $state) {
   const vm = this;
 
   vm.sprint = Sprint.get($stateParams);
-
-  vm.isRunning = true;
-  vm.isStopped = false;
 
 
   function sprintsDelete() {
