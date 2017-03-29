@@ -7,12 +7,12 @@ const auth = require('../controllers/auth');
 
 const imageUpload = require('../lib/imageUpload');
 const secureRoute = require('../lib/secureRoute');
-// const adminRoute = require('../lib/adminRoute');
+const adminRoute = require('../lib/adminRoute');
 
 // ------ Sprints ------ //
 router.route('/sprints')
   .all(secureRoute)
-  .get(sprints.index)
+  .get(adminRoute, sprints.index)
   .post(imageUpload, sprints.create);
 
 router.route('/sprints/:id')

@@ -60,7 +60,7 @@ function SprintsNewCtrl(Sprint, $state, $http, trackService) {
     $http
     .post('https://vision.googleapis.com/v1/images:annotate?key=AIzaSyBWXs5eQMEdN8caiQ-9QO0GqxRifMqNPyU', data)
     .then((response) => {
-      console.log('response', response);
+      //console.log('response', response);
       const latLng = response.data.responses[0].landmarkAnnotations[0].locations[0].latLng;
 
       if(track.track.start.lat !== latLng.latitude || track.track.start.lng !== latLng.longitude) {
@@ -69,7 +69,10 @@ function SprintsNewCtrl(Sprint, $state, $http, trackService) {
       }
 
       console.log('now');
-      vm.sprint.track = track;
+      //console.log(vm.user);
+      //vm.sprint.track = track;
+      // vm.sprint.createdBy = vm.user.id; // huw
+      vm.sprint.track = track.track.id; // huw
       console.log('track is', track);
       console.log('vm.sprint: ', vm.sprint);
       // console.log(track);
