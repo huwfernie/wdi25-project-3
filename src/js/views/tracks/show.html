@@ -3,20 +3,20 @@
 <div id="TrSbutton"></div><button  class="pure-button button-success" ng-click="tracksShow.selectTrack()">Start running this track</button>
 <div>
   <p>
-    <h2>{{ tracksShow.track.name }}</h2>
+    <h2>{{ tracksShow.track._track.name }}</h2>
     <div class="tracksShowImage">
-      <img ng-src="{{ tracksShow.track.finish.img }}">
+      <img ng-src="{{ tracksShow.track.track.finish.img }}">
     </div>
     <p>
-      A {{ tracksShow.track.distance }} mile run<br>
-      From {{ tracksShow.track.start.name }}<br>
-      To {{ tracksShow.track.finish.name }}
+      A {{ tracksShow.track.track.distance }} mile run<br>
+      From {{ tracksShow.track.track.start.name }}<br>
+      To {{ tracksShow.track.track.finish.name }}
     </p>
     <p>
       This run has been done {{ tracksShow.track[attemptedBy].length() }} times.
     </p>
     <!-- {{ tracksShow.track }} -->
-    <button class="pure-button pure-button-primary" ui-sref="tracksEdit({ id: tracksShow.track.id })">Track Edit</button>
+    <button class="pure-button pure-button-primary" ui-sref="tracksEdit({ id: tracksShow.track.track.id })">Track Edit</button>
     <button class="pure-button button-danger" ng-click="tracksShow.delete()">Track Delete</button>
   </p>
 </div>

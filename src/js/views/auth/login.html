@@ -1,24 +1,26 @@
-<h1 class="form-header">Login</h1>
-<form name="login.loginForm" class="pure-form pure-form-aligned" ng-submit="login.submit()" novalidate>
-  <fieldset>
-    <div class="pure-control-group">
-      <!-- <label for="email">Email</label> -->
-      <input type="email" name="email" id="email" ng-model="login.credentials.email" required placeholder="Email">
-      <div ng-messages="login.loginForm.email.$error" role="alert" ng-show="(login.loginForm.$submitted || login.loginForm.email.$touched) && login.loginForm.email.$invalid" class="error">
-        <div ng-message="required">Please enter a value for this field.</div>
-        <div ng-message="email">This field must be a valid email address.</div>
+<section class="formContainer">
+  <h1 class="form-header">Login</h1>
+  <form name="login.loginForm" class="pure-form pure-form-aligned" ng-submit="login.submit()" novalidate>
+    <fieldset class="">
+      <div class="pure-control-group">
+        <!-- <label for="email">Email</label> -->
+        <input type="email" name="email" id="email" ng-model="login.credentials.email" required placeholder="Email">
+        <span ng-messages="login.loginForm.email.$error" role="alert" ng-show="(login.loginForm.$submitted || login.loginForm.email.$touched) && login.loginForm.email.$invalid" class="error">
+          <div ng-message="required">Please enter your email.</div>
+          <div ng-message="email">Must be a valid email address.</div>
+        </span>
       </div>
-    </div>
-    <div class="pure-control-group">
-      <!-- <label for="password">Password</label> -->
-      <input type="password" name="password" id="password" ng-model="login.credentials.password" required placeholder="Password">
-      <div ng-messages="login.loginForm.password.$error" role="alert" ng-show="(login.loginForm.$submitted || login.loginForm.password.$touched) && login.loginForm.password.$invalid" class="error">
-        <div ng-message="required">Please enter a value for this field.</div>
+      <div class="pure-control-group">
+        <!-- <label for="password">Password</label> -->
+        <input type="password" name="password" id="password" ng-model="login.credentials.password" required placeholder="Password">
+        <span ng-messages="login.loginForm.password.$error" role="alert" ng-show="(login.loginForm.$submitted || login.loginForm.password.$touched) && login.loginForm.password.$invalid" class="error">
+          <div ng-message="required">Please enter your password.</div>
+        </span>
       </div>
-    </div>
 
-    <div class="pure-controls">
-      <button class="pure-button pure-button-primary">Login</button>
-    </div>
-  </fieldset>
-</form>
+      <div class="pure-controls">
+        <button class="pure-button pure-button-primary">Login</button>
+      </div>
+    </fieldset>
+  </form>
+</section>

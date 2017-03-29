@@ -1,71 +1,73 @@
-<h1>Edit Sprint</h1>
+<section class="formContainer">
+  <h1>Edit Sprint</h1>
 
-<form class="pure-form pure-form-aligned" name="sprintsEdit.editForm" ng-submit="sprintsEdit.update()" novalidate>
-  <fieldset>
+  <form class="pure-form pure-form-aligned" name="sprintsEdit.editForm" ng-submit="sprintsEdit.update()" novalidate>
+    <fieldset>
 
-    <div class="pure-control-group">
-      <label for="startTime">Start Time</label>
-      <input type="text" name="startTime" id="startTime" ng-model="sprintsEdit.sprint.start.time" required>
-      <div ng-messages="sprintsEdit.editForm.startTime.$error" role="alert" ng-show="(sprintsEdit.editForm.$submitted || sprintsEdit.editForm.startTime.$touched) && sprintsEdit.editForm.startTime.$invalid" class="error">
-        <div ng-message="required">Please enter a value for this field.</div>
-        <div ng-message="startTime">This field must be a valid starting address.</div>
+      <div class="pure-control-group">
+        <label for="startTime">Start Time</label>
+        <input type="text" name="startTime" id="startTime" ng-model="sprintsEdit.sprint.start.time" required>
+        <span ng-messages="sprintsEdit.editForm.startTime.$error" role="alert" ng-show="(sprintsEdit.editForm.$submitted || sprintsEdit.editForm.startTime.$touched) && sprintsEdit.editForm.startTime.$invalid" class="error">
+          <div ng-message="required">Please enter a value for this field.</div>
+          <div ng-message="startTime">This field must be a valid starting address.</div>
+        </span>
       </div>
-    </div>
 
-    <div class="pure-control-group">
-      <!-- <img class="pure-img" ng-src="{{ sprintsEdit.sprint.start.imageSRC }}" alt=""> -->
-      <label for="startImage">Start Image</label>
-      <input base64 type="file" name="base64" id="startImage" ng-model="sprintsEdit.sprint.start.base64" required>
+      <div class="pure-control-group">
+        <!-- <img class="pure-img" ng-src="{{ sprintsEdit.sprint.start.imageSRC }}" alt=""> -->
+        <label for="startImage">Start Image</label>
+        <input base64 type="file" name="base64" id="startImage" ng-model="sprintsEdit.sprint.start.base64" required>
 
-      <div ng-messages="sprintsEdit.editForm.startImage.$error" role="alert" ng-show="(sprintsEdit.editForm.$submitted || sprintsEdit.editForm.startImage.$touched) && sprintsEdit.editForm.startImage.$invalid" class="error">
-        <div ng-message="required">Please enter a value for this field.</div>
-        <div ng-message="startImage">This field must be a valid starting image.</div>
+        <span ng-messages="sprintsEdit.editForm.startImage.$error" role="alert" ng-show="(sprintsEdit.editForm.$submitted || sprintsEdit.editForm.startImage.$touched) && sprintsEdit.editForm.startImage.$invalid" class="error">
+          <div ng-message="required">Please enter a value for this field.</div>
+          <div ng-message="startImage">This field must be a valid starting image.</div>
+        </span>
+        {{ sprintEdit.sprint.image }}
       </div>
-      {{ sprintEdit.sprint.image }}
-    </div>
 
-    <div class="pure-control-group">
-      <label for="finishTime">Finish Time</label>
-      <input type="text" name="finishTime" id="finishTime" ng-model="sprintsEdit.sprint.finish.time" required>
-      <div ng-messages="sprintsEdit.editForm.finishTime.$error" role="alert" ng-show="(sprintsEdit.editForm.$submitted || sprintsEdit.editForm.finish.$touched) && sprintsEdit.editForm.finish.$invalid" class="error">
-        <div ng-message="required">Please enter a value for this field.</div>
-        <div ng-message="finishTime">This field must be a valid starting address.</div>
+      <div class="pure-control-group">
+        <label for="finishTime">Finish Time</label>
+        <input type="text" name="finishTime" id="finishTime" ng-model="sprintsEdit.sprint.finish.time" required>
+        <span ng-messages="sprintsEdit.editForm.finishTime.$error" role="alert" ng-show="(sprintsEdit.editForm.$submitted || sprintsEdit.editForm.finish.$touched) && sprintsEdit.editForm.finish.$invalid" class="error">
+          <div ng-message="required">Please enter a value for this field.</div>
+          <div ng-message="finishTime">This field must be a valid starting address.</div>
+        </span>
       </div>
-    </div>
 
-    <div class="pure-control-group">
-      <label for="finishImage">Finish Image</label>
-      <input base64 type="file" name="base64" id="finishImage" ng-model="sprintsEdit.sprint.finish.base64" required>
+      <div class="pure-control-group">
+        <label for="finishImage">Finish Image</label>
+        <input base64 type="file" name="base64" id="finishImage" ng-model="sprintsEdit.sprint.finish.base64" required>
 
-      <div ng-messages="sprintsEdit.editForm.finishImage.$error" role="alert" ng-show="(sprintsEdit.editForm.$submitted || sprintsEdit.editForm.finishImage.$touched) && sprintsEdit.editForm.finishImage.$invalid" class="error">
-        <div ng-message="required">Please enter a value for this field.</div>
-        <div ng-message="finishImage">This field must be a valid finishing image.</div>
+        <span ng-messages="sprintsEdit.editForm.finishImage.$error" role="alert" ng-show="(sprintsEdit.editForm.$submitted || sprintsEdit.editForm.finishImage.$touched) && sprintsEdit.editForm.finishImage.$invalid" class="error">
+          <div ng-message="required">Please enter a value for this field.</div>
+          <div ng-message="finishImage">This field must be a valid finishing image.</div>
+        </span>
       </div>
+
+      <div class="pure-controls">
+        <button class="pure-button pure-button-primary">Update</button>
+      </div>
+
+    </fieldset>
+  </form>
+
+  <!-- <h1> sprint edit</h1>
+
+  <input base64 type="file" name="base64" id="image" ng-model="sprintsNew.sprint.base64">
+  {{ sprintNew.sprint.image }}
+
+
+  <form ng-submit="sprintsNew.create()">
+
+
+
+    <div class="form-group">
+      <label for="base64">Image</label>
+      <input type="file" base64 name="base64" id="base64" ng-model="sprintsNew.sprint.base64">
     </div>
 
-    <div class="pure-controls">
-      <button class="pure-button pure-button-primary">Update</button>
-    </div>
-
-  </fieldset>
-</form>
-
-<!-- <h1> sprint edit</h1>
-
-<input base64 type="file" name="base64" id="image" ng-model="sprintsNew.sprint.base64">
-{{ sprintNew.sprint.image }}
-
-
-<form ng-submit="sprintsNew.create()">
-
-
-
-  <div class="form-group">
-    <label for="base64">Image</label>
-    <input type="file" base64 name="base64" id="base64" ng-model="sprintsNew.sprint.base64">
-  </div>
-
-  <button class="btn btn-primary">Update</button>
-</form>
-{{sprintsNew}}
-======= -->
+    <button class="btn btn-primary">Update</button>
+  </form>
+  {{sprintsNew}}
+  ======= -->
+</section>
