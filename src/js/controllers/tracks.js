@@ -9,7 +9,33 @@ TracksIndexCtrl.$inject = ['Track'];
 function TracksIndexCtrl(Track) {
   const vm = this;
 
-  vm.all = Track.query();
+  Track.query()
+    .$promise
+    .then((tracks) => {
+      const ids = [];
+      vm.all = tracks;
+      vm.unique = tracks.filter((track) => {
+        if(!ids.includes(track.finish.name)) {
+          ids.push(String(track.finish.name));
+          return true;
+        } else {
+          return false;
+        }
+      });
+    });
+
+  vm.startLatLng = {lat: 44.32384807250689, lng: -78.079833984375};
+  vm.startLatLng = {lat: 44.32384807250689, lng: -78.079833984375};
+  console.log(vm.startLatLng, vm.finishLatLng);
+
+
+  function getLatLng(track) {
+    vm.startLatLng = { lat: track.start.lat, lng: track.start.lng};
+    vm.finishLatLng = { lat: track.finish.lat, lng: track.finish.lng};
+    console.log(vm.startLatLng, vm.finishLatLng);
+  }
+
+  vm.getLatLng = getLatLng;
 }
 
 TracksNewCtrl.$inject = ['Track', '$state'];

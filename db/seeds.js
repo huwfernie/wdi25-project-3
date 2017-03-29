@@ -47,7 +47,7 @@ User
     console.log(`${users.length} users created`);
     return Track
       .create([{
-        name: 'Tower Buckingham Run',
+        name: 'Tower of London - Tower Bridge',
         start: {
           name: 'Tower of London',
           lat: '51.50735350177636',  //  lat: '51.5081', I changed this to recognise the white house -- Huw
@@ -55,29 +55,14 @@ User
           img: 'https://media1.britannica.com/eb-media/45/18545-004-FFFBAE09.jpg'
         },
         finish: {
-          name: 'Buckingham',
-          lat: '51.501366',
-          lng: '-0.141887',
-          img: 'http://www.buckinghampalace.co.uk/assets/images/bp1.jpg'
+          name: 'Tower Bridge',
+          lat: '51.505778',
+          lng: '-0.075982',
+          img: 'http://blog.museumoflondon.org.uk/wp-content/uploads/2014/07/Tower-Bridge-raised-blog.jpg'
         },
-        distance: '3.1 miles'
+        distance: '0.3 mile'
       },{
-        name: 'Kensington to Battersea run',
-        start: {
-          name: 'Kensington Palace',
-          lat: '51.505837',
-          lng: '-0.187713',
-          img: 'https://upload.wikimedia.org/wikipedia/commons/8/80/Kensington_Palace%2C_the_South_Front_-_geograph.org.uk_-_287402.jpg'
-        },
-        finish: {
-          name: 'Battersea',
-          lat: '51.501366',
-          lng: '-0.141887',
-          img: 'https://media1.britannica.com/eb-media/45/18545-004-FFFBAE09.jpg'
-        },
-        distance: '3.1 miles'
-      },{
-        name: 'Big Ben to St Paul Cathedral',
+        name: 'Big Ben - St Paul',
         start: {
           name: 'Big Ben',
           lat: '51.500901999999996',
@@ -92,7 +77,7 @@ User
         },
         distance: '3.1 miles'
       },{
-        name: 'London Eye to Battersea',
+        name: 'London Eye - Battersea',
         start: {
           name: 'London Eye',
           lat: '51.503226',
@@ -107,9 +92,9 @@ User
         },
         distance: '2.4 miles'
       },{
-        name: 'Trafalgal Square to Royal Albert hall',
+        name: 'Trafalgal Square - Royal Albert Hall',
         start: {
-          name: 'Trafalgar square',
+          name: 'Trafalgar Square',
           lat: '51.508078',
           lng: '-0.12808',
           img: 'http://cdn.ltstatic.com/2006/April/GK587344_942long.jpg'
