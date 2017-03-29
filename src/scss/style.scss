@@ -150,10 +150,6 @@ nav {
   width: 100vw;
 }
 
-.formContainer {
-  position: relative;
-  height: 80vh;
-}
 
 .centered {
   text-align: center;
@@ -162,25 +158,39 @@ nav {
 
 // end of Huws styling
 
-
-.pure-form {
-  // position: absolute;
-  // left: 50%;
-  // top: 50%;
-  // transform: translate(-50%, -50%);
-  fieldset {
-    width: 250px;
-    margin: 0 auto;
-  }
-  .pure-button {
-    width: 100%;
-  }
-  input {
-    margin-top: 15px;
-    height: 40px;
-    width: 100%;
+.formContainer {
+  position: relative;
+  height: 80vh;
+  form.pure-form {
+    fieldset {
+      width: 250px;
+      margin: 0 auto;
+      div.pure-control-group {
+        margin-top: 4vh;
+        input {
+          // margin: 0;
+          // margin-top: 3vh;
+          height: 40px;
+          width: 100%;
+        }
+        span {
+          color: red;
+          background-color: rgba(255, 0, 0, .2);
+          display: block;
+          margin-top: -0.3em;
+          padding: .3em;
+          border: 1px dashed rgba(255, 0, 0, 0.5);
+        }
+      }
+      div.pure-controls {
+        .pure-button {
+          width: 100%;
+        }
+      }
+    }
   }
 }
+
 
 .pure-u {
   p {
