@@ -213,17 +213,35 @@ nav {
 }
 
 
-.track-index-header {
-  .pure-button-primary {
-    width: 100px;
-    margin: 5px auto;
-    margin-left: 35%;
+.list {
+  // line-height: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  text-align: center;
+  margin: 2vh 0;
+  // position: relative;
+  h4 {
+    width: 65vw;
+    display: inline-block;
+    vertical-align: middle;
   }
   a {
+
+
+    // position: absolute;
+    // right: 10vw;
+    width: 30vw;
+    display: inline-block;
     text-decoration: none;
     text-transform: uppercase;
     font-weight: lighter;
-    font-size: 0.8em;
+    // font-size: 0.8em;
+    &.pure-button-primary {
+      margin: 0;
+      float: right;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
   }
 }
 
@@ -308,18 +326,25 @@ nav {
   text-align: center;
 }
 
- #TrSbutton {
-
-   float: left;
-   margin: 10px;
-   padding-left:  70px ;
-   width: 100px;
-   height: 200px;
-   background-image: url('http://cdn.mysitemyway.com/etc-mysitemyway/icons/legacy-previews/icons/blue-tiedyed-cloth-icons-sports-hobbies/043748-blue-tiedyed-cloth-icon-sports-hobbies-people-woman-runner.png');
-   background-size: cover;
-   background-color: transparentize(white, 0.8);
-   background-position: center;
-   border-radius: 20px;
-
-
+div.buttonContainer {
+  width: 100%;
+  button {
+    margin: 0 auto;
+  }
 }
+
+//  #TrSbutton {
+//
+//    float: left;
+//    margin: 10px;
+//    padding-left:  70px ;
+//    width: 100px;
+//    height: 200px;
+//    background-image: url('http://cdn.mysitemyway.com/etc-mysitemyway/icons/legacy-previews/icons/blue-tiedyed-cloth-icons-sports-hobbies/043748-blue-tiedyed-cloth-icon-sports-hobbies-people-woman-runner.png');
+//    background-size: cover;
+//    background-color: transparentize(white, 0.8);
+//    background-position: center;
+//    border-radius: 20px;
+//
+//
+// }

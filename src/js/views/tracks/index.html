@@ -1,49 +1,50 @@
-<h1>Select Your Route</h1>
+<section class="fullscreen">
+  <h1>Select Your Route</h1>
 
-<div class="pure-g">
-  <div class="pure-u-1-1">
-    <select name="city">
-      <option value="london">London</option>
-      <option value="spain" disabled>Spain</option>
-      <option value="italy" disabled>Italy</option>
-      <option value="turkey" disabled>Turkey</option>
-    </select>
+  <div class="pure-g">
+    <div class="pure-u-1-1">
+      <select name="city">
+        <option value="london">London</option>
+        <option value="spain" disabled>Spain</option>
+        <option value="italy" disabled>Italy</option>
+        <option value="turkey" disabled>Turkey</option>
+      </select>
+    </div>
+
+    <div class="pure-u-1-1">
+      <select name="start">
+        <option value="towerOfLondon">Tower of London</option>
+      </select>
+    </div>
+
+    <div class="pure-u-1-1">
+      <select name="finish">
+        <option value="buckinghamPalace">Buckingham Palace</option>
+      </select>
+    </div>
   </div>
 
-  <div class="pure-u-1-1">
-    <select name="start">
-      <option value="towerOfLondon">Tower of London</option>
-    </select>
+  <div ng-repeat="track in tracksIndex.all" class="list clearfix" >
+    <h4>{{ track.name }}</h4>
+    <a class="pure-button pure-button-primary" ui-sref= "tracksShow({ id: track.id })"><button>Run now</button></a>
   </div>
+  <button>Scroll down</button>
 
-  <div class="pure-u-1-1">
-    <select name="finish">
-      <option value="buckinghamPalace">Buckingham Palace</option>
-    </select>
-  </div>
-</div>
+</section>
+<section class="fullscreen">
+  <ng-map id="map" center="37.7699298, -122.4469157" scrollwheel="false" on-click="logLatLng()"  class="fullscreen">
 
-<div ng-repeat="track in tracksIndex.all" class="track-index-header" >
-  <p>
-    <h4><a ui-sref= "tracksShow({ id: track.id })">{{ track.name }}</a></h4>
-    <button class="pure-button pure-button-primary" ui-sref= "tracksEdit({ id: track.id })">Edit</button>
-
-  </p>
-
-</div>
-
-<ng-map id="map" center="37.7699298, -122.4469157" scrollwheel="false" on-click="logLatLng()" >
-
-    <!-- <marker position=": 36.9915359, lng: 35.260788"></marker> -->
-  <directions
-    draggable="true"
-    panel="directions-panel"
-    travel-mode="WALKING"
-    waypoints="[
-          {location: {lat:44.32384807250689, lng: -78.079833984375}, stopover: true},
-          {location: {lat:44.55916341529184, lng: -76.17919921875}, stopover: true}
-        ]"
-    origin="toronto"
-    destination="ottowa">
-  </directions>
-</ng-map>
+      <!-- <marker position=": 36.9915359, lng: 35.260788"></marker> -->
+    <directions
+      draggable="true"
+      panel="directions-panel"
+      travel-mode="WALKING"
+      waypoints="[
+            {location: {lat:44.32384807250689, lng: -78.079833984375}, stopover: true},
+            {location: {lat:44.55916341529184, lng: -76.17919921875}, stopover: true}
+          ]"
+      origin="toronto"
+      destination="ottowa">
+    </directions>
+  </ng-map>
+</section>
