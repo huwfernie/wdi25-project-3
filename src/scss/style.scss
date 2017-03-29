@@ -11,7 +11,21 @@ $lightblue: #84DCC6;
     width: 100%;
   }
 }
+.homeLabel {
+  li {
+    list-style: none;
+  }
+  border-radius: 10px;
 
+  width: 50%;
+  margin: 0 auto;
+  background-color: rgba(241, 247, 237, 0.5);
+}
+section {
+  // display: block;
+  height: 100vh;
+  
+}
 .clearfix:after {
    content: " "; /* Older browser do not support empty content */
    visibility: hidden;
