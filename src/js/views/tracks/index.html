@@ -23,7 +23,7 @@
   </div>
 </div>
 
-<div ng-repeat="track in tracksIndex.all" class="track-index-header">
+<div ng-repeat="track in tracksIndex.all" class="track-index-header" >
   <p>
     <h4><a ui-sref= "tracksShow({ id: track.id })">{{ track.name }}</a></h4>
     <button class="pure-button pure-button-primary" ui-sref= "tracksEdit({ id: track.id })">Edit</button>

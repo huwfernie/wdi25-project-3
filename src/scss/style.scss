@@ -24,7 +24,7 @@ $lightblue: #84DCC6;
 section {
   // display: block;
   height: 100vh;
-  
+
 }
 .clearfix:after {
    content: " "; /* Older browser do not support empty content */
@@ -282,4 +282,36 @@ nav {
     }
 
   }
+}
+
+#runningButton {
+  // text-align: justify;
+  float: inherit;
+  // width: 70px;
+  // height: 90px;
+  background-image: url('http://cdn.mysitemyway.com/etc-mysitemyway/icons/legacy-previews/icons/blue-tiedyed-cloth-icons-sports-hobbies/043748-blue-tiedyed-cloth-icon-sports-hobbies-people-woman-runner.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparentize(white, 1);
+  // background-position: center;
+  border-radius: 20px;
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+
+ #TrSbutton {
+
+   float: left;
+   margin: 10px;
+   padding-left:  70px ;
+   width: 100px;
+   height: 200px;
+   background-image: url('http://cdn.mysitemyway.com/etc-mysitemyway/icons/legacy-previews/icons/blue-tiedyed-cloth-icons-sports-hobbies/043748-blue-tiedyed-cloth-icon-sports-hobbies-people-woman-runner.png');
+   background-size: cover;
+   background-color: transparentize(white, 0.8);
+   background-position: center;
+   border-radius: 20px;
+
+
 }
