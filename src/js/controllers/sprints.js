@@ -33,29 +33,56 @@ function SprintsNewCtrl(Sprint, $state, $http, trackService) {
       }]
     };
 
-    $http // I had to change this back from Mikes version to make Google happy -- Huw
-      .post('https://vision.googleapis.com/v1/images:annotate?key=AIzaSyBWXs5eQMEdN8caiQ-9QO0GqxRifMqNPyU', data)
-      .then((response) => {
-        console.log('response', response);
-        const latLng = response.data.responses[0].landmarkAnnotations[0].locations[0].latLng;
 
-        if(track.track.start.lat !== latLng.latitude || track.track.start.lng !== latLng.longitude) {
-          console.log('false - you\'re start photo doesn\'t match');
-          //return false; // handle this error more gracefully with $broadcast or something...
-        }
 
-        console.log('now');
-        vm.sprint.track = track;
-        console.log('track is', track);
-        console.log('vm.sprint: ', vm.sprint);
-        // console.log(track);
-        // console.log(response);
+  // $http({
+  //   url: 'https://vision.googleapis.com/v1/images:annotate/',
+  //   data,
+  //   params: { key: 'AIzaSyBWXs5eQMEdN8caiQ-9QO0GqxRifMqNPyU' }
+  // })
+  // .then((response) => {
+  //   console.log(response);
+  // });
 
-        Sprint
-          .save(vm.sprint)
-          .$promise
-          .then((sprint) => $state.go('sprintsShow', { id: sprint.id }));
-      });
+    //  this doesn't work with secure routes--- AAARRRRRGGGGGHHHHHH!!!!!!! :-(
+    // $http // I had to change this back from Mikes version to make Google happy -- Huw
+    //   .post('https://vision.googleapis.com/v1/images:annotate?key=AIzaSyBWXs5eQMEdN8caiQ-9QO0GqxRifMqNPyU', data)
+    //   .then((response) => {
+
+    // $http({
+    //   url: 'https://vision.googleapis.com/v1/images:annotate?key=AIzaSyBWXs5eQMEdN8caiQ-9QO0GqxRifMqNPyU',
+    //   dataType: 'json',
+    //   data
+    // })
+    // .then((response) => {
+
+
+    $http
+    .post('https://vision.googleapis.com/v1/images:annotate?key=AIzaSyBWXs5eQMEdN8caiQ-9QO0GqxRifMqNPyU', data)
+    .then((response) => {
+      //console.log('response', response);
+      const latLng = response.data.responses[0].landmarkAnnotations[0].locations[0].latLng;
+
+      if(track.track.start.lat !== latLng.latitude || track.track.start.lng !== latLng.longitude) {
+        console.log('false - you\'re start photo doesn\'t match');
+        //return false; // handle this error more gracefully with $broadcast or something...
+      }
+
+      console.log('now');
+      //console.log(vm.user);
+      //vm.sprint.track = track;
+      // vm.sprint.createdBy = vm.user.id; // huw
+      vm.sprint.track = track.track.id; // huw
+      console.log('track is', track);
+      console.log('vm.sprint: ', vm.sprint);
+      // console.log(track);
+      // console.log(response);
+
+      Sprint
+        .save(vm.sprint)
+        .$promise
+        .then((sprint) => $state.go('sprintsShow', { id: sprint.id }));
+    });
   }
 
 

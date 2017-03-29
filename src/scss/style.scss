@@ -37,18 +37,45 @@ body.home {
     text-align: center;
     background: no-repeat url("https://static.pexels.com/photos/29578/pexels-photo.jpg");
     background-size: cover;
+    background-position: 70%;
     height: 100vh;
 
     .label {
       // border-radius: 10px;
       // width: 50%;
+      font-weight: 300;
+      color: #fff;
       margin: 0 auto;
-      background-color: rgba(241, 247, 237, 0.7);
-      padding: 1vh;
-      ul {
-        margin: 0 auto;
-        width: 80%;
-        text-align: left;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px 10px;
+      height: 100%;
+      h1 {
+        margin-top: 25px;
+        border-top: 2px solid #fff;
+        border-bottom: 2px solid #fff;
+        padding: 20px 0;
+        color: rgba(255, 255, 255, .5);
+        letter-spacing: 2px;
+      }
+      h3 {
+        padding-bottom: 15px;
+        font-size: 1.2em;
+        margin: 20px 0;
+      }
+      p {
+        padding: 30px 0 20px;
+        text-align: center;
+      }
+      button {
+        width: 100%;
+      }
+      .for-reg {
+        margin-bottom: 20px;
+      }
+      a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 0.8em;
       }
     }
   }
