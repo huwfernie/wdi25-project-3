@@ -47,7 +47,7 @@ User
     console.log(`${users.length} users created`);
     return Track
       .create([{
-        name: 'Tower Buckingham Run',
+        name: 'Tower of London - Buckingham',
         start: {
           name: 'Tower of London',
           lat: '38.897312',  //  lat: '51.5081', I changed this to recognise the white house -- Huw
@@ -62,7 +62,7 @@ User
         },
         distance: '3.1 miles'
       },{
-        name: 'Kensington to Battersea run',
+        name: 'Kensington Palace - Battersea',
         start: {
           name: 'Kensington Palace',
           lat: '51.505837',
@@ -77,7 +77,7 @@ User
         },
         distance: '3.1 miles'
       },{
-        name: 'Big Ben to St Paul Cathedral',
+        name: 'Big Ben - St Paul',
         start: {
           name: 'Big Ben',
           lat: '51.500901999999996',
@@ -92,7 +92,7 @@ User
         },
         distance: '3.1 miles'
       },{
-        name: 'London Eye to Battersea',
+        name: 'London Eye - Battersea',
         start: {
           name: 'London Eye',
           lat: '51.503226',
@@ -107,9 +107,9 @@ User
         },
         distance: '2.4 miles'
       },{
-        name: 'Trafalgal Square to Royal Albert hall',
+        name: 'Trafalgal Square - Royal Albert Hall',
         start: {
-          name: 'Trafalgar square',
+          name: 'Trafalgar Square',
           lat: '51.508078',
           lng: '-0.12808',
           img: 'http://cdn.ltstatic.com/2006/April/GK587344_942long.jpg'

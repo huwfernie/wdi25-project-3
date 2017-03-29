@@ -2,35 +2,32 @@
   <h1>Select Your Route</h1>
 
   <div class="pure-g">
-    <div class="pure-u-1-1">
-      <select name="city">
+      <select name="city" class="filter pure-u-1-1" placeholder="City">
         <option value="london">London</option>
         <option value="spain" disabled>Spain</option>
         <option value="italy" disabled>Italy</option>
         <option value="turkey" disabled>Turkey</option>
       </select>
-    </div>
 
-    <div class="pure-u-1-1">
-      <select name="start">
-        <option value="towerOfLondon">Tower of London</option>
-      </select>
-    </div>
+      <select name="start" ng-model="search.start" class="filter pure-u-1-1" ng-options="track.start.name for track in tracksIndex.all"></select>
 
-    <div class="pure-u-1-1">
-      <select name="finish">
-        <option value="buckinghamPalace">Buckingham Palace</option>
-      </select>
-    </div>
+      <select name="finish" ng-model="search.finish" class="filter pure-u-1-1" ng-options="track.finish.name for track in tracksIndex.unique" ></select>
   </div>
 
-  <div ng-repeat="track in tracksIndex.all" class="list clearfix" >
-    <h4>{{ track.name }}</h4>
-    <a class="pure-button pure-button-primary" ui-sref= "tracksShow({ id: track.id })"><button>Run now</button></a>
-  </div>
-  <button>Scroll down</button>
+  <!-- <input type="text" ng-model="search"> -->
 
+  <div>
+    Displaying routes:
+    <!-- <span ng-repeat="track in tracksIndex.all | filter:filterQuery" class="listItem clearfix" > -->
+    <span ng-repeat="track in tracksIndex.all | filter:search.start | filter:search.finish" class="listItem clearfix" >
+
+      <h4 ng-click="tracksIndex.getLatLng(track)">{{ track.name }}</h4>
+      <a class="pure-button pure-button-primary" ui-sref= "tracksShow({ id: track.id })">Run now</a>
+    </span>
+    <button>Scroll down</button>
+  </div>
 </section>
+
 <section class="fullscreen">
   <ng-map id="map" center="37.7699298, -122.4469157" scrollwheel="false" on-click="logLatLng()"  class="fullscreen">
 
@@ -40,11 +37,11 @@
       panel="directions-panel"
       travel-mode="WALKING"
       waypoints="[
-            {location: {lat:44.32384807250689, lng: -78.079833984375}, stopover: true},
+
             {location: {lat:44.55916341529184, lng: -76.17919921875}, stopover: true}
           ]"
-      origin="toronto"
-      destination="ottowa">
+      origin="tracksIndex.startLatLng"
+      destination="tracksIndex.finishLatLng">
     </directions>
   </ng-map>
 </section>
