@@ -10,7 +10,7 @@ const sprintSchema = new mongoose.Schema({
     time: { type: Date },
     img: { type: String }
   },
-  duration: { type: Number },
+  duration: { type: String },
   createdBy: { type: mongoose.Schema.ObjectId, ref: 'User' },
   track: { type: mongoose.Schema.ObjectId, ref: 'Track' }
 }, { timestamps: true }
