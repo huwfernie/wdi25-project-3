@@ -106,6 +106,36 @@ User
           img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8DSxyJ9jZb9Z4bjnizsTK8-BS4-UmxOsYNiCmgqpEKFXXmKeA'
         },
         distance: 2.4
+      },{
+        name: 'Richmond bridge - Richmond Park White Lodge',
+        start: {
+          name: 'Richmond bridge',
+          lat: '51.457285',
+          lng: '-0.307031',
+          img: 'https://upload.wikimedia.org/wikipedia/commons/6/68/Richmond_Bridge,_UK.jpg'
+        },
+        finish: {
+          name: 'Richmond Park White Lodge',
+          lat: '51.445221',
+          lng: '0.264753',
+          img: 'http://i.telegraph.co.uk/multimedia/archive/02677/PD70036571_ADHYR8_2677198b.jpg'
+        },
+        distance: 2.6
+      },{
+        name: 'Tower of London - London Eye',
+        start: {
+          name: 'Tower of London',
+          lat: '51.50735350177636',  //  lat: '51.5081', I changed this to recognise the white house -- Huw
+          lng: '-0.076121', //  lng: '-0.076674',
+          img: 'https://media1.britannica.com/eb-media/45/18545-004-FFFBAE09.jpg'
+        },
+        finish: {
+          name: 'London Eye',
+          lat: '51.503226',
+          lng: '-0.118532',
+          img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/London-Eye-2009.JPG/1200px-London-Eye-2009.JPG'
+        },
+        distance: 2.6
       }])
       .then((tracks) => {
         console.log(`${tracks.length} tracks created`);
