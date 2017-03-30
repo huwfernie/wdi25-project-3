@@ -14,7 +14,7 @@ const trackSchema = new mongoose.Schema({
     lng: { type: Number, required: true },
     img: { type: String, required: true }
   },
-  distance: { type: String }
+  distance: { type: Number }
 });
 
 module.exports = mongoose.model('Track', trackSchema);
