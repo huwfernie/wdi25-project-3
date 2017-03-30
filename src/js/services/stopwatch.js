@@ -32,15 +32,17 @@ function buildStopwatch() {
 
   // timer();
 
-
   /* Start button */
   if(start) start.onclick = timer ;
-
 
   /* Stop button */
   if(stop) stop.onclick = function() {
     clearTimeout(t);
   };
+
+  // this.stopTime = function() {
+  //   clearTimeout(t);
+  // };
 
   /* Clear button */
   if(clear) clear.onclick = function() {
