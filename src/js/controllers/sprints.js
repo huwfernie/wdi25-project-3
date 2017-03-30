@@ -136,10 +136,9 @@ function SprintsShowCtrl(Sprint, $stateParams, $state, $http, trackService, $roo
 
 }
 
-SprintsEditCtrl.$inject = ['Sprint', '$stateParams', '$state'];
-function SprintsEditCtrl(Sprint, $stateParams, $state) {
+SprintsEditCtrl.$inject = ['Sprint', '$stateParams', '$state', '$auth'];
+function SprintsEditCtrl(Sprint, $stateParams, $state, $auth) {
   const vm = this;
-
   vm.sprint = Sprint.get($stateParams);
 
   function sprintsUpdate() {
