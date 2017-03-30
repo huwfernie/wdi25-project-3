@@ -1,11 +1,11 @@
-<h1>{{ tracksShow.track.track.name }}</h1>
+<h1 class="track-show">{{ tracksShow.track.track.name }}</h1>
 
 <!-- <div id="runningButton"></div> -->
-<div class="buttonContainer">
-  <button class="pure-button button-success" ng-click="tracksShow.selectTrack()">Start running this track</button>
+<div class="buttonContainer track-show-container">
+  <button class="pure-button button-success track-show-btn" ng-click="tracksShow.selectTrack()">Start running this track</button>
 </div>
 
-<div>
+<div class="track-show-container">
     <div class="tracksShowImage">
       <img ng-src="{{ tracksShow.track.track.finish.img }}">
     </div>
