@@ -13,7 +13,8 @@ const sprintSchema = new mongoose.Schema({
   duration: { type: Number },
   createdBy: { type: mongoose.Schema.ObjectId, ref: 'User' },
   track: { type: mongoose.Schema.ObjectId, ref: 'Track' }
-});
+}, { timestamps: true }
+);
 
 sprintSchema
   .path('start.img')

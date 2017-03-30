@@ -39,7 +39,7 @@
     <!-- <span ng-repeat="track in tracksIndex.all | filter:filterQuery" class="listItem clearfix" > -->
     <!-- <span ng-repeat="track in tracksIndex.all | filter:search.start | filter:search.finish" class="listItem clearfix" > -->
       <li ng-repeat="track in tracksIndex.allFiltered" class="listItem clearfix" >
-        <h4 ng-click="tracksIndex.getLatLng(track)">{{ track.name }}</h4>
+        <a ng-click="tracksIndex.getLatLng(track)" href="#map" class="trackName">{{ track.name }}</a>
         <a class="pure-button pure-button-primary" ui-sref= "tracksShow({ id: track.id })">Run now</a>
       </li>
     </ul>
@@ -48,7 +48,7 @@
 </section>
 
   <!-- <ng-map id="map" center="{{city}}" scrollwheel="false" class="fullscreen"> -->
-  <ng-map zoom="11" center="{{city}}" scrollwheel="false">
+  <ng-map zoom="11" center="{{city}}" scrollwheel="false" class="fullscreen">
       <!-- <marker position=": 36.9915359, lng: 35.260788"></marker> -->
     <directions
       draggable="true"
