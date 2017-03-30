@@ -116,8 +116,8 @@ User
         },
         finish: {
           name: 'Richmond Park White Lodge',
-          lat: '51.445221',
-          lng: '0.264753',
+          lat: '51.445194',
+          lng: '-0.265000',
           img: 'http://i.telegraph.co.uk/multimedia/archive/02677/PD70036571_ADHYR8_2677198b.jpg'
         },
         distance: 2.6
