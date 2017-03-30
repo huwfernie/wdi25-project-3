@@ -26,7 +26,7 @@
     "angular-moment": "^1.0.1",
     "ng-maps": "ng-map#*",
     "ngmap": "^1.18.4",
-    "angular-ui-router-styles": "^1.1.0"
+    "angular-sanitize": "^1.6.3"
   },
   "resolutions": {
     "angular": "1.6.3",

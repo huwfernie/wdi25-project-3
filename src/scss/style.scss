@@ -71,7 +71,9 @@ body.home {
         text-align: center;
       }
       button {
-        width: 100%;
+        width: 50%;
+        margin: 10px auto;
+        display: block;
       }
       .for-reg {
         margin-bottom: 20px;
@@ -300,16 +302,21 @@ ul.trackIndex {
   }
 }
 
+
+
 .error {
   text-transform: uppercase;
   color: white;
   margin: 0 auto;
   text-align: center;
   padding: 10px 0;
-  width: 90%;
+  width: 100%;
   background: rgba(250, 10, 10, 0.4);
   border-top: solid 2px rgba(250, 10, 10, 0.8);
   border-bottom: solid 2px rgba(250, 10, 10, 0.8);
+  p {
+    margin-top: 10px;
+  }
 }
 
 // /////////////////////////////
@@ -429,12 +436,19 @@ h41.track-show{
   text-transform: uppercase;
 }
 
-
-.error {
-  padding-top: 20px;
-  width: 100%;
-  text-align: center;
+.newsfeed {
+  a {
+    margin-left: 10px;
+  }
+  img {
+    width: 40%;
+    float: left;
+    margin: 5%;
+    border-radius: 15px;
+  }
 }
+
+
 
 //  #TrSbutton {
 //
