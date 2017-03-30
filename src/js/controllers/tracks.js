@@ -5,37 +5,55 @@ angular
   .controller('TracksShowCtrl', TracksShowCtrl)
   .controller('TracksEditCtrl', TracksEditCtrl);
 
-TracksIndexCtrl.$inject = ['Track'];
-function TracksIndexCtrl(Track) {
+TracksIndexCtrl.$inject = ['Track', '$scope', 'filterFilter'];
+function TracksIndexCtrl(Track, $scope, filterFilter) {
   const vm = this;
 
-  Track.query()
-    .$promise
-    .then((tracks) => {
-      const ids = [];
-      vm.all = tracks;
-      vm.unique = tracks.filter((track) => {
-        if(!ids.includes(track.finish.name)) {
-          ids.push(String(track.finish.name));
-          return true;
-        } else {
-          return false;
-        }
-      });
-    });
+  vm.all = Track.query();
+  // console.log(vm.all);
+  //
+  //
+  // vm.filtered = {
+  //   // start: [...new Set(vm.all)],
+  //   // finish: [...new Set(vm.all)]
+  //   start: vm.all.map(track => track.start.name).filter((name, idx, arr) => arr.indexOf(name) === idx),
+  //   finish: vm.all.map(track => track.finish.name).filter((name, idx, arr) => arr.indexOf(name) === idx)
+  // };
+  // console.log(vm.filtered);
+  // vm.filtered = {
+  //   // start: [...new Set(vm.all)],
+  //   // finish: [...new Set(vm.all)]
+  //   start: vm.all.map(track => track.start.name).filter((name, idx, arr) => arr.indexOf(name) === idx),
+  //   finish: vm.all.map(track => track.finish.name).filter((name, idx, arr) => arr.indexOf(name) === idx)
+  // };
+  // console.log(vm.filtered);
 
-  vm.startLatLng = {lat: 44.32384807250689, lng: -78.079833984375};
-  vm.startLatLng = {lat: 44.32384807250689, lng: -78.079833984375};
-  console.log(vm.startLatLng, vm.finishLatLng);
+  $scope.$watchGroup([
+    () => vm.start,
+    () => vm.finish,
+    () => vm.all.$resolved
+  ], () => {
+    console.log(vm.start)
+    const params = {};
+    if(vm.start) params.start = { name: vm.start };
+    if(vm.finish) params.finish = { name: vm.finish };
+    vm.allFiltered = filterFilter(vm.all, params);
+    console.log(vm.allFiltered);
+    vm.filtered = {
+      start: vm.allFiltered.map(track => track.start.name).filter((name, idx, arr) => arr.indexOf(name) === idx),
+      finish: vm.allFiltered.map(track => track.finish.name).filter((name, idx, arr) => arr.indexOf(name) === idx)
+    };
+  });
 
 
   function getLatLng(track) {
-    vm.startLatLng = { lat: track.start.lat, lng: track.start.lng};
-    vm.finishLatLng = { lat: track.finish.lat, lng: track.finish.lng};
-    console.log(vm.startLatLng, vm.finishLatLng);
+    vm.startLatLng = `${track.start.lat}, ${track.start.lng}`;
+    vm.finishLatLng = `${track.finish.lat}, ${track.finish.lng}`;
   }
 
   vm.getLatLng = getLatLng;
+
+
 }
 
 TracksNewCtrl.$inject = ['Track', '$state'];

@@ -223,7 +223,6 @@ nav {
   }
 }
 
-
 .pure-u {
   p {
     margin: 10px 0;
@@ -239,27 +238,28 @@ nav {
   margin-top: 10px;
 }
 
-
-.listItem {
-  display: block;
-  border: 1px solid black;
-  border-radius: 10px;
-  text-align: center;
-  margin: 2vh 0;
-  h4 {
-    width: 65vw;
-    display: inline-block;
-    vertical-align: middle;
-  }
-  a {
-    display: inline-block;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: lighter;
-    margin: 0;
-    float: right;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+ul.trackIndex {
+  li {
+    display: block;
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+    margin: 2vh 0;
+    h4 {
+      width: 65vw;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    a {
+      display: inline-block;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: lighter;
+      margin: 0;
+      float: right;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
   }
 }
 
@@ -375,22 +375,27 @@ nav {
   text-align: center;
 }
 
-div.buttonContainer {
-  width: 100%;
-  button {
-    display: block;
-    margin: 30px auto 0;
-    background-color: $lightblue;
-  }
+.track-show-btn {
+  background-color: $green;
+  // margin-left:5%;
+  width: 75%;
 }
 
-h1.track-show{
+button.centered {
+  display: block;
+  margin: 3vw auto;
+  padding: 3vw;
+  width: 90%;
+}
+
+
+h41.track-show{
   text-align: center;
   margin: 10px 25px;
 }
 
 .track-show-container {
-  width: 100%;
+  padding: 0 5%;
   margin: 0 auto;
   img {
     width: 100%;
