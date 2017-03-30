@@ -25,7 +25,8 @@
     "moment": "^2.18.1",
     "angular-moment": "^1.0.1",
     "ng-maps": "ng-map#*",
-    "ngmap": "^1.18.4"
+    "ngmap": "^1.18.4",
+    "angular-sanitize": "^1.6.3"
   },
   "resolutions": {
     "angular": "1.6.3"
