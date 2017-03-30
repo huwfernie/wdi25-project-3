@@ -342,7 +342,28 @@ div.buttonContainer {
   button {
     margin: 0 auto;
   }
+  .track-show-btn {
+    background-color: $green;
+    margin-left:5%;
+    width: 75%;
+  }
 }
+
+h1.track-show{
+  text-align: center;
+  margin: 10px 25px;
+}
+
+.track-show-container {
+  padding: 5%;
+  width: 90%;
+  margin: 0 auto;
+  img {
+    width: 100%;
+  }
+}
+
+
 
 //  #TrSbutton {
 //
