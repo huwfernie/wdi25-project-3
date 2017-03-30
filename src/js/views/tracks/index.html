@@ -33,22 +33,22 @@
 
   <div>
     Displaying routes:
-    <ul class="trackIndex">
+    <ul class="trackIndex clearfix">
       <!-- <li ng-repeat="run in runs.allFiltered">{{ run.start.name }} - {{ run.finish.name }}</li> -->
 
     <!-- <span ng-repeat="track in tracksIndex.all | filter:filterQuery" class="listItem clearfix" > -->
     <!-- <span ng-repeat="track in tracksIndex.all | filter:search.start | filter:search.finish" class="listItem clearfix" > -->
-      <li ng-repeat="track in tracksIndex.allFiltered" class="listItem clearfix" >
-        <h4 ng-click="tracksIndex.getLatLng(track)">{{ track.name }}</h4>
-        <a class="pure-button pure-button-primary" ui-sref= "tracksShow({ id: track.id })">Run now</a>
+      <li ng-repeat="track in tracksIndex.allFiltered" class="listItem clearfix fill-height outer">
+        <a ng-click="tracksIndex.getLatLng(track)" href="#map" class="trackName fill-height inner">{{ track.name }}</a>
+        <a class="pure-button pure-button-primary fill-height inner" ui-sref= "tracksShow({ id: track.id })">Run now</a>
       </li>
     </ul>
-    <button class="pure-button centered">Scroll down for map</button>
+    <a class="pure-button centered fw" href="#">Click to view new route on map</a>
   </div>
 </section>
 
   <!-- <ng-map id="map" center="{{city}}" scrollwheel="false" class="fullscreen"> -->
-  <ng-map zoom="11" center="{{city}}" scrollwheel="false">
+  <ng-map zoom="11" center="{{city}}" scrollwheel="false" class="fullscreen" id="map">
       <!-- <marker position=": 36.9915359, lng: 35.260788"></marker> -->
     <directions
       draggable="true"
