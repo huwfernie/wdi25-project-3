@@ -3,7 +3,7 @@ const Sprint = require('../models/sprint');
 function indexRoute(req, res, next) {
   Sprint
     .find()
-    // .populate('createdBy')
+    .populate('createdBy')
     .exec()
     .then((sprints) => res.json(sprints))
     .catch(next);

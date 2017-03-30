@@ -119,6 +119,7 @@ function SprintsShowCtrl(Sprint, $stateParams, $state, $http, trackService, $roo
       }
 
       console.log('now');
+      $rootScope.$broadcast('$stateChangeSuccess');
       vm.sprint
       .$update()
       .then(() => $state.go('sprintsShow', $stateParams));
