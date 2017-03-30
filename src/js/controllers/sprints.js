@@ -118,7 +118,6 @@ function SprintsShowCtrl(Sprint, $stateParams, $state, $http, trackService, $roo
         return $rootScope.$broadcast('error', err);
       }
 
-      console.log('now');
       $rootScope.$broadcast('$stateChangeSuccess');
       vm.sprint
       .$update()
@@ -130,14 +129,13 @@ function SprintsShowCtrl(Sprint, $stateParams, $state, $http, trackService, $roo
   // used to switch between views on the show page
   function takeFinishPhoto(){
     vm.sprint.finish.time = new Date();
-    // $state.reload();
   }
   vm.takeFinishPhoto = takeFinishPhoto;
 
 }
 
-SprintsEditCtrl.$inject = ['Sprint', '$stateParams', '$state', '$auth'];
-function SprintsEditCtrl(Sprint, $stateParams, $state, $auth) {
+SprintsEditCtrl.$inject = ['Sprint', '$stateParams', '$state'];
+function SprintsEditCtrl(Sprint, $stateParams, $state) {
   const vm = this;
   vm.sprint = Sprint.get($stateParams);
 

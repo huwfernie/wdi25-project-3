@@ -45,15 +45,14 @@
     <p>Date: {{ sprintsShow.sprint.start.time | limitTo : 10 : 0 }}</p>
     <p>Start time: {{ sprintsShow.sprint.start.time | limitTo : 8 : 11 }}</p>
     <p>Finish time: {{ sprintsShow.sprint.finish.time | limitTo : 8 : 11  }}</p>
-    <!-- <p>Runner: {{ sprintsShow.sprint }}</p> -->
     <p>Duration: {{ sprintsShow.sprint.duration }} seconds</p>
-    <!-- <p>Total time: {{ sprintsShow.sprint.finish.time | date:'MM/dd/yyyy' }}</p> -->
 
     <div class="pure-g">
       <img class="pure-u-1-2 pure-img sprintsIndex" ng-src="{{ sprintsShow.sprint.start.imgSRC }}" alt="start user image">
       <img class="pure-u-1-2 pure-img sprintsIndex" ng-src="{{ sprintsShow.sprint.finish.imgSRC }}" alt="finish user image">
     </div>
-    <button class="pure-button pure-button-primary" ui-sref="tracksIndex"> Run More</button>
+    <button class="pure-button pure-button-primary" ui-sref="tracksIndex"> Run More</button><br>
+    <button class="pure-button pure-button-primary" ui-sref="sprintsIndex"> View recent runs</button>
 
 
   </div>
