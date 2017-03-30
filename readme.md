@@ -51,7 +51,9 @@ Due to varying skill levels in the group, it was difficult for everyone to contr
 ### If we had more time we'd like to...
 
 * Create user profiles
+* Geolocation API if Google Vision doesn't pick up location
 * Allow users to add routes
 * Have a news feed of the latest activity
+* Have a leaderboard
 * Be able to rate routes
 * Have routes for different cities / countries
