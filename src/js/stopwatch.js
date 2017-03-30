@@ -1,5 +1,5 @@
 window.onload = function buildStopwatch() {
-  console.log('Stopwatch ready');
+//  console.log('Stopwatch ready');
   var stopwatch = document.getElementById('stopwatch'),
     start = document.getElementById('start'),
     stop = document.getElementById('stop'),
