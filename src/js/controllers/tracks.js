@@ -9,30 +9,26 @@ TracksIndexCtrl.$inject = ['Track'];
 function TracksIndexCtrl(Track) {
   const vm = this;
 
-  Track.query()
-    .$promise
-    .then((tracks) => {
-      const ids = [];
-      vm.all = tracks;
-      vm.unique = tracks.filter((track) => {
-        if(!ids.includes(track.finish.name)) {
-          ids.push(String(track.finish.name));
-          return true;
-        } else {
-          return false;
-        }
-      });
-    });
+  vm.all = Track.query();
 
-  vm.startLatLng = {lat: 44.32384807250689, lng: -78.079833984375};
-  vm.startLatLng = {lat: 44.32384807250689, lng: -78.079833984375};
-  console.log(vm.startLatLng, vm.finishLatLng);
+  // vm.startLat = 43.6532;
+  // vm.startLng = -79.38325;
+  // vm.finishLat = 44.55916341529184;
+  // vm.finishLng =  -76.17919921875;
 
+  // vm.startLatLng = '';
+  // vm.finishLatLng = '';
+
+  // vm.centerLat = (vm.startLatLng.lat + vm.finishLatLng.lat)/2;
+  // vm.centerLng = (vm.startLatLng.lng + vm.startLatLng.lng)/2;
+  //
+  // vm.centerLatLng = {lat: vm.centerLat, lng: vm.centerLng};
+  // console.log(vm.startLatLng, vm.finishLatLng);
+  // console.log(vm.centerLatLng);
 
   function getLatLng(track) {
-    vm.startLatLng = { lat: track.start.lat, lng: track.start.lng};
-    vm.finishLatLng = { lat: track.finish.lat, lng: track.finish.lng};
-    console.log(vm.startLatLng, vm.finishLatLng);
+    vm.startLatLng = `${track.start.lat}, ${track.start.lng}`;
+    vm.finishLatLng = `${track.finish.lat}, ${track.finish.lng}`;
   }
 
   vm.getLatLng = getLatLng;

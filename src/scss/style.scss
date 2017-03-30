@@ -218,7 +218,6 @@ nav {
   }
 }
 
-
 .pure-u {
   p {
     margin: 10px 0;
@@ -234,27 +233,28 @@ nav {
   margin-top: 10px;
 }
 
-
-.listItem {
-  display: block;
-  border: 1px solid black;
-  border-radius: 10px;
-  text-align: center;
-  margin: 2vh 0;
-  h4 {
-    width: 65vw;
-    display: inline-block;
-    vertical-align: middle;
-  }
-  a {
-    display: inline-block;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: lighter;
-    margin: 0;
-    float: right;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+ul.trackIndex {
+  li {
+    display: block;
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+    margin: 2vh 0;
+    h4 {
+      width: 65vw;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    a {
+      display: inline-block;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: lighter;
+      margin: 0;
+      float: right;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
   }
 }
 

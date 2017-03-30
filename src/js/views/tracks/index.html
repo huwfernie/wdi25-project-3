@@ -1,17 +1,31 @@
-<section class="fullscreen">
+<!-- <section class="fullscreen"> -->
+<section>
   <h1>Select Your Route</h1>
 
   <div class="pure-g">
-      <select name="city" class="filter pure-u-1-1" placeholder="City">
+
+      <select name="city" ng-model="city" class="filter pure-u-1-1" placeholder="City">
+        <option value="" selected>City</option>
         <option value="london">London</option>
-        <option value="spain" disabled>Spain</option>
-        <option value="italy" disabled>Italy</option>
-        <option value="turkey" disabled>Turkey</option>
+        <option value="spain">Spain</option>
+        <option value="italy">Italy</option>
+        <option value="turkey">Turkey</option>
       </select>
 
-      <select name="start" ng-model="search.start" class="filter pure-u-1-1" ng-options="track.start.name for track in tracksIndex.all"></select>
+      <!-- <body ng-controller="runCtrl as runs">
+        <select ng-options="location for location in runs.filtered.start"></select>
+        <select ng-options="location for location in runs.filtered.finish"></select>
 
-      <select name="finish" ng-model="search.finish" class="filter pure-u-1-1" ng-options="track.finish.name for track in tracksIndex.unique" ></select>
+      </body> -->
+
+
+      <select ng-model="track.start" ng-options="track.start.name for track in tracksIndex.all" class="filter pure-u-1-1">
+        <option selected value="">Start Landmark</option>
+      </select>
+
+      <select ng-model="track.finish" ng-options="track.finish.name for track in tracksIndex.unique" class="filter pure-u-1-1">
+        <option selected value="">Finish Landmark</option>
+      </select>
 
   </div>
 
@@ -19,30 +33,32 @@
 
   <div>
     Displaying routes:
-    <!-- <span ng-repeat="track in tracksIndex.all | filter:filterQuery" class="listItem clearfix" > -->
-    <span ng-repeat="track in tracksIndex.all | filter:search.start | filter:search.finish" class="listItem clearfix" >
+    <ul class="trackIndex">
+      <!-- <li ng-repeat="run in runs.allFiltered">{{ run.start.name }} - {{ run.finish.name }}</li> -->
 
-      <h4 ng-click="tracksIndex.getLatLng(track)">{{ track.name }}</h4>
-      <a class="pure-button pure-button-primary" ui-sref= "tracksShow({ id: track.id })">Run now</a>
-    </span>
+    <!-- <span ng-repeat="track in tracksIndex.all | filter:filterQuery" class="listItem clearfix" > -->
+    <!-- <span ng-repeat="track in tracksIndex.all | filter:search.start | filter:search.finish" class="listItem clearfix" > -->
+      <li ng-repeat="track in tracksIndex.all | filter:search.start | filter:search.finish" class="listItem clearfix" >
+        <h4 ng-click="tracksIndex.getLatLng(track)">{{ track.name }}</h4>
+        <a class="pure-button pure-button-primary" ui-sref= "tracksShow({ id: track.id })">Run now</a>
+      </li>
+    </ul>
     <button>Scroll down</button>
   </div>
 </section>
 
-<section class="fullscreen">
-  <ng-map id="map" center="37.7699298, -122.4469157" scrollwheel="false" on-click="logLatLng()"  class="fullscreen">
+<!-- <section class="fullscreen"> -->
+
+  <!-- <ng-map id="map" center="{{city}}" scrollwheel="false" class="fullscreen"> -->
+  <ng-map zoom="11" center="{{city}}" scrollwheel="false">
 
       <!-- <marker position=": 36.9915359, lng: 35.260788"></marker> -->
     <directions
       draggable="true"
       panel="directions-panel"
       travel-mode="WALKING"
-      waypoints="[
-
-            {location: {lat:44.55916341529184, lng: -76.17919921875}, stopover: true}
-          ]"
-      origin="tracksIndex.startLatLng"
-      destination="tracksIndex.finishLatLng">
+      origin="{{tracksIndex.startLatLng}}"
+      destination="{{tracksIndex.finishLatLng}}">
     </directions>
   </ng-map>
-</section>
+<!-- </section> -->
