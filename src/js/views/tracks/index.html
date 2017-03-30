@@ -19,11 +19,11 @@
       </body> -->
 
 
-      <select ng-model="track.start" ng-options="track.start.name for track in tracksIndex.all" class="filter pure-u-1-1">
+      <select ng-model="tracksIndex.start" ng-options="landmark for landmark in tracksIndex.filtered.start" class="filter pure-u-1-1">
         <option selected value="">Start Landmark</option>
       </select>
 
-      <select ng-model="track.finish" ng-options="track.finish.name for track in tracksIndex.all" class="filter pure-u-1-1">
+      <select ng-model="tracksIndex.finish" ng-options="landmark for landmark in tracksIndex.filtered.finish" class="filter pure-u-1-1">
         <option selected value="">Finish Landmark</option>
       </select>
 
@@ -38,21 +38,17 @@
 
     <!-- <span ng-repeat="track in tracksIndex.all | filter:filterQuery" class="listItem clearfix" > -->
     <!-- <span ng-repeat="track in tracksIndex.all | filter:search.start | filter:search.finish" class="listItem clearfix" > -->
-      <li ng-repeat="track in tracksIndex.all | filter:search.start | filter:search.finish" class="listItem clearfix" >
+      <li ng-repeat="track in tracksIndex.allFiltered" class="listItem clearfix" >
         <h4 ng-click="tracksIndex.getLatLng(track)">{{ track.name }}</h4>
         <a class="pure-button pure-button-primary" ui-sref= "tracksShow({ id: track.id })">Run now</a>
       </li>
     </ul>
-    <button>Scroll down</button>
-
+    <button class="pure-button centered">Scroll down for map</button>
   </div>
 </section>
 
-<!-- <section class="fullscreen"> -->
-
   <!-- <ng-map id="map" center="{{city}}" scrollwheel="false" class="fullscreen"> -->
   <ng-map zoom="11" center="{{city}}" scrollwheel="false">
-
       <!-- <marker position=": 36.9915359, lng: 35.260788"></marker> -->
     <directions
       draggable="true"
@@ -62,4 +58,3 @@
       destination="{{tracksIndex.finishLatLng}}">
     </directions>
   </ng-map>
-<!-- </section> -->

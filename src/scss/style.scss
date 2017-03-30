@@ -360,17 +360,24 @@ ul.trackIndex {
   text-align: center;
 }
 
-div.buttonContainer {
-  width: 100%;
-  button {
-    margin: 0 auto;
-  }
-  .track-show-btn {
-    background-color: $green;
-    margin-left:5%;
-    width: 75%;
-  }
+
+button {
+  margin: 0 auto;
 }
+.track-show-btn {
+  background-color: $green;
+  // margin-left:5%;
+  width: 75%;
+}
+
+button.centered {
+  display: block;
+  margin: 3vw auto;
+  padding: 3vw;
+  width: 90%;
+
+}
+
 
 h1.track-show{
   text-align: center;
@@ -378,8 +385,8 @@ h1.track-show{
 }
 
 .track-show-container {
-  padding: 5%;
-  width: 90%;
+  padding: 0 5%;
+  // width: 100%;
   margin: 0 auto;
   img {
     width: 100%;

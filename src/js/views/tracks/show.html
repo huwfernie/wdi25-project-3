@@ -1,11 +1,8 @@
 <h1 class="track-show">{{ tracksShow.trackname }}</h1>
 
-<!-- <div id="runningButton"></div> -->
-<div class="buttonContainer track-show-container">
-  <button class="pure-button button-success track-show-btn" ng-click="tracksShow.selectTrack()">Start running this track</button>
-</div>
-
+<button class="pure-button button-success centered" ng-click="tracksShow.selectTrack()">Start running this track</button>
 <div class="track-show-container">
+
     <div class="tracksShowImage">
       <img ng-src="{{ tracksShow.track.finish.img }}">
     </div>

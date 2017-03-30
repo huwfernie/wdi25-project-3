@@ -64,7 +64,7 @@ function SprintsNewCtrl(Sprint, $state, $http, trackService, $rootScope) {
         .save(vm.sprint)
         .$promise
         .then((sprint) => $state.go('sprintsShow', { id: sprint.id }));
-    })
+    });
   }
 
 
