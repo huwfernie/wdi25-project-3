@@ -37,7 +37,7 @@ function SprintsNewCtrl(Sprint, $state, $http, trackService, $rootScope) {
       if(!response.data.responses[0].landmarkAnnotations) {
         const err = new Error('No landmarks found');
         err.status = 404;
-        err.data = { message: 'No landmarks found' };
+        err.data = { message: 'Whoa there; we searched the image you just uploaded and didn\'t find any landmarks in it, please upload another image to start your run.' };
         return $rootScope.$broadcast('error', err);
       }
 
