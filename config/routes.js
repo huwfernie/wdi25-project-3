@@ -6,39 +6,40 @@ const sprints = require('../controllers/sprints');
 const auth = require('../controllers/auth');
 
 const imageUpload = require('../lib/imageUpload');
-// const secureRoute = require('../lib/secureRoute');
-// const adminRoute = require('../lib/adminRoute');
+const secureRoute = require('../lib/secureRoute');
+const adminRoute = require('../lib/adminRoute');
 
 // ------ Sprints ------ //
 router.route('/sprints')
-  // .all(secureRoute)
+  .all(secureRoute)
   .get(sprints.index)
-  //.get(sprints.index)
   .post(imageUpload, sprints.create);
 
 router.route('/sprints/:id')
-  // .all(secureRoute)
+  .all(secureRoute)
   .get(sprints.show)
   .put(imageUpload, sprints.update)
   .delete(sprints.delete);
 
 // ------ Tracks ------ //
 router.route('/tracks')
+  .all(secureRoute)
   .get(tracks.index)
-  .post(tracks.create);
+  .post(secureRoute, adminRoute, tracks.create);
 
 router.route('/tracks/:id')
+  .all(secureRoute)
   .get(tracks.show)
-  .put(tracks.update)
-  .delete(tracks.delete);
+  .put(adminRoute, tracks.update)
+  .delete(adminRoute, tracks.delete);
 
 // ------ Users ------ //
 router.route('/users')
-  .get(users.index) // admin route
-  .post(users.create);
+  .get(secureRoute, adminRoute, users.index); // admin route
 
 router.route('/users/:id')
-  .get(users.show) // admin route???
+  .all(secureRoute)
+  .get(adminRoute, users.show) // admin route???
   .put(users.update)
   .delete(users.delete);
 
