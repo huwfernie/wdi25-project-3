@@ -23,7 +23,7 @@
         <option selected value="">Start Landmark</option>
       </select>
 
-      <select ng-model="track.finish" ng-options="track.finish.name for track in tracksIndex.unique" class="filter pure-u-1-1">
+      <select ng-model="track.finish" ng-options="track.finish.name for track in tracksIndex.all" class="filter pure-u-1-1">
         <option selected value="">Finish Landmark</option>
       </select>
 
@@ -44,6 +44,7 @@
       </li>
     </ul>
     <button>Scroll down</button>
+
   </div>
 </section>
 

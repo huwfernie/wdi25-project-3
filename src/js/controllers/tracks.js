@@ -55,8 +55,12 @@ TracksShowCtrl.$inject = ['Track', '$stateParams', '$state', 'trackService'];
 function TracksShowCtrl(Track, $stateParams, $state, trackService) {
   const vm = this;
   // vm.newComment = {};
-  vm.track = Track.get($stateParams);
-  //vm.trackResponse = Track.get($stateParams); will this get rid of track.track
+  Track.get($stateParams)
+    .$promise
+    .then((data) => {
+      vm.track = data.track;
+      vm.sprints = data.sprints;
+    });
 
   function tracksDelete() {
     //console.log('are you sure');

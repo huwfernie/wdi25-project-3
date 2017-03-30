@@ -1,8 +1,9 @@
-<h1>Congratulations</h1>
+
 
 <!-- Placeholder with timer and cancel button -->
 <!-- start time: {{ sprintsShow.sprint.start.time }} minutes -->
 <div class="fullscreen pure-g outline ng-hide" ng-show="!sprintsShow.sprint.finish.time">
+  <h1>Have a Nice Run</h1>
   <div class="pure-u sprint-upload">
     <h2>{{ sprintsShow.sprint.createdBy }}</h2>
     Are you running? {{ sprintsShow.isRunning }}
@@ -12,8 +13,8 @@
     <button class="pure-button pure-button-primary" id="clear">clear</button>
 
 
-    <button class="pure-button pure-button-primary" ng-click="">Cancel</button>
-    <button class="pure-button pure-button-primary" ng-click="sprintsShow.takeFinishPhoto()">Take finish photo</button>
+    <button class="pure-button pure-button-primary finish-cancel" ng-click="">Cancel</button>
+    <button class="pure-button pure-button-primary finish-photo" ng-click="sprintsShow.takeFinishPhoto()">Take finish photo</button>
   </div>
   <!-- lastly: {{ sprintsShow.sprint }} -->
 </div>
@@ -34,46 +35,25 @@
 </div>
 
 
-<!-- <div class="fullscreen pure-g outline">
-  <form class="pure-u pure-form pure-form-aligned" name="sprintsShow.finishForm" ng-submit="sprintsShow.finish()" novalidate>
-    <fieldset>
-
-      <div class="pure-control-group">
-        <label for="finishImage">Finish Image</label>
-        <input base64 type="file" name="finishImage" id="finishImage" ng-model="sprintsShow.sprint.finish.base64" required> -->
-
-        <!-- <div ng-messages="sprintsShow.finishForm.finishImage.$error" role="alert" ng-show="(sprintsShow.finishForm.$submitted || sprintsShow.finishForm.finishImage.$touched) && sprintsShow.finishForm.finishImage.$invalid" class="error">
-          <div ng-message="required">Please enter a value for this field.</div>
-          <div ng-message="finishImage">This field must be a valid finishing image.</div>
-        </div>
-      </div> -->
-
-<!--
-      <div class="pure-controls">
-        <button class="pure-button pure-button-primary">Upload finish image</button>
-      </div>
-
-    </fieldset>
-  </form>
-</div> -->
 
 <!-- Display completed sprint -->
 <div class="fullscreen pure-g outline ng-hide" ng-show="sprintsShow.sprint.finish.imgSRC">
   <div class="pure-u sprint-upload">
+    <h1>Well Done</h1>
 
-
-    <p>Start time: {{ sprintsShow.sprint.start.time }}</p>
-    <p>Finish time: {{ sprintsShow.sprint.finish.time }}</p>
-    <p>Runner: {{ sprintsShow.sprint }}</p>
-    <p>Duration: {{ sprintsShow.sprint.duration }}</p>
+    <p>Date: {{ sprintsShow.sprint.start.time | limitTo : 10 : 0 }}</p>
+    <p>Start time: {{ sprintsShow.sprint.start.time | limitTo : 8 : 11 }}</p>
+    <p>Finish time: {{ sprintsShow.sprint.finish.time | limitTo : 8 : 11  }}</p>
+    <!-- <p>Runner: {{ sprintsShow.sprint }}</p> -->
+    <p>Duration: {{ sprintsShow.sprint.duration }} seconds</p>
     <!-- <p>Total time: {{ sprintsShow.sprint.finish.time | date:'MM/dd/yyyy' }}</p> -->
 
     <div class="pure-g">
       <img class="pure-u-1-2 pure-img sprintsIndex" ng-src="{{ sprintsShow.sprint.start.imgSRC }}" alt="start user image">
       <img class="pure-u-1-2 pure-img sprintsIndex" ng-src="{{ sprintsShow.sprint.finish.imgSRC }}" alt="finish user image">
     </div>
-    <button class="pure-button pure-button-primary" ng-click="">Public</button>
-    <button class="pure-button pure-button-primary" ng-click="">Private</button>
+    <button class="pure-button pure-button-primary" ui-sref="tracksIndex"> Run More</button>
+
 
   </div>
 </div>

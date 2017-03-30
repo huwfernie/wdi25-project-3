@@ -19,6 +19,7 @@ async defer></script>
 </head>
 <body ng-class="main.pageName" ng-controller="MainCtrl as main">
   <div ng-include="'js/views/partials/navbar.html'"></div>
+  <p class="error" ng-if="main.message">{{ main.message }}</p>
   <main ui-view></main>
 </body>
 </html>

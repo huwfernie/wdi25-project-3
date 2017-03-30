@@ -47,35 +47,20 @@ User
     console.log(`${users.length} users created`);
     return Track
       .create([{
-        name: 'Tower of London - Buckingham',
+        name: 'Tower of London - Tower Bridge',
         start: {
           name: 'Tower of London',
-          lat: '38.897312',  //  lat: '51.5081', I changed this to recognise the white house -- Huw
-          lng: '-77.036564', //  lng: '-0.076674',
-          img: 'http://www.buckinghampalace.co.uk/assets/images/bp1.jpg'
-        },
-        finish: {
-          name: 'Buckingham',
-          lat: '51.501366',
-          lng: '-0.141887',
+          lat: '51.50735350177636',  //  lat: '51.5081', I changed this to recognise the white house -- Huw
+          lng: '-0.076121', //  lng: '-0.076674',
           img: 'https://media1.britannica.com/eb-media/45/18545-004-FFFBAE09.jpg'
         },
-        distance: '3.1 miles'
-      },{
-        name: 'Kensington Palace - Battersea',
-        start: {
-          name: 'Kensington Palace',
-          lat: '51.505837',
-          lng: '-0.187713',
-          img: 'https://upload.wikimedia.org/wikipedia/commons/8/80/Kensington_Palace%2C_the_South_Front_-_geograph.org.uk_-_287402.jpg'
-        },
         finish: {
-          name: 'Battersea',
-          lat: '51.501366',
-          lng: '-0.141887',
-          img: 'https://media1.britannica.com/eb-media/45/18545-004-FFFBAE09.jpg'
+          name: 'Tower Bridge',
+          lat: '51.505778',
+          lng: '-0.075982',
+          img: 'http://blog.museumoflondon.org.uk/wp-content/uploads/2014/07/Tower-Bridge-raised-blog.jpg'
         },
-        distance: '3.1 miles'
+        distance: '0.3 mile'
       },{
         name: 'Big Ben - St Paul',
         start: {
@@ -134,8 +119,8 @@ User
               time: new Date(2017,2,26,12,15,12),
               img: 'http://i.dailymail.co.uk/i/pix/2014/04/06/article-2598044-1CE188AF00000578-133_634x386.jpg'
             },
-            track: tracks[0],
-            createdBy: users[0]
+            track: tracks[2],
+            createdBy: users[2]
           }]);
       });
   })
