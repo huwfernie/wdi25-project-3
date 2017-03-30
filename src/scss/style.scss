@@ -27,6 +27,10 @@ h1 {
   font-weight: bold;
 }
 
+.image-input {
+  margin-top: 60px;
+  font-size: 20px;
+}
 
 
 body.home {
@@ -271,6 +275,25 @@ nav {
   text-align: center;
   input {
     margin: 10px 0;
+    border: 1px solid $lightblue;
+    padding: 10px 20px;
+    width: 80%;
+    border-radius: 10px;
+    background: rgba(28, 184, 65, 0.1);
+  }
+  h1 {
+    color: $lightblue;
+    font-weight: bold;
+  }
+  p {
+    margin: 20px 0;
+  }
+  .form-group{
+    margin: 20px auto;
+    text-align: center;
+  }
+  .image-input {
+    font-weight: bold;
   }
 }
 
@@ -342,7 +365,48 @@ div.buttonContainer {
   button {
     margin: 0 auto;
   }
+  .track-show-btn {
+    background-color: $green;
+    margin-left:5%;
+    width: 75%;
+  }
 }
+
+h1.track-show{
+  text-align: center;
+  margin: 10px 25px;
+}
+
+.track-show-container {
+  padding: 5%;
+  width: 90%;
+  margin: 0 auto;
+  img {
+    width: 100%;
+  }
+}
+
+
+#start,
+#stop,
+#clear,
+.finish-cancel,
+.finish-photo {
+  width: 90%;
+  margin: 10px;
+}
+
+.finish-photo,
+.finish-cancel {
+  margin: 50px 0 0 0;
+}
+.finish-photo,
+ {
+  text-transform: uppercase;
+}
+
+
+
 
 //  #TrSbutton {
 //
