@@ -78,7 +78,7 @@ function SprintsShowCtrl(Sprint, $stateParams, $state, $http, trackService) {
   function sprintsDelete() {
     vm.sprint
       .$remove()
-      .then(() => $state.go('sprintsIndex'));
+      .then(() => $state.go('tracksIndex'));
   }
   vm.delete = sprintsDelete;
 
