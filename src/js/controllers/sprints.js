@@ -46,25 +46,17 @@ function SprintsNewCtrl(Sprint, $state, $http, trackService, $rootScope) {
       if(vm.track.start.lat !== latLng.latitude || vm.track.start.lng !== latLng.longitude) {
         const err = new Error('Wrong location');
         err.status = 404;
-        err.data = { message: 'Hold on, your photo has a landmark in it doesn\'t match the start position, try uploading another' };
+        err.data = { message: 'Hold on, your photo has a landmark in it that  doesn\'t match the start position, try uploading another' };
         return $rootScope.$broadcast('error', err);
       }
 
-      //console.log('now');
-      //console.log(vm.user);
-      //vm.sprint.track = track;
-      // vm.sprint.createdBy = vm.user.id; // huw
-      vm.sprint.track = vm.track.id; // huw
-      //console.log('track is', track);
-      //console.log('vm.sprint: ', vm.sprint);
-      // console.log(track);
-      // console.log(response);
+      vm.sprint.track = vm.track.id;
 
       Sprint
         .save(vm.sprint)
         .$promise
         .then((sprint) => $state.go('sprintsShow', { id: sprint.id }));
-    })
+    });
   }
 
 
