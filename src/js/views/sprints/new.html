@@ -7,10 +7,10 @@
 
     <div class="form-group">
       <label for="base64" class="image-input">Upload your start image!</label>
-      <input type="file" base64 name="base64" id="base64" ng-model="sprintsNew.sprint.base64" >
+      <input type="file" base64 name="base64" id="base64" ng-model="sprintsNew.sprint.base64" required>
     </div>
 
-    <button class="btn btn-primary pure-button pure-button-primary" ng-disabled="!bankfilepath"> Submit</button>
+    <button class="btn btn-primary pure-button pure-button-primary" ng-disabled="sprints.imageForm.$invalid"> Submit</button>
     <button class="btn btn-primary pure-button pure-button-primary"  ui-sref="tracksIndex">Cancel</button>
 
   </form>
