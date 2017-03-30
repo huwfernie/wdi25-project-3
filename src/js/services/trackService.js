@@ -2,15 +2,14 @@ angular
   .module('runApp')
   .service('trackService', trackService);
 
-function trackService() {
-  let _track = null;
-
+trackService.$inject = ['$window'];
+function trackService($window) {
   this.getTrack = function getTrack() {
-    return _track;
+    return JSON.parse($window.localStorage.getItem('track'));
   };
 
   this.setTrack = function setTrack(track) {
-    _track = track;
+    return $window.localStorage.setItem('track', JSON.stringify(track));
   };
 
 }

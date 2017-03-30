@@ -17,11 +17,8 @@ function SprintsNewCtrl(Sprint, $state, $http, trackService, $rootScope) {
   const vm = this;
   vm.sprint = {};
 
-  const track = trackService.getTrack();
-  console.log('this is', track.track.name);
-  vm.startName = track.track.start.name;
-
-  if(!track) {
+  vm.track = trackService.getTrack();
+  if(!vm.track) {
     $state.go('tracksIndex'); // handle this error more gracefully with $broadcast or something...
   }
 
@@ -36,20 +33,28 @@ function SprintsNewCtrl(Sprint, $state, $http, trackService, $rootScope) {
     $http
     .post('https://vision.googleapis.com/v1/images:annotate?key=AIzaSyBWXs5eQMEdN8caiQ-9QO0GqxRifMqNPyU', data)
     .then((response) => {
-      console.log('response', response);
+
+      if(!response.data.responses[0].landmarkAnnotations) {
+        const err = new Error('No landmarks found');
+        err.status = 404;
+        err.data = { message: 'No landmarks found' };
+        return $rootScope.$broadcast('error', err);
+      }
+
       const latLng = response.data.responses[0].landmarkAnnotations[0].locations[0].latLng;
 
-      if(track.track.start.lat !== latLng.latitude || track.track.start.lng !== latLng.longitude) {
-        console.log('false - you\'re start photo doesn\'t match');
-        $rootScope.$broadcast('start-photo-fail');
-        //return false; // handle this error more gracefully with $broadcast or something...
+      if(vm.track.start.lat !== latLng.latitude || vm.track.start.lng !== latLng.longitude) {
+        const err = new Error('Wrong location');
+        err.status = 404;
+        err.data = { message: 'Your photo does not appear to match the start position' };
+        return $rootScope.$broadcast('error', err);
       }
 
       //console.log('now');
       //console.log(vm.user);
       //vm.sprint.track = track;
       // vm.sprint.createdBy = vm.user.id; // huw
-      vm.sprint.track = track.track.id; // huw
+      vm.sprint.track = vm.track.id; // huw
       //console.log('track is', track);
       //console.log('vm.sprint: ', vm.sprint);
       // console.log(track);
@@ -59,7 +64,7 @@ function SprintsNewCtrl(Sprint, $state, $http, trackService, $rootScope) {
         .save(vm.sprint)
         .$promise
         .then((sprint) => $state.go('sprintsShow', { id: sprint.id }));
-    });
+    })
   }
 
 
@@ -72,9 +77,9 @@ function SprintsShowCtrl(Sprint, $stateParams, $state, $http, trackService) {
   const vm = this;
 
   vm.sprint = Sprint.get($stateParams);
-  const track = trackService.getTrack();
+  vm.track = trackService.getTrack();
 
-  if(!track) {
+  if(!vm.track) {
     $state.go('tracksIndex'); // handle this error more gracefully with $broadcast or something...
   }
 
@@ -101,7 +106,7 @@ function SprintsShowCtrl(Sprint, $stateParams, $state, $http, trackService) {
       //console.log('response', response);
       const latLng = response.data.responses[0].landmarkAnnotations[0].locations[0].latLng;
 
-      if(track.track.finish.lat !== latLng.latitude || track.track.finish.lng !== latLng.longitude) {
+      if(vm.track.finish.lat !== latLng.latitude || vm.track.finish.lng !== latLng.longitude) {
         console.log('false - you\'re finish photo doesn\'t match');
         vm.sprint.finish.time = null;
         //return false; // handle this error more gracefully with $broadcast or something...

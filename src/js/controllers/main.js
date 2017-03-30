@@ -11,7 +11,6 @@ function MainCtrl($rootScope, $state, $auth) {
   // rootscope is listening - it will pick up any 'error'
   $rootScope.$on('error', (e, err) => {
     vm.stateHasChanged = false;
-    console.log(e, err);
     vm.message = err.data.message; // this is the message from the server
     if(err.status === 401) $state.go('login'); // redirect to login.
   });
