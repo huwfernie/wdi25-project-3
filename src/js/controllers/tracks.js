@@ -33,6 +33,7 @@ function TracksIndexCtrl(Track, $scope, filterFilter) {
     () => vm.finish,
     () => vm.all.$resolved
   ], () => {
+    console.log(vm.start)
     const params = {};
     if(vm.start) params.start = { name: vm.start };
     if(vm.finish) params.finish = { name: vm.finish };

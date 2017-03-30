@@ -4,16 +4,17 @@
 <div class="track-show-container">
 
     <div class="tracksShowImage">
+      <h3>This will be your destination:</h3>
       <img ng-src="{{ tracksShow.track.finish.img }}">
     </div>
     <p>
       A {{ tracksShow.track.distance }} mile run<br>
-      From {{ tracksShow.track.start.name }}<br>
-      To {{ tracksShow.track.finish.name }}
+      From: {{ tracksShow.track.start.name }}<br>
+      To: {{ tracksShow.track.finish.name }}
     </p>
-    <p>
+    <!-- <p>
       This run has been done {{ tracksShow.track[attemptedBy].length() }} times.
-    </p>
+    </p> -->
     <button ng-if="!main.isAuthenticated()"　class="pure-button pure-button-primary" ui-sref="tracksEdit({ id: tracksShow.track.id })">Track Edit</button>
     <button ng-if="!main.isAuthenticated()"　class="pure-button button-danger" ng-click="tracksShow.delete()">Track Delete</button>
 </div>
