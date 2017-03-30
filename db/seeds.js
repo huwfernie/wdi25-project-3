@@ -110,14 +110,14 @@ User
         name: 'Richmond bridge - Richmond Park White Lodge',
         start: {
           name: 'Richmond bridge',
-          lat: '51.457285',
-          lng: '-0.307031',
-          img: 'https://upload.wikimedia.org/wikipedia/commons/6/68/Richmond_Bridge,_UK.jpg'
+          lat: '51.457558',
+          lng: '-0.306973',
+          img: 'http://i.dailymail.co.uk/i/pix/2013/03/29/article-2301345-026F165A00000578-337_636x421.jpg'
         },
         finish: {
           name: 'Richmond Park White Lodge',
-          lat: '51.445221',
-          lng: '0.264753',
+          lat: '51.445375',
+          lng: '-0.265327',
           img: 'http://i.telegraph.co.uk/multimedia/archive/02677/PD70036571_ADHYR8_2677198b.jpg'
         },
         distance: 2.6
@@ -136,6 +136,36 @@ User
           img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/London-Eye-2009.JPG/1200px-London-Eye-2009.JPG'
         },
         distance: 2.6
+      },{
+        name: 'Kensington Palace - Regents Park',
+        start: {
+          name: 'Kensington Palace',
+          lat: '51.505794',  //  lat: '51.5081', I changed this to recognise the white house -- Huw
+          lng: '-0.187778', //  lng: '-0.076674',
+          img: 'http://cdn.londonandpartners.com/asset/kensington-palace-kensington-palace2783-bec26169c74be0d434d58302dac1c5d0.jpg'
+        },
+        finish: {
+          name: 'Regents Park Open Air Theatre',
+          lat: '51.528438',
+          lng: '-0.154762',
+          img: 'https://openairtheatre.com/up/seating/770787123.jpg'
+        },
+        distance: 2.1
+      },{
+        name: 'Camden Town - Parliament Hill',
+        start: {
+          name: 'Cyberdog',
+          lat: '51.542234',  //  lat: '51.5081', I changed this to recognise the white house -- Huw
+          lng: '-0.147167', //  lng: '-0.076674',
+          img: 'https://ablognso.files.wordpress.com/2012/05/cyberdog.jpg'
+        },
+        finish: {
+          name: 'Parliament Hill',
+          lat: '51.559683',
+          lng: '-0.159645',
+          img: 'https://upload.wikimedia.org/wikipedia/commons/1/12/Flickr_-_Duncan~_-_London_from_Parliament_Hill.jpg'
+        },
+        distance: 2.1
       }])
       .then((tracks) => {
         console.log(`${tracks.length} tracks created`);
