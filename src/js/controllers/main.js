@@ -20,7 +20,6 @@ function MainCtrl($rootScope, $state, $auth) {
   });
 
   $rootScope.$on('$stateChangeSuccess', () => {
-    // check with Mike if it's OK to change this from -- if(vm.stateHasChanged) vm.message = null;
     vm.message = null;
     if(!vm.stateHasChanged) vm.stateHasChanged = true;
     vm.isNavCollapsed = true;
