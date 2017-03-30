@@ -287,6 +287,8 @@ nav {
   }
   p {
     margin: 20px 0;
+    font-size: 20px;
+    color: rgba(0, 100, 50, 1);
   }
   .form-group{
     margin: 20px auto;
@@ -295,6 +297,18 @@ nav {
   .image-input {
     font-weight: bold;
   }
+}
+
+.error {
+  text-transform: uppercase;
+  color: white;
+  margin: 0 auto;
+  text-align: center;
+  padding: 10px 0;
+  width: 90%;
+  background: rgba(250, 10, 10, 0.4);
+  border-top: solid 2px rgba(250, 10, 10, 0.8);
+  border-bottom: solid 2px rgba(250, 10, 10, 0.8);
 }
 
 // /////////////////////////////
