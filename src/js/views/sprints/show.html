@@ -62,6 +62,7 @@
   <div class="pure-u sprint-upload">
 
 
+    <p>Date: {{ sprintsShow.sprint.start.time | limitTo : 10 : 0 }}</p>
     <p>Start time: {{ sprintsShow.sprint.start.time | limitTo : 8 : 11 }}</p>
     <p>Finish time: {{ sprintsShow.sprint.finish.time | limitTo : 8 : 11  }}</p>
     <!-- <p>Runner: {{ sprintsShow.sprint }}</p> -->

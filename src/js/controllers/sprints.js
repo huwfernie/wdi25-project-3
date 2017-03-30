@@ -18,7 +18,8 @@ function SprintsNewCtrl(Sprint, $state, $http, trackService, $rootScope) {
   vm.sprint = {};
 
   const track = trackService.getTrack();
-
+  console.log('this is', track.track.name);
+  vm.startName = track.track.start.name;
 
   if(!track) {
     $state.go('tracksIndex'); // handle this error more gracefully with $broadcast or something...
