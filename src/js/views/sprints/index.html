@@ -1,8 +1,20 @@
-<h1>Sprints Index (Newsfeed)</h1>
+<h1>Newsfeed</h1>
 
-<div class="pure-g" ng-repeat="sprint in sprintsIndex.all">
-  <div class="pure-u">
-    <h3><a ui-sref="sprintsShow({ id: sprint.id })">{{ sprint.id }}</a></h3>
+<div class="pure-g" ng-repeat="sprint in sprintsIndex.all | orderBy:'-createdAt' ">
+  <div class="pure-u newsfeed">
+    <h3><a ui-sref="sprintsShow({ id: sprint.id })">{{ sprint.start.time | limitTo : 10 : 0 }} - {{ sprint.start.time | limitTo : 8 : 11  }}</a></h3>
+    <div class="clearfix">
+      <img ng-src="{{ sprint.start.imgSRC }}" alt="start user photo">
+      <img ng-src="{{ sprint.finish.imgSRC }}" alt="finish user photo">
+    </div>
+    <div class="centered">
+      <p>Date: {{ sprint.start.time | limitTo : 10 : 0 }}</p>
+      <p>Start time: {{ sprint.start.time | limitTo : 8 : 11 }}</p>
+      <p>Finish time: {{ sprint.finish.time | limitTo : 8 : 11  }}</p>
+      <p>Duration: {{ sprint.duration }} seconds</p>
+      <p>User: {{ sprint.createdBy.username }}</p>
+    </div>
+    <hr>
     <!-- <button class="pure-button pure-button-primary" ui-sref= "sprintsEdit({ id: sprint.id })">Edit</button> -->
   </div>
 
@@ -13,4 +25,3 @@
   </div> -->
   <hr>
 </div>
-<!-- double check we need the Image SRC or not ?? -->
