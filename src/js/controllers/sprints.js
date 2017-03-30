@@ -66,8 +66,8 @@ function SprintsNewCtrl(Sprint, $state, $http, trackService, $rootScope) {
   vm.create = sprintsCreate;
 }
 
-SprintsShowCtrl.$inject = ['Sprint', '$stateParams', '$state', '$http', 'trackService', '$rootScope'];
-function SprintsShowCtrl(Sprint, $stateParams, $state, $http, trackService, $rootScope) {
+SprintsShowCtrl.$inject = ['Sprint', '$stateParams', '$state', '$http', 'trackService', '$rootScope', 'buildStopwatch'];
+function SprintsShowCtrl(Sprint, $stateParams, $state, $http, trackService, $rootScope, buildStopwatch) {
   const vm = this;
 
   vm.sprint = Sprint.get($stateParams);

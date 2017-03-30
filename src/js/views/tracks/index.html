@@ -39,7 +39,7 @@
     <!-- <span ng-repeat="track in tracksIndex.all | filter:filterQuery" class="listItem clearfix" > -->
     <!-- <span ng-repeat="track in tracksIndex.all | filter:search.start | filter:search.finish" class="listItem clearfix" > -->
       <li ng-repeat="track in tracksIndex.allFiltered" class="listItem clearfix fill-height outer">
-        <a ng-click="tracksIndex.getLatLng(track)" href="#map" class="trackName fill-height inner">{{ track.name }}</a>
+      <span><a ng-click="tracksIndex.getLatLng(track)" href="#map" class="trackName fill-height inner">{{ track.name }}</a></span>
         <a class="pure-button pure-button-primary fill-height inner" ui-sref= "tracksShow({ id: track.id })">Run now</a>
       </li>
     </ul>

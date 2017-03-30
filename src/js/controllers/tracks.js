@@ -10,23 +10,6 @@ function TracksIndexCtrl(Track, $scope, filterFilter) {
   const vm = this;
 
   vm.all = Track.query();
-  // console.log(vm.all);
-  //
-  //
-  // vm.filtered = {
-  //   // start: [...new Set(vm.all)],
-  //   // finish: [...new Set(vm.all)]
-  //   start: vm.all.map(track => track.start.name).filter((name, idx, arr) => arr.indexOf(name) === idx),
-  //   finish: vm.all.map(track => track.finish.name).filter((name, idx, arr) => arr.indexOf(name) === idx)
-  // };
-  // console.log(vm.filtered);
-  // vm.filtered = {
-  //   // start: [...new Set(vm.all)],
-  //   // finish: [...new Set(vm.all)]
-  //   start: vm.all.map(track => track.start.name).filter((name, idx, arr) => arr.indexOf(name) === idx),
-  //   finish: vm.all.map(track => track.finish.name).filter((name, idx, arr) => arr.indexOf(name) === idx)
-  // };
-  // console.log(vm.filtered);
 
   $scope.$watchGroup([
     () => vm.start,
