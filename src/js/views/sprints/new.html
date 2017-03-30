@@ -1,9 +1,9 @@
 <section class="formContainer">
-  <h1>New Sprint</h1>
+  <h1>Let's start your run</h1>
 
   <form ng-submit="sprintsNew.create()" class="sprint-upload">
 
-    <p>To start this run you'll  need to upload a photo of you with -{{ sprintsNew.track.start.name }}- in the background.</p>
+    <p>To start this run you'll  need to upload a photo of you with -<strong><em>{{ sprintsNew.track.start.name }}</em></strong>- in the background.</p>
 
     <div class="form-group">
       <label for="base64" class="image-input">Upload your start image!</label>
@@ -11,5 +11,8 @@
     </div>
 
     <button class="btn btn-primary pure-button pure-button-primary">Submit</button>
+    <button   ng-click="console.log('Hello')">Cancel</button>
+
   </form>
 </section>
+<!-- ui-sref="tracksIndex" -->

@@ -164,6 +164,7 @@ nav {
 
 .pure-img {
   &.sprintsIndex {
+    height: 100%;
     width: 100vw;
     display: inline-block;
   }
@@ -287,6 +288,8 @@ ul.trackIndex {
   }
   p {
     margin: 20px 0;
+    font-size: 20px;
+    color: rgba(0, 100, 50, 1);
   }
   .form-group{
     margin: 20px auto;
@@ -295,6 +298,18 @@ ul.trackIndex {
   .image-input {
     font-weight: bold;
   }
+}
+
+.error {
+  text-transform: uppercase;
+  color: white;
+  margin: 0 auto;
+  text-align: center;
+  padding: 10px 0;
+  width: 90%;
+  background: rgba(250, 10, 10, 0.4);
+  border-top: solid 2px rgba(250, 10, 10, 0.8);
+  border-bottom: solid 2px rgba(250, 10, 10, 0.8);
 }
 
 // /////////////////////////////
@@ -363,12 +378,9 @@ ul.trackIndex {
 div.buttonContainer {
   width: 100%;
   button {
-    margin: 0 auto;
-  }
-  .track-show-btn {
-    background-color: $green;
-    margin-left:5%;
-    width: 75%;
+    display: block;
+    margin: 30px auto 0;
+    background-color: $lightblue;
   }
 }
 
@@ -378,14 +390,21 @@ h1.track-show{
 }
 
 .track-show-container {
-  padding: 5%;
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   img {
     width: 100%;
+    margin: 20px 0;
+  }
+  h3 {
+    text-align: center;
+    margin-top: 20px;
+  }
+  p{
+    padding: 0 10px;
+    font-size: 18px;
   }
 }
-
 
 #start,
 #stop,
@@ -406,7 +425,11 @@ h1.track-show{
 }
 
 
-
+.error {
+  padding-top: 20px;
+  width: 100%;
+  text-align: center;
+}
 
 //  #TrSbutton {
 //

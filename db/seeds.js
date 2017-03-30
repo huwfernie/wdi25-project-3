@@ -60,7 +60,7 @@ User
           lng: '-0.075982',
           img: 'http://blog.museumoflondon.org.uk/wp-content/uploads/2014/07/Tower-Bridge-raised-blog.jpg'
         },
-        distance: '0.3 mile'
+        distance: 0.3
       },{
         name: 'Big Ben - St Paul',
         start: {
@@ -75,7 +75,7 @@ User
           lng: '-0.0984799861907959',
           img: 'http://www.astoft2.co.uk/london/P1030970-transf-wandyellred-cln-u1-h540-u0.3t5-q60-selnonblue-varyr0div.jpg'
         },
-        distance: '3.1 miles'
+        distance: 3.1
       },{
         name: 'London Eye - Battersea',
         start: {
@@ -90,7 +90,7 @@ User
           lng: '-0.144839',
           img: 'https://static.dezeen.com/uploads/2011/12/dezeen_Farrells-Battersea-Power-Station_1.jpg'
         },
-        distance: '2.4 miles'
+        distance: 2.4
       },{
         name: 'Trafalgal Square - Royal Albert Hall',
         start: {
@@ -105,7 +105,7 @@ User
           lng: '-0.144839',
           img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8DSxyJ9jZb9Z4bjnizsTK8-BS4-UmxOsYNiCmgqpEKFXXmKeA'
         },
-        distance: '2.4 miles'
+        distance: 2.4
       }])
       .then((tracks) => {
         console.log(`${tracks.length} tracks created`);

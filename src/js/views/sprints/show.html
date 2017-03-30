@@ -1,22 +1,20 @@
-
-
 <!-- Placeholder with timer and cancel button -->
+
 <!-- start time: {{ sprintsShow.sprint.start.time }} minutes -->
 <div class="fullscreen pure-g outline ng-hide" ng-show="!sprintsShow.sprint.finish.time">
-  <h1>Have a Nice Run</h1>
   <div class="pure-u sprint-upload">
+    <h1>Have a Nice Run</h1>
     <h2>{{ sprintsShow.sprint.createdBy }}</h2>
-    Are you running? {{ sprintsShow.isRunning }}
+
     <div id="stopwatch">00:00:00</div>
     <button class="pure-button pure-button-primary" id="start">start</button>
     <button class="pure-button pure-button-primary" id="stop">stop</button>
     <button class="pure-button pure-button-primary" id="clear">clear</button>
 
 
-    <button class="pure-button pure-button-primary finish-cancel" ng-click="">Cancel</button>
+    <button class="pure-button pure-button-primary finish-cancel" ng-click="sprintsShow.delete()">Cancel Your Run</button>
     <button class="pure-button pure-button-primary finish-photo" ng-click="sprintsShow.takeFinishPhoto()">Take finish photo</button>
   </div>
-  <!-- lastly: {{ sprintsShow.sprint }} -->
 </div>
 
 <!-- Upload finish image -->
@@ -25,6 +23,9 @@
   <div class="pure-u">
     <form ng-submit="sprintsShow.finish()" class="sprint-upload">
       <div class="form-group">
+
+        <p>To finish this run you'll  need to upload a photo of you with -<strong><em>{{ sprintsShow.track.finish.name }}</em></strong>- in the background.</p>
+
         <label for="base64">Image</label>
         <input type="file" base64 name="base64" id="base64" ng-model="sprintsShow.sprint.base64">
       </div>
