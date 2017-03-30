@@ -1,8 +1,9 @@
-<h1>Congratulations</h1>
+
 
 <!-- Placeholder with timer and cancel button -->
 <!-- start time: {{ sprintsShow.sprint.start.time }} minutes -->
 <div class="fullscreen pure-g outline ng-hide" ng-show="!sprintsShow.sprint.finish.time">
+  <h1>Have a Nice Run</h1>
   <div class="pure-u sprint-upload">
     <h2>{{ sprintsShow.sprint.createdBy }}</h2>
     Are you running? {{ sprintsShow.isRunning }}
@@ -60,7 +61,7 @@
 <!-- Display completed sprint -->
 <div class="fullscreen pure-g outline ng-hide" ng-show="sprintsShow.sprint.finish.imgSRC">
   <div class="pure-u sprint-upload">
-
+    <h1>Well Done</h1>
 
     <p>Start time: {{ sprintsShow.sprint.start.time | limitTo : 8 : 11 }}</p>
     <p>Finish time: {{ sprintsShow.sprint.finish.time | limitTo : 8 : 11  }}</p>
