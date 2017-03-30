@@ -12,6 +12,7 @@ function MainCtrl($rootScope, $state, $auth) {
   $rootScope.$on('error', (e, err) => {
     vm.stateHasChanged = false;
     vm.message = err.data.message; // this is the message from the server
+    // You could have a two stage error message here if you want. -- Huw
     if(err.status === 401) $state.go('login'); // redirect to login.
   });
 
@@ -19,24 +20,17 @@ function MainCtrl($rootScope, $state, $auth) {
     vm.pageName = toState.name;
   });
 
-  $rootScope.$on('stateChangeSuccess', () => {
-    if(vm.stateHasChanged) vm.message = null;
+  $rootScope.$on('$stateChangeSuccess', () => {
+    // check with Mike if it's OK to change this from -- if(vm.stateHasChanged) vm.message = null;
+    vm.message = null;
     if(!vm.stateHasChanged) vm.stateHasChanged = true;
     vm.isNavCollapsed = true;
-
   });
 
   function logout() {
     $auth.logout();
-    $state.go('home'); // redirect to login page
+    $state.go('home'); // redirect to home page
   }
 
   vm.logout = logout;
-
-  function click() {
-    console.log('click');
-  }
-
-  vm.click = click;
-
 }
