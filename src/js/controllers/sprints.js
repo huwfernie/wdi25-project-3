@@ -37,7 +37,8 @@ function SprintsNewCtrl(Sprint, $state, $http, trackService, $rootScope) {
       if(!response.data.responses[0].landmarkAnnotations) {
         const err = new Error('No landmarks found');
         err.status = 404;
-        err.data = { message: 'Whoa there; we searched the image you just uploaded and didn\'t find any landmarks in it, <p><em>please upload another image to start your run.</em></p>' };
+        err.data = { message: 'Whoa there; we searched the image you just uploaded and didn\'t find any landmarks in it. Please upload another image to start your run.' };
+        console.log('No landmark found: Error');
         return $rootScope.$broadcast('error', err);
       }
 
@@ -47,6 +48,7 @@ function SprintsNewCtrl(Sprint, $state, $http, trackService, $rootScope) {
         const err = new Error('Wrong location');
         err.status = 404;
         err.data = { message: 'Hold on, your photo has a landmark in it that  doesn\'t match the start position, try uploading another' };
+        console.log('Wrong location: Error');
         return $rootScope.$broadcast('error', err);
       }
 

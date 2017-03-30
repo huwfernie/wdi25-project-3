@@ -1,7 +1,7 @@
 <section class="formContainer">
   <h1>Let's start your run</h1>
 
-  <form ng-submit="sprintsNew.create()" class="sprint-upload">
+  <form ng-submit="sprintsNew.create()" class="sprint-upload" name="sprints.imageForm" novalidate>
 
     <p>To start this run you'll  need to upload a photo of you with -<strong><em>{{ sprintsNew.track.start.name }}</em></strong>- in the background.</p>
 
@@ -10,8 +10,8 @@
       <input type="file" base64 name="base64" id="base64" ng-model="sprintsNew.sprint.base64" >
     </div>
 
-    <button class="btn btn-primary pure-button pure-button-primary">Submit</button>
-    <button   ng-click="console.log('Hello')">Cancel</button>
+    <button class="btn btn-primary pure-button pure-button-primary" ng-disabled="!bankfilepath"> Submit</button>
+    <button class="btn btn-primary pure-button pure-button-primary"  ui-sref="tracksIndex">Cancel</button>
 
   </form>
 </section>
