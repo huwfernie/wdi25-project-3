@@ -23,23 +23,21 @@ router.route('/sprints/:id')
 
 // ------ Tracks ------ //
 router.route('/tracks')
-  .all(secureRoute)
   .get(tracks.index)
   .post(secureRoute, adminRoute, tracks.create);
 
 router.route('/tracks/:id')
-  .all(secureRoute)
   .get(tracks.show)
-  .put(adminRoute, tracks.update)
-  .delete(adminRoute, tracks.delete);
+  .put(secureRoute, adminRoute, tracks.update)
+  .delete(secureRoute, adminRoute, tracks.delete);
 
 // ------ Users ------ //
 router.route('/users')
-  .get(secureRoute, adminRoute, users.index); // admin route
+  .get(secureRoute, adminRoute, users.index);
 
 router.route('/users/:id')
   .all(secureRoute)
-  .get(adminRoute, users.show) // admin route???
+  .get(adminRoute, users.show)
   .put(users.update)
   .delete(users.delete);
 

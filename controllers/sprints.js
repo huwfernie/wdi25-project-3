@@ -40,7 +40,7 @@ function showRoute(req, res, next) {
 function updateRoute(req, res, next) {
   if(req.file) req.body.finish.img = req.file.filename;
   req.body.createdBy = req.user.id;
-  req.body.finish.time = new Date();  // change this so it doesn't make a new finish time on each update.
+  req.body.finish.time = new Date();  // change this if you allow edit access to prevent finish time update on edit
 
   Sprint
     .findById(req.params.id)

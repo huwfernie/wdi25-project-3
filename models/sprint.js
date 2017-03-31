@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-//const s3 = require('../lib/s3');
 
 const sprintSchema = new mongoose.Schema({
   start: {
@@ -52,19 +51,5 @@ sprintSchema
 
     next();
   });
-
-
-// sprintSchema.pre('save', function checkPreviousImage(next) {
-//   if(this.isModified('start.img') && this.start._img) {
-//     return s3.deleteObject({ Key: this.start_img }, next);
-//   }
-//   next();
-// });
-//
-// sprintSchema.pre('remove', function deleteImage(next) {
-//   if(this.image) return s3.deleteObject({ Key: this.image}, next );
-//   next();
-// });
-
 
 module.exports = mongoose.model('Sprint', sprintSchema);

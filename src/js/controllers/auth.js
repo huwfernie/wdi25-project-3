@@ -1,8 +1,7 @@
 angular
   .module('runApp')
-  .controller('RegisterCtrl', RegisterCtrl) // name the function
-  .controller('LoginCtrl', LoginCtrl); // name the function
-
+  .controller('RegisterCtrl', RegisterCtrl)
+  .controller('LoginCtrl', LoginCtrl);
 
 RegisterCtrl.$inject = ['$auth', '$state'];
 function RegisterCtrl($auth, $state) {
@@ -16,7 +15,6 @@ function RegisterCtrl($auth, $state) {
 
   vm.submit = submit;
 }
-
 
 LoginCtrl.$inject = ['$auth', '$state'];
 function LoginCtrl($auth, $state) {

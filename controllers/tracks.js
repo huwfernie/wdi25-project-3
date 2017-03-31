@@ -10,9 +10,6 @@ function indexRoute(req, res, next) {
 }
 
 function createRoute(req, res, next) {
-  // if(req.file) req.body.start.img = req.file.filename;
-  // image files -- do with imageupload and base64 directive etc.
-
   req.body.createdBy = req.user;
 
   Track
@@ -26,7 +23,6 @@ function showRoute(req, res, next) {
     .findById(req.params.id)
     .exec()
     .then((track) => {
-
       if(!track) return res.notFound();
 
       Sprint.find({ track: track.id })
@@ -42,8 +38,6 @@ function showRoute(req, res, next) {
 }
 
 function updateRoute(req, res, next) {
-  // if(req.file) req.body.image = req.file.filename;
-
   Track
     .findById(req.params.id)
     .exec()
