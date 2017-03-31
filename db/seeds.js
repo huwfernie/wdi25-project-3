@@ -101,8 +101,8 @@ User
         },
         finish: {
           name: 'Royal Albert Hall',
-          lat: '51.482719',
-          lng: '-0.144839',
+          lat: '51.50118281543877',
+          lng: '-0.177498',
           img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8DSxyJ9jZb9Z4bjnizsTK8-BS4-UmxOsYNiCmgqpEKFXXmKeA'
         },
         distance: 2.4
@@ -137,7 +137,7 @@ User
         },
         distance: 2.6
       },{
-        name: 'Albert Memorial - Regents Park',
+        name: 'Albert Memorial - Tower Bridge',
         start: {
           name: 'Albert Memorial',
           lat: '51.50225139237363',
@@ -145,10 +145,10 @@ User
           img: 'https://wanderingfeast.files.wordpress.com/2013/08/image17.jpg'
         },
         finish: {
-          name: 'Regents Park',
-          lat: '51.513563',
-          lng: '-0.0984799861907959',
-          img: 'http://www.astoft2.co.uk/london/P1030970-transf-wandyellred-cln-u1-h540-u0.3t5-q60-selnonblue-varyr0div.jpg'
+          name: 'Tower Bridge',
+          lat: '51.505778',
+          lng: '-0.075982',
+          img: 'http://blog.museumoflondon.org.uk/wp-content/uploads/2014/07/Tower-Bridge-raised-blog.jpg'
         },
         distance: 3.7
       },{
@@ -173,13 +173,13 @@ User
           .create([{
             start: {
               time: new Date(2017,2,26,10,34,12),
-              img: 'http://www.kobinazrul.towerhamlets.sch.uk/files/slideshows/728/5829d830b4528.jpg'
+              img: '5df5c5ea-fec0-4536-8e1f-2b569b675ccc.jpeg'
             },
             finish: {
               time: new Date(2017,2,26,12,15,12),
-              img: 'http://i.dailymail.co.uk/i/pix/2014/04/06/article-2598044-1CE188AF00000578-133_634x386.jpg'
+              img: '2ce614fb-226d-4547-9928-e172532a4472.jpeg'
             },
-            track: tracks[2],
+            track: tracks[7],
             createdBy: users[2]
           }]);
       });

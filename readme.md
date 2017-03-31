@@ -34,7 +34,7 @@ After realising our first idea didn't cover all the CRUD bases, we came up with 
 
 Creating a balsamiq mock up went well and we were quickly able to visualise how the app was intended to work and look.
 
-###### Coding
+##### Coding
 
 We worked well together working out what needed to be done and who would be best suited for the job.
 
