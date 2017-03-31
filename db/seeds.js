@@ -50,8 +50,8 @@ User
         name: 'Tower of London - Tower Bridge',
         start: {
           name: 'Tower of London',
-          lat: '51.50735350177636',  //  lat: '51.5081', I changed this to recognise the white house -- Huw
-          lng: '-0.076121', //  lng: '-0.076674',
+          lat: '51.50735350177636',
+          lng: '-0.076121',
           img: 'https://media1.britannica.com/eb-media/45/18545-004-FFFBAE09.jpg'
         },
         finish: {
@@ -107,7 +107,7 @@ User
         },
         distance: 2.4
       },{
-        name: 'Thames Riverfront - Richmond Park White Lodge',
+        name: 'Thames Riverfront - White Lodge',
         start: {
           name: 'Thames Riverfront',
           lat: '51.457558',
@@ -125,8 +125,8 @@ User
         name: 'Tower of London - London Eye',
         start: {
           name: 'Tower of London',
-          lat: '51.50735350177636',  //  lat: '51.5081', I changed this to recognise the white house -- Huw
-          lng: '-0.076121', //  lng: '-0.076674',
+          lat: '51.50735350177636',
+          lng: '-0.076121',
           img: 'https://media1.britannica.com/eb-media/45/18545-004-FFFBAE09.jpg'
         },
         finish: {
@@ -139,13 +139,13 @@ User
       },{
         name: 'Albert Memorial - Regents Park',
         start: {
-          name: 'Kensington Palace',
-          lat: '51.50225139237363',  //  lat: '51.5081', I changed this to recognise the white house -- Huw
-          lng: '-0.177712', //  lng: '-0.076674',
+          name: 'Albert Memorial',
+          lat: '51.50225139237363',
+          lng: '-0.177712',
           img: 'https://wanderingfeast.files.wordpress.com/2013/08/image17.jpg'
         },
         finish: {
-          name: 'St Paul',
+          name: 'Regents Park',
           lat: '51.513563',
           lng: '-0.0984799861907959',
           img: 'http://www.astoft2.co.uk/london/P1030970-transf-wandyellred-cln-u1-h540-u0.3t5-q60-selnonblue-varyr0div.jpg'
@@ -155,8 +155,8 @@ User
         name: 'Camden Town - Parliament Hill',
         start: {
           name: 'Cyberdog',
-          lat: '51.542234',  //  lat: '51.5081', I changed this to recognise the white house -- Huw
-          lng: '-0.147167', //  lng: '-0.076674',
+          lat: '51.542234',
+          lng: '-0.147167',
           img: 'https://ablognso.files.wordpress.com/2012/05/cyberdog.jpg'
         },
         finish: {
