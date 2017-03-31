@@ -8,11 +8,11 @@ function MainCtrl($rootScope, $state, $auth) {
   vm.isNavCollapsed = true;
 
   vm.isAuthenticated = $auth.isAuthenticated;
-  // rootscope is listening - it will pick up any 'error'
+
   $rootScope.$on('error', (e, err) => {
     vm.stateHasChanged = false;
-    vm.message = err.data.message; // this is the message from the server
-    if(err.status === 401) $state.go('login'); // redirect to login.
+    vm.message = err.data.message;
+    if(err.status === 401) $state.go('login');
   });
 
   $rootScope.$on('$stateChangeStart', (e, toState) => {
@@ -27,7 +27,7 @@ function MainCtrl($rootScope, $state, $auth) {
 
   function logout() {
     $auth.logout();
-    $state.go('home'); // redirect to home page
+    $state.go('home');
   }
 
   vm.logout = logout;
