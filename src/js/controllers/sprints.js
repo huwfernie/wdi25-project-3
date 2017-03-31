@@ -61,8 +61,6 @@ function SprintsNewCtrl(Sprint, $state, $http, trackService, $rootScope) {
     });
   }
 
-
-
   vm.create = sprintsCreate;
 }
 
