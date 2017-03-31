@@ -42,7 +42,7 @@ function SprintsNewCtrl(Sprint, $state, $http, trackService, $rootScope) {
 
       const latLng = response.data.responses[0].landmarkAnnotations[0].locations[0].latLng;
 
-      if((vm.track.start.lat.toFixed(2) !== latLng.latitude.toFixed(2)) || (vm.track.start.lng.toFixed(2) !== latLng.longitude.toFixed(2))) {
+      if((vm.track.start.lat.toFixed(3) !== latLng.latitude.toFixed(3)) || (vm.track.start.lng.toFixed(3) !== latLng.longitude.toFixed(3))) {
         const err = new Error('Wrong location');
         err.status = 404;
         err.data = { message: 'Hold on, your photo has a landmark in it that  doesn\'t match the start position, try uploading another' };
@@ -99,8 +99,11 @@ function SprintsShowCtrl(Sprint, $stateParams, $state, $http, trackService, $roo
       }
 
       const latLng = response.data.responses[0].landmarkAnnotations[0].locations[0].latLng;
-
-      if((vm.track.finish.lat.toFixed(2) !== latLng.latitude.toFixed(2)) || (vm.track.finish.lng.toFixed(2) !== latLng.longitude.toFixed(2))) {
+      // console.log('response lattitude:', latLng.latitude.toFixed(3));
+      // console.log('required lattitude:', vm.track.finish.lat.toFixed(3));
+      // console.log('response longitude:', latLng.longitude.toFixed(3));
+      // console.log('required longitude:', vm.track.finish.lng.toFixed(3));
+      if((vm.track.finish.lat.toFixed(3) !== latLng.latitude.toFixed(3)) || (vm.track.finish.lng.toFixed(3) !== latLng.longitude.toFixed(3))) {
         const err = new Error('Wrong location');
         err.status = 404;
         err.data = { message: 'Hold on, your finish photo has a landmark in it that  doesn\'t match the finish position, try uploading another picture' };
