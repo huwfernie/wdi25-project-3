@@ -107,9 +107,9 @@ User
         },
         distance: 2.4
       },{
-        name: 'Richmond bridge - Richmond Park White Lodge',
+        name: 'Thames Riverfront - Richmond Park White Lodge',
         start: {
-          name: 'Richmond bridge',
+          name: 'Thames Riverfront',
           lat: '51.457558',
           lng: '-0.306973',
           img: 'http://i.dailymail.co.uk/i/pix/2013/03/29/article-2301345-026F165A00000578-337_636x421.jpg'
@@ -137,20 +137,20 @@ User
         },
         distance: 2.6
       },{
-        name: 'Kensington Palace - Regents Park',
+        name: 'Albert Memorial - Regents Park',
         start: {
           name: 'Kensington Palace',
-          lat: '51.505794',  //  lat: '51.5081', I changed this to recognise the white house -- Huw
-          lng: '-0.187778', //  lng: '-0.076674',
-          img: 'http://cdn.londonandpartners.com/asset/kensington-palace-kensington-palace2783-bec26169c74be0d434d58302dac1c5d0.jpg'
+          lat: '51.50225139237363',  //  lat: '51.5081', I changed this to recognise the white house -- Huw
+          lng: '-0.177712', //  lng: '-0.076674',
+          img: 'https://wanderingfeast.files.wordpress.com/2013/08/image17.jpg'
         },
         finish: {
-          name: 'Regents Park Open Air Theatre',
-          lat: '51.528438',
-          lng: '-0.154762',
-          img: 'https://openairtheatre.com/up/seating/770787123.jpg'
+          name: 'St Paul',
+          lat: '51.513563',
+          lng: '-0.0984799861907959',
+          img: 'http://www.astoft2.co.uk/london/P1030970-transf-wandyellred-cln-u1-h540-u0.3t5-q60-selnonblue-varyr0div.jpg'
         },
-        distance: 2.1
+        distance: 3.7
       },{
         name: 'Camden Town - Parliament Hill',
         start: {
