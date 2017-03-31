@@ -16,7 +16,6 @@ $classError: rgba(250, 10, 10, 0.4);
 $classErrorBorder: rgba(250, 10, 10, 0.8);
 $runnungButtonBackground: transparentize(white, 1);
 
-
 * {
   font-family: 'Open Sans', sans-serif;
   padding: 0;
@@ -109,6 +108,7 @@ nav {
     .floatRight li {float: right;}
     .floatLeft li {float: left;}
     li {
+      cursor: pointer;
       color: white;
       font-size: 3vh;
       float: none;
@@ -174,10 +174,10 @@ nav {
         }
         span {
           color: $formErrorColor;
+          box-sizing: border-box;
           background-color: $formErrorBackground;
           display: block;
           margin-top: -0.3em;
-          padding: .3em;
           border: 1px dashed $formErrorBorder;
         }
       }
@@ -298,8 +298,6 @@ a.centered.fw {
     font-weight: bold;
   }
 }
-
-
 
 .error {
   text-transform: uppercase;
