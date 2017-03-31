@@ -173,13 +173,13 @@ User
           .create([{
             start: {
               time: new Date(2017,2,26,10,34,12),
-              img: 'http://www.kobinazrul.towerhamlets.sch.uk/files/slideshows/728/5829d830b4528.jpg'
+              img: '5df5c5ea-fec0-4536-8e1f-2b569b675ccc.jpeg'
             },
             finish: {
               time: new Date(2017,2,26,12,15,12),
-              img: 'http://i.dailymail.co.uk/i/pix/2014/04/06/article-2598044-1CE188AF00000578-133_634x386.jpg'
+              img: '2ce614fb-226d-4547-9928-e172532a4472.jpeg'
             },
-            track: tracks[2],
+            track: tracks[7],
             createdBy: users[2]
           }]);
       });
