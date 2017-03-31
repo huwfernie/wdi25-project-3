@@ -137,7 +137,7 @@ User
         },
         distance: 2.6
       },{
-        name: 'Albert Memorial - Regents Park',
+        name: 'Albert Memorial - Tower Bridge',
         start: {
           name: 'Albert Memorial',
           lat: '51.50225139237363',
@@ -145,10 +145,10 @@ User
           img: 'https://wanderingfeast.files.wordpress.com/2013/08/image17.jpg'
         },
         finish: {
-          name: 'Regents Park',
-          lat: '51.513563',
-          lng: '-0.0984799861907959',
-          img: 'http://www.astoft2.co.uk/london/P1030970-transf-wandyellred-cln-u1-h540-u0.3t5-q60-selnonblue-varyr0div.jpg'
+          name: 'Tower Bridge',
+          lat: '51.505778',
+          lng: '-0.075982',
+          img: 'http://blog.museumoflondon.org.uk/wp-content/uploads/2014/07/Tower-Bridge-raised-blog.jpg'
         },
         distance: 3.7
       },{
