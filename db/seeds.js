@@ -101,8 +101,8 @@ User
         },
         finish: {
           name: 'Royal Albert Hall',
-          lat: '51.482719',
-          lng: '-0.144839',
+          lat: '51.50118281543877',
+          lng: '-0.177498',
           img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8DSxyJ9jZb9Z4bjnizsTK8-BS4-UmxOsYNiCmgqpEKFXXmKeA'
         },
         distance: 2.4
