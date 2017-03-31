@@ -9,9 +9,6 @@ function indexRoute(req, res, next) {
 }
 
 function createRoute(req, res, next) {
-  // if(req.file) req.body.start.img = req.file.filename;
-  // image files -- do with imageupload and base64 directive etc.
-
   req.body.createdBy = req.user;
 
   User
@@ -33,8 +30,6 @@ function showRoute(req, res, next) {
 }
 
 function updateRoute(req, res, next) {
-  // if(req.file) req.body.image = req.file.filename;
-
   User
     .findById(req.params.id)
     .exec()
@@ -57,7 +52,7 @@ function deleteRoute(req, res, next) {
     .exec()
     .then((user) => {
       if(!user) return res.notFound();
-
+      
       return user.remove();
     })
     .then(() => res.status(204).end())
