@@ -3,7 +3,6 @@ angular
   .service('buildStopwatch', buildStopwatch);
 
 function buildStopwatch() {
-//  console.log('Stopwatch ready');
   var stopwatch = document.getElementById('stopwatch'),
     start = document.getElementById('start'),
     stop = document.getElementById('stop'),
@@ -30,8 +29,6 @@ function buildStopwatch() {
     t = setTimeout(add, 1000);
   }
 
-  // timer();
-
   /* Start button */
   if(start) start.onclick = timer ;
 
@@ -39,10 +36,6 @@ function buildStopwatch() {
   if(stop) stop.onclick = function() {
     clearTimeout(t);
   };
-
-  // this.stopTime = function() {
-  //   clearTimeout(t);
-  // };
 
   /* Clear button */
   if(clear) clear.onclick = function() {

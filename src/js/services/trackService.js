@@ -11,5 +11,4 @@ function trackService($window) {
   this.setTrack = function setTrack(track) {
     return $window.localStorage.setItem('track', JSON.stringify(track));
   };
-
 }

@@ -6,16 +6,6 @@ const mongoose = require('mongoose');
 mongoose.plugin(require('./lib/globalToJSON'));
 mongoose.Promise = require('bluebird');
 const { port, env, dbURI } = require('./config/environment');
-// bcrypt
-// aws-sdk
-// jsonwebtoken
-// request
-// request-promise
-// angular
-// angular-messages
-// angular-ui-router
-// angular-resource
-// satellizer
 
 // Custom middleware setup
 const routes = require('./config/routes');

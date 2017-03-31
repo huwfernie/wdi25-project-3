@@ -2,6 +2,20 @@ $maroon: rgb(202, 60, 60);
 $purple: #531253;
 $green: rgb(28, 184, 65);
 $lightblue: #84DCC6;
+$background1: rgba(255, 255, 255, .5);
+$background2: rgba(0, 0, 0, 0.5);
+$textShadow: rgba(0, 0, 0, 0.2);
+$formErrorBackground: rgba(255, 0, 0, .2);
+$formErrorBorder: rgba(255, 0, 0, 0.5);
+$formErrorColor: red;
+$black: black;
+$white: #fff;
+$sprintBackground: rgba(28, 184, 65, 0.1);
+$sprintColor: rgba(0, 100, 50, 1);
+$classError: rgba(250, 10, 10, 0.4);
+$classErrorBorder: rgba(250, 10, 10, 0.8);
+$runnungButtonBackground: transparentize(white, 1);
+
 
 * {
   font-family: 'Open Sans', sans-serif;
@@ -37,7 +51,7 @@ body.home {
   font-size: 3vh;
 
   main {
-    background-color: rgba(255, 255, 255, .5);
+    background-color: $background1;
     text-align: center;
     background: no-repeat url("https://static.pexels.com/photos/29578/pexels-photo.jpg");
     background-size: cover;
@@ -50,7 +64,7 @@ body.home {
       font-weight: 300;
       color: #fff;
       margin: 0 auto;
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: $background2;
       padding: 10px 10px;
       height: 100%;
       h1 {
@@ -58,7 +72,7 @@ body.home {
         border-top: 2px solid #fff;
         border-bottom: 2px solid #fff;
         padding: 20px 0;
-        color: rgba(255, 255, 255, .5);
+        color: $background1;
         letter-spacing: 2px;
       }
       h3 {
@@ -98,35 +112,10 @@ nav {
       color: white;
       font-size: 3vh;
       float: none;
-      // display: inline-block;
       vertical-align: middle;
       &:not(.burger) {
         padding: 3vh 6vh;
       }
-      // &.burger {
-      // height: 15px;
-      // width: 20px;
-      //   span {
-      //     display: block;
-      //     position: absolute;
-      //     height: 3px;
-      //     width: 100%;
-      //     background-color: pink;
-      //     border-radius: 3px;
-      //     opacity: 1;
-      //     left: 0;
-      //     &:nth-child(1) {
-      //       top: 0px;
-      //     }
-      //     &:nth-child(2),
-      //     &:nth-child(3) {
-      //       top: 6px;
-      //     }
-      //     &:nth-child(4) {
-      //       top: 12px;
-      //     }
-      //   }
-      // }
     }
     div.hide {
       // unhide when screen is large
@@ -136,24 +125,11 @@ nav {
   }
 }
 
-// h1 {
-//   font-size: 10vw;
-// }
-// h2 {}
-// h3 {}
-// h4 {
-//   font-size: 6vw;
-// }
-// h5 {}
-// h6 {}
-
 .button-success,
 .button-danger {
-// .button-warning,
-// .button-secondary {
     color: white;
     border-radius: 4px;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 1px 1px $textShadow;
 }
 
 .button-success {
@@ -172,13 +148,6 @@ nav {
   }
 }
 
-// These are for Huw, we can maybe delete them later:
-
-// ************** COMMENTED OUT THE OUTLINE ********
-// .outline {
-//   border: 1px solid black;
-// }
-
 .fullscreen {
   height: 100vh;
   width: 100vw;
@@ -190,8 +159,6 @@ nav {
   margin: 0 auto;
 }
 
-// end of Huws styling
-
 .formContainer {
   position: relative;
   height: 80vh;
@@ -202,18 +169,16 @@ nav {
       div.pure-control-group {
         margin-top: 4vh;
         input {
-          // margin: 0;
-          // margin-top: 3vh;
           height: 40px;
           width: 100%;
         }
         span {
-          color: red;
-          background-color: rgba(255, 0, 0, .2);
+          color: $formErrorColor;
+          background-color: $formErrorBackground;
           display: block;
           margin-top: -0.3em;
           padding: .3em;
-          border: 1px dashed rgba(255, 0, 0, 0.5);
+          border: 1px dashed $formErrorBorder;
         }
       }
       div.pure-controls {
@@ -244,7 +209,7 @@ ul.trackIndex {
   li {
     display: block;
     margin: 2vh 0;
-    border: 1px solid black;
+    border: 1px solid $black;
     border-radius: 10px;
     // text-align: center;
     vertical-align: middle;
@@ -256,7 +221,7 @@ ul.trackIndex {
       ;
       // padding: 8px;
       a.trackName {
-        color: black;
+        color: $black;
         text-decoration: none;
         vertical-align: middle;
         height: 100%;
@@ -292,15 +257,13 @@ a.centered.fw {
 .fill-height.outer {
      position:relative;
      height:10vh;
-    //  border: 1px solid red;
  }
  .fill-height.inner {
-    //  position:absolute;
      height:100%;
  }
 
 .filter {
-  color: #fff;
+  color: $white;
   background: $lightblue;
   margin-bottom: 1vh;
   padding: 5px;
@@ -316,7 +279,7 @@ a.centered.fw {
     padding: 10px 20px;
     width: 80%;
     border-radius: 10px;
-    background: rgba(28, 184, 65, 0.1);
+    background: $sprintBackground;
   }
   h1 {
     color: $lightblue;
@@ -325,7 +288,7 @@ a.centered.fw {
   p {
     margin: 20px 0;
     font-size: 20px;
-    color: rgba(0, 100, 50, 1);
+    color: $sprintColor;
   }
   .form-group{
     margin: 20px auto;
@@ -345,15 +308,14 @@ a.centered.fw {
   text-align: center;
   padding: 10px 0;
   width: 100%;
-  background: rgba(250, 10, 10, 0.4);
-  border-top: solid 2px rgba(250, 10, 10, 0.8);
-  border-bottom: solid 2px rgba(250, 10, 10, 0.8);
+  background: $classError;
+  border-top: solid 2px $classErrorBorder;
+  border-bottom: solid 2px $classErrorBorder;
   p {
     margin-top: 10px;
   }
 }
 
-// /////////////////////////////
 @media (min-width: 650px) {
   nav ul {
     div.hide{
@@ -373,15 +335,8 @@ a.centered.fw {
     ul {
       text-align: right;
       list-style: none;
-      // height: 100vh;
       .floatRight li {float: none;}
       .floatLeft li {float: none;}
-
-      // div.collapse.navbar-collapse {
-      //     display: block;
-      // }
-
-
       li {
         display: block;
         padding: 3vh;
@@ -401,15 +356,11 @@ a.centered.fw {
 }
 
 #runningButton {
-  // text-align: justify;
   float: inherit;
-  // width: 70px;
-  // height: 90px;
   background-image: url('http://cdn.mysitemyway.com/etc-mysitemyway/icons/legacy-previews/icons/blue-tiedyed-cloth-icons-sports-hobbies/043748-blue-tiedyed-cloth-icon-sports-hobbies-people-woman-runner.png');
   background-size: contain;
   background-repeat: no-repeat;
-  background-color: transparentize(white, 1);
-  // background-position: center;
+  background-color: $runnungButtonBackground;
   border-radius: 20px;
   width: 100%;
   display: block;
@@ -418,7 +369,6 @@ a.centered.fw {
 
 .track-show-btn {
   background-color: $green;
-  // margin-left:5%;
   width: 75%;
 }
 
@@ -481,21 +431,3 @@ h1.track-show{
     border-radius: 15px;
   }
 }
-
-
-
-//  #TrSbutton {
-//
-//    float: left;
-//    margin: 10px;
-//    padding-left:  70px ;
-//    width: 100px;
-//    height: 200px;
-//    background-image: url('http://cdn.mysitemyway.com/etc-mysitemyway/icons/legacy-previews/icons/blue-tiedyed-cloth-icons-sports-hobbies/043748-blue-tiedyed-cloth-icon-sports-hobbies-people-woman-runner.png');
-//    background-size: cover;
-//    background-color: transparentize(white, 0.8);
-//    background-position: center;
-//    border-radius: 20px;
-//
-//
-// }

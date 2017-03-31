@@ -3,7 +3,6 @@
   <form name="login.loginForm" class="pure-form pure-form-aligned" ng-submit="login.submit()" novalidate>
     <fieldset class="">
       <div class="pure-control-group">
-        <!-- <label for="email">Email</label> -->
         <input type="email" name="email" id="email" ng-model="login.credentials.email" required placeholder="Email">
         <span ng-messages="login.loginForm.email.$error" role="alert" ng-show="(login.loginForm.$submitted || login.loginForm.email.$touched) && login.loginForm.email.$invalid" class="error">
           <div ng-message="required">Please enter your email.</div>
@@ -11,7 +10,6 @@
         </span>
       </div>
       <div class="pure-control-group">
-        <!-- <label for="password">Password</label> -->
         <input type="password" name="password" id="password" ng-model="login.credentials.password" required placeholder="Password">
         <span ng-messages="login.loginForm.password.$error" role="alert" ng-show="(login.loginForm.$submitted || login.loginForm.password.$touched) && login.loginForm.password.$invalid" class="error">
           <div ng-message="required">Please enter your password.</div>
