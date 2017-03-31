@@ -61,13 +61,11 @@ function SprintsNewCtrl(Sprint, $state, $http, trackService, $rootScope) {
     });
   }
 
-
-
   vm.create = sprintsCreate;
 }
 
-SprintsShowCtrl.$inject = ['Sprint', '$stateParams', '$state', '$http', 'trackService', '$rootScope'];
-function SprintsShowCtrl(Sprint, $stateParams, $state, $http, trackService, $rootScope) {
+SprintsShowCtrl.$inject = ['Sprint', '$stateParams', '$state', '$http', 'trackService', '$rootScope', 'buildStopwatch'];
+function SprintsShowCtrl(Sprint, $stateParams, $state, $http, trackService, $rootScope, buildStopwatch) {
   const vm = this;
 
   vm.sprint = Sprint.get($stateParams);
@@ -118,7 +116,6 @@ function SprintsShowCtrl(Sprint, $stateParams, $state, $http, trackService, $roo
         return $rootScope.$broadcast('error', err);
       }
 
-      console.log('now');
       $rootScope.$broadcast('$stateChangeSuccess');
       vm.sprint
       .$update()
@@ -130,7 +127,6 @@ function SprintsShowCtrl(Sprint, $stateParams, $state, $http, trackService, $roo
   // used to switch between views on the show page
   function takeFinishPhoto(){
     vm.sprint.finish.time = new Date();
-    // $state.reload();
   }
   vm.takeFinishPhoto = takeFinishPhoto;
 
@@ -139,7 +135,6 @@ function SprintsShowCtrl(Sprint, $stateParams, $state, $http, trackService, $roo
 SprintsEditCtrl.$inject = ['Sprint', '$stateParams', '$state'];
 function SprintsEditCtrl(Sprint, $stateParams, $state) {
   const vm = this;
-
   vm.sprint = Sprint.get($stateParams);
 
   function sprintsUpdate() {

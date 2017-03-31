@@ -92,7 +92,7 @@ User
         },
         distance: 2.4
       },{
-        name: 'Trafalgal Square - Royal Albert Hall',
+        name: 'Trafalgar Square - Royal Albert Hall',
         start: {
           name: 'Trafalgar Square',
           lat: '51.508078',
